@@ -40,6 +40,8 @@ function flexible_content($contents = null)
             $content['_total'] = count($contents);
 
             if (locate_template('flexible-content/' . str_replace('_', '-', $content['acf_fc_layout']) . '.php')) {
+                // @todo
+                //echo "<div class='template-name' style='position:relative'><pre>" . 'flexible-content/' . str_replace('_', '-', $content['acf_fc_layout']) . '.php' . "</pre></div>";
                 include locate_template('flexible-content/' . str_replace('_', '-', $content['acf_fc_layout']) . '.php');
             } elseif (current_user_can('administrator')) {
                 pr('Template ' . str_replace('_', '-', $content['acf_fc_layout']) . '.php' . ' missing', true);

@@ -19,6 +19,12 @@
         }
     }
 
+    &--green-no-shape { background-color: $green; color: $white;
+        &:hover { background-color: $orange;
+            svg { transform: translate(10px,0);}
+        }
+    }
+
     &--outline { border: 1px solid $green;
         svg {
             path { fill: $green; }

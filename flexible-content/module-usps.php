@@ -1,4 +1,5 @@
 <!-- usps -->
+<?php if( isset( $content['usps'] ) && is_array( $content['usps'] ) ) : ?>
 <section class="module module--usps">
     <div class="container">
         <div class="c-usps">
@@ -10,4 +11,5 @@
         </div>
     </div>
 </section>
+<?php endif; ?>
 <!-- usps -->

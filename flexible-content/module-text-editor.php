@@ -1,11 +1,12 @@
 <?php 
+
     $layout = $content['layout'];
     $bgcolor = $content['bg_color'];
-    $size = $content['size'];
+    $size = isset( $content['size'] ) ? $content['size'] : '';
 ?>
 
 <!-- text editor -->
-<section class="module module--texteditor<?php if($bgcolor === 'white' or $bgcolor === 'green') : ?> u-pd u-pd--md bg bg--<?php echo $bgcolor; ?><?php else: ?> u-md u-mg--md<?php endif;?>">
+<section class="module module--texteditor <?php if($bgcolor === 'white' or $bgcolor === 'green') : ?> u-pd u-pd--md bg bg--<?php echo $bgcolor; ?><?php else: ?> u-md u-mg--md<?php endif;?>">
     <div class="container">
         <?php if($layout==='one') : ?>
             <div class="c-editor">

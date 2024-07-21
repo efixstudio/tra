@@ -1,0 +1,284 @@
+.c-cards {
+  &--person {
+    grid-template-columns: repeat(2, 1fr);
+    .c-card{
+      &--person {margin-bottom: 30px;}
+      &__meta {
+        &-name {
+          span { display: inline-block;
+
+          }
+        }
+      }
+    }
+  }
+
+  &--blog{
+    grid-template-areas: "c1 c1" "c2 c3" "c4 c4" "c5 c6" "c7 c7";
+
+    .c-card {
+      width: 100%;
+      margin-left: auto;
+
+      &--blog {
+
+
+        &-item-1 {
+          border-right: none;
+          &:not([data-total-posts="1"]){
+            border-bottom: 1px solid $green;
+          }
+
+
+          .c-card {
+
+            &__header{ margin: 0;}
+            &__box { gap: 20px; }
+            &__image { height: auto; aspect-ratio: 4 / 2; overflow: hidden;
+              img {  }
+            }
+            &__title {
+              a.title {  }
+            }
+          }
+        }
+
+        &-item-2 {
+
+          grid-area: c2;
+          border: none;
+          border-right: 1px solid $green;
+
+          .c-card {
+            &__header{ margin: 0;}
+            &__box {  }
+            &__image {
+              img { height: 100%; object-fit: cover; }
+            }
+            &__title {
+              a.title {  }
+            }
+          }
+        }
+
+        &-item-3 {
+          grid-area: c3;
+        }
+
+        &-item-4 {
+          grid-area: c4;
+          border-top: 1px solid $green;
+          .c-card {
+            &__box {  }
+            &__image { display: none;
+            }
+            &__title {
+              a.title {  }
+            }
+          }
+
+          &[data-total-posts="5"]{
+            border-bottom: 1px solid $green;
+          }
+        }
+
+        &-item-5 {
+          grid-area: c5;
+          border-top: none;
+          border-right: 1px solid $green;
+          &:not(&[data-total-posts="5"]){
+            border-top: 1px solid $green;
+          }
+
+          .c-card {
+            &__box {  }
+            &__image { display: none;
+            }
+            &__title {
+              a.title {  }
+            }
+          }
+        }
+
+        &-item-6 {
+          grid-area: c6;
+        }
+
+        &-item-7 {
+          grid-area: c7;
+          border-top: 1px solid $green;
+          .c-card {
+            &__box {  }
+            &__image { display: none;
+            }
+            &__title {
+              a.title {  }
+            }
+          }
+        }
+      }
+    }
+
+
+  }
+
+  &--testimonials { display: grid; grid-template-columns: repeat( 2, 1fr); grid-template-areas: unset; border: 1px solid $green;
+    .c-card { margin-left: auto;
+      border-bottom: 1px solid $green;
+      grid-area: unset !important;
+
+      &:nth-of-type(n+3):nth-of-type(even){border-right: none; }
+      &:nth-of-type(odd){ border-right: 1px solid $green;}
+      &:last-of-type{ border-bottom: none;}
+
+      &:nth-last-of-type(2):nth-of-type(odd){ border-bottom: none;}
+      &:first-of-type {
+
+
+        .inner { height: 100%;
+          .c-card{
+            &__box{ flex-direction: column; height: calc(100% - 20px);
+              .u-col{
+                &--left{ width: 100% !important; }
+                &--right{ width: 100% !important; height: 100%;}
+              }
+            }
+
+
+          }
+        }
+      }
+    }
+  }
+}
+
+.c-card {
+  &--plan {
+    .inner { padding: 20px;
+    }
+  }
+
+  &--text { width: 45%; margin: 0 0 40px;
+    .c-card {
+      &__title { font-size: 40px; line-height: 40px; margin: 0 0 25px; }
+    }
+  }
+
+  &--partner {
+
+    a {
+      position: relative;
+      margin: auto;
+      @include flex-center;
+      flex-direction: column;
+      padding: 10px 10px 40px;
+      justify-content: center;
+      border-right: 1px solid $green;
+      border-bottom: 1px solid $green;
+
+      img {
+        transition: 0.3s;
+        max-height: 150px;
+      }
+
+      svg {
+        position: absolute;
+        display: block;
+        width: 20px;
+        height: 20px;
+        right: 10px;
+        bottom: 10px;
+        transition: 0.3s;
+
+        path {
+          fill: $green;
+        }
+      }
+
+      &:hover {
+        img {
+          opacity: 0.5;
+        }
+
+        svg {
+          transform: translate(10px, 0);
+        }
+      }
+    }
+  }
+
+  &--blog{
+    display: flex;
+    flex-direction: column;
+    gap: 20px !important;
+    justify-content: space-between;
+    padding: 20px;
+    .c-card {
+      gap: 20px;
+      justify-content: center;
+
+      &__box { flex-direction: column;gap: 20px; }
+      &__image { height: auto; width: 100%; aspect-ratio: 4 / 2; overflow: hidden;}
+      &__title { padding-left: 0;  width: 100%; margin: 0;
+        .title{
+          margin: 0;
+        }
+        a.url { margin-top: 25px; margin-left: auto; @include flex-center; position: absolute;
+          bottom: 20px;
+          right: 20px;
+        }
+      }
+      &__header { margin: 0; }
+    }
+  }
+
+
+
+  &--testimonial { border: 1px solid $white;
+    .c-card {
+      &__header { padding: 0 20px; font-size: 12px;
+        a { padding: 20px 0; padding-left: 20px; }
+      }
+
+      &__title{
+        padding-right: 20px;
+      }
+
+      &__text { padding: 20px; box-sizing: border-box; }
+    }
+
+    &.v2 { width: 100%; box-sizing: border-box; transition: 0.3s;
+      .u-cols { display: flex;
+        .u-col { width: 50%;
+          &--right { padding: 0 20px; box-sizing: border-box; display: flex; flex-direction: column; }
+        }
+      }
+
+      .inner{ gap: 20px; padding: 20px;}
+
+      .c-card {
+
+        &__head{  }
+        &__date{ }
+        &__box{  gap: 15px; flex-direction: column;
+          .u-col{
+            &--left{ width: 100%; }
+            &--right{ width: 100%; gap: 20px; }
+          }
+        }
+        &__image { width: 50px;
+          img{  aspect-ratio: 9/6; object-fit:cover; vertical-align: top; }
+        }
+        &__title { font-weight: 700; font-size: 20px; }
+        &__url { margin-top: auto; margin-left: auto; }
+      }
+
+      &:hover { background-color: $green; color: $white;
+        a { color: $white; }
+        svg {
+          path { fill: $white; }
+        }
+      }
+    }
+  }
+}

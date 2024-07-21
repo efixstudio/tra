@@ -15,17 +15,19 @@
 <!-- listing comunity  -->
 <section class="module module--listing  u-pd u-pd--md bg bg--green">
         <div class="container">
-            <div class="c-cards c-cards--person fx fx--wrap">
+            <div class="c-cards c-cards--person">
                 <?php  
                     if($content['feed']==='atleti') :
-                        while ( $loop->have_posts() ) : $loop->the_post(); 
-                            include get_theme_file_path( 'flexible-content/parts/cards/card-person.php' );
+                        while ( $loop->have_posts() ) : $loop->the_post();
+                            get_template_part('flexible-content/parts/cards/card-person');
+                            //include get_theme_file_path( 'flexible-content/parts/cards/card-person.php' );
                         endwhile; wp_reset_postdata(); 
 
                     else: 
                     
-                        while ( $loop->have_posts() ) : $loop->the_post(); 
-                            include get_theme_file_path( 'flexible-content/parts/cards/card-person.php' );
+                        while ( $loop->have_posts() ) : $loop->the_post();
+                            get_template_part('flexible-content/parts/cards/card-person');
+                            //include get_theme_file_path( 'flexible-content/parts/cards/card-person.php' );
                         endwhile; wp_reset_postdata(); 
                     endif;
                 ?>

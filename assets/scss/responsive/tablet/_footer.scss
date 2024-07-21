@@ -1,0 +1,27 @@
+.c-footer {
+  &-top {
+    .inner { }
+
+    .row {
+      span { }
+
+      .u-cols { flex-direction: column; gap: 30px;
+        .u-col { width: 100%; }
+      }
+
+      &:first-of-type { }
+
+      &__button {
+        a { svg{ width: 40px; height: auto;}  }
+
+        &.is-outline {
+          a {  }
+        }
+
+        &.is-white {
+          a { }
+        }
+      }
+    }
+  }
+}

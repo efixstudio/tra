@@ -3,7 +3,7 @@
 --------------------------------------------------------------*/
 * {margin:0; padding:0;}
 html { -webkit-text-size-adjust: 100%; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; scroll-behavior: smooth;}
-html, body {height: 100%;}
+html, body {height: 100%; }
 .clear {display:block; clear:both; height:0;}
 a img {border:none; height: auto; }
 a {outline:none;}
@@ -14,3 +14,7 @@ input { -webkit-appearance: none; appearance: none; border-radius: 0;
 textarea { border-radius: 0; }
 
 img { max-width: 100%; height: auto; display: flex; }
+
+*{
+    box-sizing: border-box;
+}

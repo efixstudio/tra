@@ -1,0 +1,24 @@
+.calendly-overlay{
+    z-index: 99999;
+}
+.calendly-close-overlay {
+    background: #ffffff;
+}
+
+.calendly-overlay .calendly-popup-close {
+    background: url('../../../assets/img/icons/close-bold.svg') no-repeat;
+    background-size: contain;
+}
+
+.calendly-overlay .calendly-popup-close:before {
+    content: "INCHIDE";
+    position: absolute;
+    right: 120%;
+    color: #000;
+    font-weight: 500;
+
+}
+
+.calendly-spinner {
+    display: none
+}

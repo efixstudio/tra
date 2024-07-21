@@ -1,12 +1,17 @@
-<div class="c-card c-card--testimonial v2">
-    <div class="inner">
-        <div class="u-cols fx">
-            <div class="u-col u-col--left">
-                <a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_post_thumbnail(); ?></a>
-            </div>
+<?php
+$testimonialItemCounter = $testimonialItemCounter ?? 'single';
+$countPosts = $countPosts ?? false;
 
+?>
+<div class="c-card c-card--testimonial v2 c-card--testimonial-item-<?php echo $testimonialItemCounter; ?>"  data-total-posts="<?php echo $countPosts; ?>">
+    <div class="inner">
+        <div class="c-card__head"><span></span><span class="c-card__date"><?php echo  get_the_date('d.m.Y'); ?></span></div>
+        <div class="c-card__box">
+            <div class="u-col u-col--left">
+                <a href="<?php echo get_the_permalink(); ?>" class="c-card__image"><?php echo get_the_post_thumbnail(); ?></a>
+            </div>
             <div class="u-col u-col--right">
-                <span class="c-card__date"><?php echo  get_the_date('d.m.Y'); ?></span>
+
                 <a href="<?php echo get_the_permalink(); ?>" class="c-card__title"><?php echo get_the_title(); ?></a>
                 <a href="<?php echo get_the_permalink(); ?>" class="c-card__url btn btn--primary btn--simple">
                     Citeste

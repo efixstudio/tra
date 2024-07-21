@@ -8,6 +8,9 @@
     );
 
     $loop = new WP_Query( $args );
+
+    $cloneLoop  = sort_event_loop_by_event_date( $loop );
+
 ?>
 
 <!-- listing events -->
@@ -23,20 +26,26 @@
     <div class="container">
         <div class="c-events is-green">
             <div class="c-table">
-                <?php while ( $loop->have_posts() ) : $loop->the_post(); $btn = get_field('cta'); $date = get_field('date'); $location = get_field('location'); $text = get_field('event_description'); $members = get_field('membri'); ?>
+                <?php while ( $cloneLoop->have_posts() ) : $cloneLoop->the_post();
+                    $btn = get_field('cta');
+                    $date = get_field('date');
+                    $location = get_field('location');
+                    $text = get_field('event_description');
+                    $members = get_field('membri');
+                ?>
                 <div class="c-table-row">
                     <div class="c-table-item">
-                        <div class="c-table-item__column c-table-item__date">
+                        <div class="c-table-item__column c-table-item__date" data-label="Data">
                             <?php if($date) : ?>
                                 <span><?php echo $date; ?></span>
                             <?php endif; ?>
                         </div>
 
-                        <div class="c-table-item__column c-table-item__title">
+                        <div class="c-table-item__column c-table-item__title" data-label="Eveniment">
                             <span><?php echo get_the_title(); ?></span>
                         </div>
 
-                        <div class="c-table-item__column c-table-item__location">
+                        <div class="c-table-item__column c-table-item__location" data-label="Locatie">
                             <?php if($location) : ?>
                                 <span><?php echo $location; ?></span>
                             <?php endif; ?>

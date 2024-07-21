@@ -63,6 +63,32 @@
             "append": ""
         },
         {
+            "key": "field_66939d3a081bc",
+            "label": "Currency",
+            "name": "currency",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "ron": "RON",
+                "eur": "EUR"
+            },
+            "default_value": "ron",
+            "return_format": "array",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
             "key": "field_65d1f43be031c",
             "label": "Event date",
             "name": "data_eveniment",
@@ -201,5 +227,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1712305260
+    "modified": 1720950278
 }

@@ -5,7 +5,7 @@
         }
     }
 
-    &--benefit { width: 25%; display: flex;
+    &--benefit { width: 100%; display: flex;
         .c-card {
             &__icon { flex: none; margin: 0 30px 0 0; }
             &__meta {
@@ -17,13 +17,23 @@
         }
     }
 
-    &--blog { padding: 40px; box-sizing: border-box; 
+    &--blog { padding: 40px; box-sizing: border-box;  position: relative; display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         .c-card {
-            &__box { display: flex; justify-content: space-between; }
+
+
+            &__box { display: flex; justify-content: space-between;
+                 }
             &__image { width: 50%; flex: none; }
             &__title { width: 50%; padding-left: 25px; box-sizing: border-box; display: flex; flex-direction: column; 
                 a.title { line-height: 26px; }
-                a.url { margin-top: auto; margin-left: auto; @include flex-center;
+            }
+
+            &__footer{
+                display: flex; justify-content: space-between; align-items: flex-end;
+                &_cat{ max-width: 50%; bottom: 40px; left: 40px; }
+                a.url { margin-left: auto; @include flex-center; position: relative;
                     svg { width: 20px; height: 20px; margin: 0 0 0 10px; transition: 0.3s;
                         path { fill: $green; }
                     }
@@ -33,8 +43,12 @@
                     }
                 }
             }
+
+
+
             &__header { display: flex; justify-content: space-between; margin: 0 0 40px; }
         }
+
     } 
 
     &--camp { width: 47%; display: flex; flex-direction: column;
@@ -45,7 +59,7 @@
                 &:after { content: ""; position: absolute; top: 20px; left: 20px; border: 1px solid $green; width: 100%; height: 100%; transition: 0.3s; }
             }
 
-            &__meta { padding: 0 40px; box-sizing: border-box; display: flex; flex-direction: column; height:100%;
+            &__meta { padding: 0 0 0 40px; box-sizing: border-box; display: flex; flex-direction: column; height:100%;
                 &-header { margin: 0 0 28px; }
                 &-title { font-size: 30px; font-weight: 700; margin: 0 0 34px; display: block; }
                 &-button { margin-top: auto; }
@@ -61,11 +75,11 @@
         }
     }
 
-    &--partner { width: 33.33333333%; padding-bottom: 200px; position: relative; border-bottom: 1px solid $green; 
-        a { position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto; @include flex-center; justify-content: center; 
-            img { transition: 0.3s; }
+    &--partner { width: 33.33333333%; position: relative;
+        a { position: relative; margin: auto; @include flex-center; flex-direction: column; gap: 20px; padding: 20px 20px 50px;justify-content: center; border-right: 1px solid $green; border-bottom: 1px solid $green;
+            img { transition: 0.3s; max-height: 150px; }
 
-            svg { width: 40px; height: 40px; position: absolute; bottom: 10px; right: 20px; transition: 0.3s;
+            svg { position: absolute; display: block;  width: 40px; height: 40px;  right: 20px; bottom: 20px; transition: 0.3s;
                 path { fill: $green; }
             }
 
@@ -76,14 +90,14 @@
             }
         }
 
-        &:before { content: ""; width: 1px; height: 100%; background-color: $green; position: absolute; left: 0; }
-        
-        &:nth-child(3n) {
-            &:after { content: ""; width: 1px; height: 100%; background-color: $green; position: absolute; right: 0; }
-        }
+        //&:before { content: ""; width: 1px; height: 100%; background-color: $green; position: absolute; left: 0; }
+        //
+        //&:nth-child(3n) {
+        //    &:after { content: ""; width: 1px; height: 100%; background-color: $green; position: absolute; right: 0; }
+        //}
     }
 
-    &--person { width: 22%; margin-right: 3%; margin-bottom: 60px; position: relative; color: $white;
+    &--person { width: 100%; margin-bottom: 60px; position: relative; color: $white;
         .c-card {
             &__image { height: 345px; position: relative; 
                 &:after { content: ""; width: 100%; height: 100%; border: 1px solid $white; position: absolute; top: 10px; left: 10px; transition: 0.3s; }  
@@ -122,8 +136,8 @@
         }
     }
 
-    &--plan { position: relative; width: 33.33%; display: flex; flex-direction: column;
-        .inner { padding: 50px; box-sizing: border-box; position: relative;
+    &--plan { position: relative; width: 100%; display: flex; flex-direction: column;
+        .inner { padding: 50px; box-sizing: border-box; position: relative; display: flex; flex-direction: column; justify-content: space-between;
             &:last-of-type { border-bottom: 1px solid $green; }
 
             &:after { content: ""; width: 1px; height: 100%; background-color: $green; position: absolute; top: 0; right: 0; }
@@ -177,14 +191,28 @@
             &__text { padding: 40px; box-sizing: border-box; }
         }
 
-        &.v2 { width: 50%; border: none; padding: 40px; box-sizing: border-box; border-bottom: 1px solid $green; border-right: 1px solid $green; transition: 0.3s;
+        &.v2 { width: 100%; border: none; box-sizing: border-box; transition: 0.3s;
             .u-cols { display: flex;
                 .u-col { width: 50%; 
                     &--right { padding: 0 20px; box-sizing: border-box; display: flex; flex-direction: column; }
                 }
             }
 
+            .inner{display: flex; flex-direction: column; justify-content: space-between; gap: 40px; padding: 40px;}
+
             .c-card {
+
+                &__head{ display: flex; justify-content: space-between; }
+                &__date{ dispay: block; text-align: right; }
+                &__box{ display: flex; gap: 25px;
+                    .u-col{
+                        &--left{ width: 50%; }
+                        &--right{ display: flex; flex-direction: column; justify-content: space-between; width: 50%; }
+                    }
+                }
+                &__image { width: 50px;
+                    img{  aspect-ratio: 9/6; object-fit:cover; vertical-align: top; }
+                }
                 &__title { font-weight: 700; font-size: 24px; }
                 &__url { margin-top: auto; margin-left: auto; }
             }
@@ -200,56 +228,91 @@
 }
 
 .c-cards {
-    &--blog { border: 1px solid $green; 
-        .row { display: flex; justify-content: space-between; flex-wrap: wrap; position: relative; flex-direction: column; width: 100%;
-            &:first-of-type { border-bottom: 1px solid $green;
-                .c-card { width: 50%; margin-left: auto;  
-                    &:first-of-type { position: absolute; top: 0; left: 0; height: 100%; display: flex; flex-direction: column;
-                        .c-card {
-                            &__box { flex-direction: column; height: 100%; justify-content: flex-start; }
-                            &__image { width: 100%; height: 50%; 
-                                img { height: 100%; object-fit: cover; }
-                            }
-                            &__title { padding-left: 0; margin-top: 40px; width: 100%; height: 100%;
-                                a.title { font-size: 24px; line-height: 30px; }
-                            }
+    &--blog { border: 1px solid $green; display: grid; grid-template-columns: repeat(2, 1fr); grid-template-areas:  "c1 c2" "c1 c3" "c4 c4" "c5 c6" "c7 c7";
+
+        .c-card {
+            width: 100%;
+            margin-left: auto;
+
+            &--blog {
+                position: relative;
+
+                &-item-1 {
+                    grid-area: c1;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 40px;
+                    border-right: 1px solid $green;
+                    .c-card {
+                        &__header{ margin: 0;}
+                        &__box { flex-direction: column; height: 100%; justify-content: flex-start; gap: 40px; }
+                        &__image { width: 100%;
+                            img { height: 100%; object-fit: cover; }
                         }
-
-                        &:after { content: ""; width: 1px; height: 100%; background-color: $green; position: absolute; right: 0; top: 0; }
-                    }
-
-                    &:nth-child(2) { border-bottom: 1px solid $green; }
-                }
-            }
-
-            &:nth-child(2) { flex-direction: row; border-bottom: 1px solid $green;
-                .c-card { width: 50%;
-                    &:first-of-type { width: 100%; border-bottom: 1px solid $green; 
-                        .c-card {
-                            &__image { display: none; }
-                            &__title { padding-left: 0; width: 100%; 
-                                a.title { font-size: 24px; width: 60%; line-height: 30px; margin-bottom: 60px; }
-                            }
+                        &__title { padding-left: 0;  width: 100%; height: 50%; display: flex; flex-direction: column; justify-content: space-between;
+                            a.title { font-size: 24px; line-height: 30px; }
                         }
-                    }
-
-                    &:nth-child(2) { position: relative; display: flex; flex-direction: column;
-                        .c-card {
-                            &__box { height: 100%; }
-                            &__image { display: none; }
-                            &__title { width: 100%; padding-left: 0; }
-                        }
-
-                        &:after { content: ""; width: 1px; height: 100%; background-color: $green; position: absolute; top: 0; right: 0; }
                     }
                 }
-            }
 
-            &:nth-child(3) {
-                .c-card {
-                    &__image { display: none; }
-                    &__title { width: 100%; padding-left: 0; 
-                        a.title { font-size: 24px; width: 60%; line-height: 30px; margin-bottom: 60px; }
+                &-item-2 {
+                    grid-area: c2;
+                    border-bottom: 1px solid $green;
+                }
+
+                &-item-3 {
+                    grid-area: c3;
+                }
+
+                &-item-4 {
+                    grid-area: c4;
+                    border-top: 1px solid $green;
+                    .c-card {
+                        &__box {  }
+                        &__image { display: none;
+                        }
+                        &__title { padding-left: 0; width: 100%; height: 100%;
+                            a.title { font-size: 24px; width: 60%; line-height: 30px; }
+                        }
+                    }
+
+                    &[data-total-posts="5"]{
+                        border-bottom: 1px solid $green;
+                    }
+                }
+
+                &-item-5 {
+                    grid-area: c5;
+                    border-right: 1px solid $green;
+                    &:not([data-total-posts="5"]){
+                        border-top: 1px solid $green;
+                    }
+
+                    .c-card {
+                        &__box {  }
+                        &__image { display: none;
+                        }
+                        &__title { padding-left: 0; width: 100%; height: 100%;
+                            a.title {  }
+                        }
+                    }
+                }
+
+                &-item-6 {
+                    grid-area: c6;
+                    border-top: 1px solid $green;
+                }
+
+                &-item-7 {
+                    grid-area: c7;
+                    border-top: 1px solid $green;
+                    .c-card {
+                        &__box {  }
+                        &__image { display: none;
+                        }
+                        &__title { padding-left: 0;  width: 100%; height: 100%;
+                            a.title { font-size: 24px; width: 60%; line-height: 30px;  }
+                        }
                     }
                 }
             }
@@ -257,12 +320,13 @@
     }
 
     &--camp {
+        padding-right: 22px;
         .row { width:100%; display: flex; flex-wrap: wrap; justify-content: space-between; border-bottom: 1px solid $green; margin-bottom: 40px; padding-bottom: 40px;  }
     }
 
     &--text { margin: 0 0 -80px; }
     
-    &--partners { border-top: 1px solid $green;
+    &--partners { border-top: 1px solid $green; border-left: 1px solid $green;
         .row { width: 100%; display: flex;
             &.is-last {
                 .c-card {
@@ -272,26 +336,50 @@
         }
     }
 
-    &--person { margin: 0 -3% 0 0;
+    &--benefits {
+        display: grid; grid-template-columns: repeat( 4, 1fr); gap: 10px;
+    }
+
+    &--person { margin: 0; display: grid; grid-template-columns: repeat( 4, 1fr); gap: 30px; padding-right: 12px;
         &.is-active { display: flex; }
     }
 
-    &--plans { border-top: 1px solid $green; border-left: 1px solid $green; }
+    &--plans { border-top: 1px solid $green; border-left: 1px solid $green; display: grid; grid-template-columns: repeat( 3, 1fr); }
 
-    &--testimonials { display: flex; flex-wrap: wrap; justify-content: space-between; border-left: 1px solid $green; border-top: 1px solid $green; 
-        .row { display: block; flex-wrap: wrap; position: relative;
-            .c-card { margin-left: auto;
-                &:first-of-type { position: absolute; top: 0; left: 0; height: 100%;
-                    .u-cols { flex-wrap: wrap; height: 100%;
-                        .u-col { width: 100%;
-                            &--left { height: 280px; 
-                                img { @include object-fit; }
+    &--testimonials { display: grid; grid-template-columns: repeat( 2, 1fr); grid-template-areas: "c1 c2" "c1 c3" "c4 c5" "c6 c7" "c8 c9" "c10 c11"; border: 1px solid $green;
+        .c-card { margin-left: auto;
+            border-bottom: 1px solid $green;
+
+
+            &:first-of-type{ grid-area: c1;  }
+            &:nth-of-type(2){grid-area: c2;}
+            &:nth-of-type(3){grid-area: c3; }
+            &:nth-of-type(4){grid-area: c4;}
+            &:nth-of-type(5){grid-area: c5; }
+            &:nth-of-type(6){grid-area: c6;  }
+            &:nth-of-type(7){grid-area: c7;}
+            &:nth-of-type(8){grid-area: c8; }
+            &:nth-of-type(9){grid-area: c9;}
+            &:nth-of-type(10){grid-area: c10; }
+            &:nth-of-type(11){grid-area: c11;}
+            &:nth-of-type(n+3):nth-of-type(even){border-right: 1px solid $green; }
+
+            &:last-of-type{ border-bottom: none;}
+            &:nth-last-of-type(2):nth-of-type(even){ border-bottom: none;}
+            &:first-of-type {border-right: 1px solid $green;
+
+
+                .inner { height: 100%;
+                    .c-card{
+                        &__box{ flex-direction: column; height: calc(100% - 61px);
+                            .u-col{
+                                &--left{ width: 100% !important; }
+                                &--right{ width: 100% !important; height: 100%;}
                             }
-                            &--right { padding: 0; margin: 20px 0 0; }
                         }
-                    }
 
-                    .inner { height: 100%;}
+
+                    }
                 }
             }
         }

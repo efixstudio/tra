@@ -1,4 +1,5 @@
 <!-- text cards -->
+<?php if( isset( $content['cards'] ) && is_array( $content['cards'] ) ) : ?>
 <section class="module module--textcards u-pd u-pd--md">
     <div class="container">
         <div class="c-cards c-cards--text fx fx--sb fx--wrap">
@@ -15,4 +16,5 @@
         </div>
     </div>
 </section>
+<?php endif; ?>
 <!-- text cards -->

@@ -1,0 +1,106 @@
+//HEADER
+
+.c-main { padding-top: 110px; }
+.c-headroom{
+  .c-header{
+
+    &__logo{
+      a{ padding-top: 0; margin-bottom: 0;
+        svg{
+          width: 75px;
+          height: auto;
+        }
+      }
+
+    }
+
+    &__button{
+      margin-top: -10px;
+       a { padding: 10px; }
+      span{
+        font-size: 14px;
+        svg{
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+    &__burger{
+      flex-direction: column;
+      justify-content: center;
+      order: 2;
+      margin-left: 20px;
+      margin-right: 0;
+      gap: 5px;
+      > span{
+        order: 2;
+        margin: 0;
+      }
+    }
+
+    .u-cols{
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+  }
+
+  &.is-scrolled{
+    border-bottom: 1px solid #e2e2e9;
+  }
+
+  &.menu-opened, &.is-scrolled{
+
+    .c-header{
+      &__logo{
+        a{ padding-top: 0; margin-bottom: 0;
+          svg{
+            width: 75px;
+            height: auto;
+          }
+        }
+
+      }
+    }
+
+  }
+}
+
+.c-mmenu {height: 100vh; padding-top: calc( $headerHeightMobile + 10px);
+  ul { @include reset-list;
+
+    &.menu{
+      position: fixed;
+      width: 100%;
+      max-width: 100%;
+      top: calc( $headerHeightMobile + 10px);
+      height: calc( 100vh - $headerHeightMobile );
+      overflow-y: auto;
+
+      > li{
+        &:not(.menu-item-has-children){
+          margin-bottom: 30px
+        }
+      }
+
+    }
+    li {
+      font-size: 25px;
+      ul {
+        li {
+          margin: 0 20px 10px 0;
+          a { }
+        }
+      }
+
+      a {
+        &:hover {  }
+      }
+
+    }
+
+    &.sub-menu{
+      flex-direction: column;
+      max-width: 100%;
+    }
+  }
+}

@@ -1,0 +1,149 @@
+.c-footer {
+  &-top { padding-bottom: 80px;
+    .inner {  }
+
+    .row { padding: 30px 15px;
+      span { font-size: 35px;  margin: 0 0 15px; line-height: 1.125; }
+
+      .u-cols {
+        .u-col { width: 100%; }
+      }
+
+      &:first-of-type {  }
+
+      &__button {
+        a {
+          padding: 20px;
+        }
+        &.is-outline {
+          a {  }
+        }
+
+        &.is-white {
+          a {  }
+        }
+      }
+    }
+  }
+
+  &-partners { padding-bottom: 60px;
+    &__title { margin: -2.6em 0 40px; }
+  }
+
+  &-bottom {
+    .row {
+      &--top {
+        .u-cols {
+          flex-direction: column;
+          padding: 0;
+          .u-col {
+            padding-left: 15px;
+            padding-right: 15px;
+            &--left {
+              width: 100%; max-width: 100%; border-bottom: 1px solid $white; border-right: none;
+            }
+            &--right {
+              width: 100%;
+              max-width: 100%;
+              .c-menus {
+                flex-wrap: wrap;
+                flex-direction: row;
+                gap: 5px;
+                .c-menu {
+                  flex: 0 0 45%;
+                  box-sizing: border-box;
+                  margin-right: 0;
+                  margin-bottom: 20px;
+                  span {  }
+                  &:last-of-type {  }
+                }
+              }
+            }
+
+
+          }
+        }
+
+        .c-box {
+          &__contact {
+            p {
+              &:last-of-type {  }
+            }
+          }
+        }
+      }
+
+      &--middle {
+        .u-cols {
+          flex-direction: column;
+          flex-wrap: wrap;
+          .u-col {
+            width: 100%;
+
+            &--right {
+              .stripe {
+                svg {  }
+              }
+            }
+            .menu{
+              flex-direction: row;
+              flex-wrap: wrap;
+              margin-bottom: 15px;
+            }
+          }
+        }
+
+        ul { display: inline-flex;
+          li {  margin-bottom: 10px;}
+        }
+      }
+
+      &--bottom {
+        .u-cols {
+          flex-direction: column;
+          gap: 30px;
+          .u-col {
+            &--left {
+              width: 100%
+            }
+            &--right {
+              a {  }
+              .credits {
+                svg {  }
+              }
+            }
+          }
+        }
+
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+          width: 100%;
+          margin-left: 0;
+          li {
+            &:after {  }
+            &:last-of-type {
+              &:after {  }
+            }
+          }
+        }
+      }
+
+      &--lg {
+        .u-cols { padding: 30px 15px; }
+      }
+
+      &__logo {
+        a {  }
+      }
+    }
+
+    span{ font-size: 14px;}
+
+    a {
+      &:hover { color: $orange; }
+    }
+
+    ul { @include reset-list; }
+  }
+}

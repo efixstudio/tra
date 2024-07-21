@@ -1,4 +1,5 @@
-<?php 
+
+<?php
     $global = get_field('benefits_group', 'options');
     $feed = $content['feed'];
 
@@ -24,7 +25,7 @@
             </div>
         <?php endif; ?>
 
-        <div class="c-cards c-cards--benefits fx fx--wrap">
+        <div class="c-cards c-cards--benefits">
             <?php foreach($loop['cards'] as $card ) : ?>
                 <div class="c-card c-card--benefit">
                     <div class="c-card__icon">

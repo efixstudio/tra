@@ -57,4 +57,14 @@
     </div>
 
     <main class="c-main">
+        <?php if(function_exists('yoast_breadcrumb') && ! is_front_page() ) : ?>
+        <section class="section-breadcrumbs">
+            <div class="container">
+                <div class="fx fx--ac fx--je">
+                    <?php yoast_breadcrumb( '<p id="breadcrumbs">','</p>' ); ?>
+                </div>
+            </div>
+        </section>
+        <?php endif; ?>
+
 

@@ -1,4 +1,4 @@
-input[type=text],input[type=email],input[type=phone],input[type=submit], textarea { font-size: 18px; font-family: $font-c1; color: $green; padding: 30px 40px; box-sizing: border-box; width: 100%; border: 1px solid $green;
+input[type=text],input[type=email],input[type=phone],input[type=submit], textarea { font-size: 18px; font-family: $font-c1; color: $green; padding: 20px; box-sizing: border-box; width: 100%; border: 1px solid $green;
     &::-webkit-input-placeholder {  color: $green; }
     &::-moz-placeholder { color: $green; }
     &:-ms-input-placeholder { color: $green; }

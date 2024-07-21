@@ -1,5 +1,5 @@
 .c-footer {
-    &-top { background-color: $green; background: url('assets/img/footer-bg.png'); background-size: cover; padding-bottom: 100px;
+    &-top {  background: url('assets/img/footer-bg.png'); background-color: $green; background-size: cover; padding-bottom: 130px;
         .inner { border-top: 1px solid $white; border-bottom: 1px solid $white; }
 
         .row { padding: 80px 40px; box-sizing: border-box; border-left: 1px solid $white; border-right: 1px solid $white; color: $white; 
@@ -12,7 +12,9 @@
             &:first-of-type { border-bottom: 1px solid $white; }
     
             &__button {
-                a {  display: flex; align-items: center; justify-content: space-between; padding: 27px 35px; box-sizing: border-box; text-transform: uppercase; font-size: 18px; font-weight: 800; }
+                a {  display: flex; align-items: center; justify-content: space-between; padding: 27px 35px; box-sizing: border-box; text-transform: uppercase; font-size: 18px; font-weight: 800;
+                    svg{ width: 40px; height: auto; }
+                }
                 
                 &.is-outline { 
                     a { border: 1px solid #fff; color: $white; }
@@ -26,7 +28,7 @@
     }
 
     &-partners {
-        &__title { font-size: 8vw; font-weight: 900; line-height: 180px; margin: -175px 0 50px; text-transform: lowercase; text-align: center; } 
+        &__title {  font-weight: 900;  margin: -2.4em 0 50px; text-transform: lowercase; text-align: center; }
     }
 
     &-bottom { background-color: $green; color: $white; border-top: 1px solid $white; 
@@ -34,8 +36,8 @@
             &--top {
                 .u-cols { padding: 0 40px; box-sizing: border-box; border-left: 1px solid $white; border-right: 1px solid $white; border-bottom: 1px solid $white; align-items: flex-start;
                     .u-col { padding: 60px 0;
-                        &--left { border-right: 1px solid $white; padding-right: 40px; box-sizing: border-box; }
-                        &--right { padding-left: 40px; padding-right: 40px; box-sizing: border-box;
+                        &--left { max-width: 350px; border-right: 1px solid $white; padding-right: 40px; box-sizing: border-box; }
+                        &--right { max-width: calc(100% - 350px); padding-left: 40px; padding-right: 40px; box-sizing: border-box;
                             .c-menus { display: flex; 
                                 .c-menu { margin-right: 40px;
                                     span { display: block; text-transform: uppercase; font-weight: 700; margin: 0 0 15px; }

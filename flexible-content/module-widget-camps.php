@@ -1,8 +1,10 @@
-<?php 
-    $post = $content['camp'];
+<?php
+    if( isset( $content['camp'] ) && $content['camp']):
+        $post = $content['camp'];
 ?>
 
 <!-- camps widget -->
+
 <section class="module module--camps bg bg--green">
     <div class="container">
         <div class="c-camps">
@@ -48,4 +50,5 @@
         </div>
     </div>
 </section>
+<?php endif; ?>
 <!-- camps widget -->

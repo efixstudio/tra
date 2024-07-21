@@ -1,6 +1,8 @@
-<?php 
-    $coach = $content['coach']; 
-    $image = get_the_post_thumbnail($coach->ID);
+<?php
+    if( isset( $content['coach'] ) && $content[ 'coach'] !== false ):
+        $coach = $content['coach'];
+
+        $image = get_the_post_thumbnail($coach->ID);
 ?>
 
 <!-- coach bio -->
@@ -38,4 +40,5 @@
         </div>
     </div>
 </section>
+<?php endif; ?>
 <!-- coach bio -->

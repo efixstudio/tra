@@ -1,0 +1,131 @@
+.c-card{
+  &--benefit {
+    margin-bottom: 15px;
+  }
+
+  &--text { width: 100%; margin: 0 0 30px;
+    .c-card {
+      &__title { font-size: 35px; line-height: 35px; margin: 0 0 25px; }
+    }
+  }
+
+  &--camp {
+    width: 100%;
+    margin-bottom: 30px;
+    .c-card {
+      &__image { height: auto;
+        img { @include object-fit; aspect-ratio: 3/2;  }
+
+        &:after { top: 10px; left: 10px;}
+      }
+
+      &__meta { padding: 0;
+        &-header { }
+        &-title { font-size: 25px; margin: 0 0 28px;  }
+        &-button {  }
+      }
+    }
+
+    &:hover {
+      .c-card {
+        &__image {
+          &:after { }
+        }
+      }
+    }
+  }
+
+  &--blog{
+    .c-card {
+      &__box {  }
+      &__image { }
+      &__title {font-size: 20px; width: 100%;
+        .title{
+          margin: 0; width: 100% !important; font-size: 20px !important;
+        }
+        a.url { }
+      }
+      &__header {}
+    }
+  }
+
+  &--testimonial {
+
+    &.v2 {
+
+
+      .inner{ gap: 20px; padding: 10px;}
+
+      .c-card {
+
+        &__head{  }
+        &__date{ font-size: 14px;}
+        &__box{  gap: 15px; flex-direction: column;
+          .u-col{
+            &--left{ width: 100%; }
+            &--right{ width: 100%; gap: 20px; }
+          }
+        }
+        &__image { width: 50px;
+          img{  aspect-ratio: 9/6; object-fit:cover; vertical-align: top; }
+        }
+        &__title { font-weight: 700; font-size: 14px; }
+        &__url { margin-top: auto; margin-left: auto; font-size: 14px;
+          svg{ height: 15px; width: 15px;}
+        }
+      }
+
+      &:hover { background-color: $green; color: $white;
+        a { color: $white; }
+        svg {
+          path { fill: $white; }
+        }
+      }
+    }
+  }
+
+}
+
+.c-cards {
+  &--person {
+    grid-template-columns: 1fr;
+    .c-card{
+      &--person {
+
+      }
+      &__meta {
+        &-name {
+          span { display: inline-block;}
+        }
+      }
+    }
+  }
+
+  &--blog {
+    grid-template-columns: 1fr;
+    grid-template-areas: unset;
+
+    .c-card {
+      width: 100%;
+      margin-left: auto;
+
+      &--blog {
+        grid-area: unset !important;
+        border: none !important;
+
+        &:not(:first-of-type){
+          border-top: 1px solid $green !important;
+        }
+      }
+    }
+  }
+
+  &--camp {
+    padding-right: 12px;
+    .row { width:100%; display: flex; flex-wrap: wrap; justify-content: space-between; border-bottom: 1px solid $green; margin-bottom: 40px; padding-bottom: 40px;  }
+  }
+
+  &--benefits {
+    grid-template-columns: 1fr;
+  }
+}

@@ -23,7 +23,7 @@
                 </div>
             </div>
 
-            <?php if($items) : ?>
+            <?php if($items && is_array( $items ) ) : ?>
             <div class="u-table-row">
                 <?php foreach($items as $item ) : ?>
                     <div class="u-table-column">

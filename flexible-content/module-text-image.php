@@ -1,5 +1,5 @@
 <!-- text and image -->
-<section class="module module--ti<?php if($content['bg_image']===true):?> bg bg--green u-pd u-pd--lg has-bg<?php else: ?> is-transparent u-mg u-mg--bottom<?php endif; ?><?php if($content['no_margin_bottom']):?> no-mg--bottom<?php endif; ?>">
+<section class="module module--ti <?php if($content['bg_image']===true):?> bg bg--green u-pd u-pd--lg has-bg<?php else: ?> is-transparent u-mg u-mg--bottom<?php endif; ?><?php if($content['no_margin_bottom']):?> no-mg--bottom<?php endif; ?>">
     <div class="container">
         <div class="u-cols u-cols--even fx fx--<?php echo $content['align']; ?> fx--sb<?php if($content['reverse_columns']===true) : ?> is-reversed<?php endif; ?>">
             <div class="u-col u-col--left">

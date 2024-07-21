@@ -10,26 +10,27 @@
             <div class="c-togglers__header">
                 <span><?php echo $camp['titlu_tabel_program']; ?></span>
             </div>
+            <?php if( isset( $content['list'] ) && is_array( $content['list'] ) ) : ?>
+                <?php foreach($content['list'] as $item) : ?>
+                    <div class="c-toggler">
+                        <div class="c-toggler__header">
+                            <span class="c-toggler__header-date"><?php echo $item['date']; ?></span>
+                            <span class="c-toggler__header-day"><?php echo $item['day']; ?></span>
+                            <span class="c-toggler__header-location"><?php echo $item['location']; ?></span>
+                            <span class="c-toggler__header-icon fx fx--je"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M 7.21875 5.78125 L 5.78125 7.21875 L 14.5625 16 L 5.78125 24.78125 L 7.21875 26.21875 L 16 17.4375 L 24.78125 26.21875 L 26.21875 24.78125 L 17.4375 16 L 26.21875 7.21875 L 24.78125 5.78125 L 16 14.5625 Z"/></svg></span>
+                        </div>
 
-            <?php foreach($content['list'] as $item) : ?>
-                <div class="c-toggler">
-                    <div class="c-toggler__header">
-                        <span class="c-toggler__header-date"><?php echo $item['date']; ?></span>
-                        <span class="c-toggler__header-day"><?php echo $item['day']; ?></span>
-                        <span class="c-toggler__header-location"><?php echo $item['location']; ?></span>
-                        <span class="c-toggler__header-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M 7.21875 5.78125 L 5.78125 7.21875 L 14.5625 16 L 5.78125 24.78125 L 7.21875 26.21875 L 16 17.4375 L 24.78125 26.21875 L 26.21875 24.78125 L 17.4375 16 L 26.21875 7.21875 L 24.78125 5.78125 L 16 14.5625 Z"/></svg></span>
-                    </div>
-
-                    <div class="c-toggler__content">
-                        <div class="c-editor">
-                            <?php echo $item['content']; ?>
+                        <div class="c-toggler__content">
+                            <div class="c-editor">
+                                <?php echo $item['content']; ?>
+                            </div>
                         </div>
                     </div>
-                </div>
-            <?php endforeach; ?>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </div>
         
-        <?php $organisers = $content['organisers']; if($organisers['event_organisers']) : ?>
+        <?php $organisers = $content['organisers']; if($organisers['event_organisers']) :  ?>
             <div class="c-organisers">
                 <?php $orgLabel = $camp['label_organizatori']; if($orgLabel) : ?>
                     <h3 class="c-organisers__title"><?php echo $orgLabel; ?></h3>
@@ -41,12 +42,14 @@
                     </div>
 
                     <div class="u-col u-col--right">
-                        <?php foreach($organisers['event_organisers'] as $post) : ?>
-                            <a href="<?php echo get_the_permalink($post->ID); ?>">
-                                <?php echo get_the_title($post->ID); ?>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M 18.71875 6.78125 L 17.28125 8.21875 L 24.0625 15 L 4 15 L 4 17 L 24.0625 17 L 17.28125 23.78125 L 18.71875 25.21875 L 27.21875 16.71875 L 27.90625 16 L 27.21875 15.28125 Z"></path></svg>
-                            </a>
-                        <?php endforeach?>
+                        <?php if( isset( $organisers['event_organisers'] ) && is_array( $organisers['event_organisers'] ) ) : ?>
+                            <?php foreach($organisers['event_organisers'] as $post) : ?>
+                                <a href="<?php echo get_the_permalink($post->ID); ?>">
+                                    <?php echo get_the_title($post->ID); ?>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M 18.71875 6.78125 L 17.28125 8.21875 L 24.0625 15 L 4 15 L 4 17 L 24.0625 17 L 17.28125 23.78125 L 18.71875 25.21875 L 27.21875 16.71875 L 27.90625 16 L 27.21875 15.28125 Z"></path></svg>
+                                </a>
+                            <?php endforeach?>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
@@ -59,7 +62,7 @@
                 <div class="c-plan">
                     <div class="c-plan-body">
                         <div class="container">    
-                            <div class="c-plan-content">
+                            <div class="c-plan-content is-active">
                                 <div class="u-cols fx">
                                     <div class="u-col u-col--left">
                                         <div class="c-plan__image">
@@ -84,8 +87,15 @@
                                                     </span>
 
                                                     <span class="price">
-                                                        <strong><?php the_field('pret'); ?></strong> 
-                                                        <sup>RON</sup> 
+                                                        <strong><?php the_field('pret'); ?></strong>
+                                                        <?php
+                                                            $get_currency = get_field( 'currency' );
+                                                            $currency = 'RON';
+                                                            if( is_array( $get_currency ) && array_key_exists( 'label', $get_currency ) ){
+                                                                $currency = $get_currency['label'];
+                                                            }
+                                                        ?>
+                                                        <sup><?php echo $currency; ?></sup>
                                                     </span>
                                                 </div>
                                             </div>

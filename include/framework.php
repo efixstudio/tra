@@ -222,6 +222,8 @@ class Framework
 
             $src = (filter_var($style['src'], FILTER_VALIDATE_URL)) ? $style['src'] : get_bloginfo('template_url') . '/' . $style['src'];
             $ver = (filter_var($style['src'], FILTER_VALIDATE_URL)) ? get_bloginfo('version') : filemtime(get_template_directory() . '/' . $style['src']);
+            //@todo REMOVE when DONE
+            $ver = '';
 
             wp_register_style($style['handle'], $src, $style['dependencies'], $ver, $style['media']);
             wp_enqueue_style($style['handle']);
@@ -529,7 +531,7 @@ class Framework
      */
     public function disable_author_archive_pages()
     {
-        if (is_author()) {
+        if (is_author() && !is_category() ) {
             wp_redirect(get_bloginfo('url'), 301);
             exit;
         }

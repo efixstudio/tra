@@ -47,20 +47,22 @@
 
             <div class="c-tabs-content">
                 <div class="c-tab-box" id="atleti">
-                    <div class="c-cards c-cards--person fx fx--wrap">
+                    <div class="c-cards c-cards--person">
                         <?php  
-                            while ( $loopAtlet->have_posts() ) : $loopAtlet->the_post(); 
-                                include get_theme_file_path( 'flexible-content/parts/cards/card-person.php' );
+                            while ( $loopAtlet->have_posts() ) : $loopAtlet->the_post();
+                                get_template_part('flexible-content/parts/cards/card-person');
+                                //include get_theme_file_path( 'flexible-content/parts/cards/card-person.php' );
                             endwhile; wp_reset_postdata(); 
                         ?>
                     </div>
                 </div>
 
                 <div class="c-tab-box" id="antrenori">
-                    <div class="c-cards c-cards--person fx fx--wrap">
+                    <div class="c-cards c-cards--person">
                         <?php  
-                            while ( $loopCoach->have_posts() ) : $loopCoach->the_post(); 
-                                include get_theme_file_path( 'flexible-content/parts/cards/card-person.php' );
+                            while ( $loopCoach->have_posts() ) : $loopCoach->the_post();
+                                get_template_part('flexible-content/parts/cards/card-person');
+                                //include get_theme_file_path( 'flexible-content/parts/cards/card-person.php' );
                             endwhile; wp_reset_postdata(); 
                         ?>
                     </div>

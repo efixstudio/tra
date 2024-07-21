@@ -16,7 +16,7 @@
                 <span><?php echo $content['heading_title']; ?></span>
             </div>
 
-            <?php foreach($content['faqs'] as $item) : ?>
+            <?php if( is_array( $content['faqs'] ) ) : foreach($content['faqs'] as $item) : ?>
                 <div class="c-toggler">
                     <div class="c-toggler__header">
                         <span class="c-toggler__header-title"><?php echo $item['title']; ?></span>
@@ -29,7 +29,7 @@
                         </div>
                     </div>
                 </div>
-            <?php endforeach; ?>
+            <?php endforeach; endif; ?>
         </div>
     </div>
 </section>

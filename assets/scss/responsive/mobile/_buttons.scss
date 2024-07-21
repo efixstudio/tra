@@ -1,0 +1,93 @@
+
+  .btn {
+    &--primary {
+      &:after { }
+      &:before {  }
+      span {  font-size: 16px; }
+      svg {
+        path { }
+      }
+    }
+
+    &--green {
+      &:before { }
+      &:after {  }
+
+      &:hover {
+        &:before {  }
+        &:after {  }
+        svg { }
+      }
+    }
+
+    &--green-no-shape {
+      &:hover {
+        svg { }
+      }
+    }
+
+    &--outline {
+      svg {
+        path { }
+      }
+
+      &:hover {
+        svg {
+          path {  }
+        }
+      }
+    }
+
+    &--toBottom {
+      svg { }
+      &:hover {
+        svg { }
+      }
+    }
+
+    &--simple {
+      svg {
+        path {  }
+      }
+    }
+
+    &--underline { @include flex-center; transition: 0.3s;
+      svg {
+        path {  }
+      }
+
+      &--green {
+        span { }
+
+        svg {
+          path {  }
+        }
+
+        &:hover {
+          svg {
+            path {  }
+          }
+
+          span {  }
+        }
+      }
+
+      &--white {
+        span {  }
+
+        svg {
+          path {  }
+        }
+
+        &:hover {
+          svg {
+            path { }
+          }
+
+          span { }
+        }
+      }
+
+      &.lg { }
+    }
+  }

@@ -1,5 +1,4 @@
 
-
 <!-- <?php echo get_the_title($post->ID); ?> -->
 <a class="c-card c-card--person" href="<?php echo get_the_permalink($post->ID); ?>">
     <div class="c-card__image"> 

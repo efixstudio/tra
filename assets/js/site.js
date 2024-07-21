@@ -1,6 +1,7 @@
 $ = jQuery.noConflict();
 
 $(document).ready(function () {
+    const windowWidth = window.outerWidth;
 
     $("#burger").click(function(){
         event.preventDefault();
@@ -34,6 +35,10 @@ $(document).ready(function () {
 		$(this).closest('.menu-item').find('a:first').append('<span class="submenu-toggle"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-chevron-down fa-w-14"><path fill="currentColor" d="M441.9 167.3l-19.8-19.8c-4.7-4.7-12.3-4.7-17 0L224 328.2 42.9 147.5c-4.7-4.7-12.3-4.7-17 0L6.1 167.3c-4.7 4.7-4.7 12.3 0 17l209.4 209.4c4.7 4.7 12.3 4.7 17 0l209.4-209.4c4.7-4.7 4.7-12.3 0-17z" class=""></path></svg></span>');
         $(this).closest('.menu-item').find('a:first').addClass('has-dropdown');
 	})
+    $(".c-mmenu .menu .sub-menu .menu-item:not(.menu-item-has-children)").each( function( index, element ){
+        $(this).closest('.menu-item').find('a:first').append('<svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-chevron-down fa-w-14"><path fill="currentColor" d="M441.9 167.3l-19.8-19.8c-4.7-4.7-12.3-4.7-17 0L224 328.2 42.9 147.5c-4.7-4.7-12.3-4.7-17 0L6.1 167.3c-4.7 4.7-4.7 12.3 0 17l209.4 209.4c4.7 4.7 12.3 4.7 17 0l209.4-209.4c4.7-4.7 4.7-12.3 0-17z" class=""></path></svg></span>');
+        $(this).closest('.menu-item').find('a:first').addClass('has-dropdown');
+    })
 
     $('.gfield--type-fileupload .ginput_container').wrapAll('<div class="btn-upload"></div>');
 
@@ -56,8 +61,6 @@ $(document).ready(function () {
 		$(this).closest('.c-toggler').find('.c-toggler__content').slideToggle();
 	})
 
-    // wrap first 3 testimonials cards
-    $('.c-cards--testimonials > .c-card--testimonial:lt(3)').wrapAll('<div class="row"></div>');
 
     // wrap person title in span tags
     $('.c-card--person .c-card__meta h3').each(function() {
@@ -100,10 +103,52 @@ $(document).ready(function () {
 		$(activeTab).show();
 	});
 
+
     // tabs text togglers
+
+    const pageTabParameter = 'page-tab';
+    const pageTabDataParameter = 'data-toggler-slug';
+
+    const getURLQueryVariable = (variable) => {
+        const query = window.location.search.substring(1);
+        const vars = query.split('&');
+        for (let i = 0; i < vars.length; i++) {
+            const pair = vars[i].split('=');
+            if (pair[0] === variable) {
+                return decodeURIComponent(pair[1]); // Decode the value
+            }
+        }
+        return false;
+    }
+
     $('.c-ttogglers .c-navbar a:first-child').addClass('is-active');
 	$('.c-ttogglers .c-navbar a').on("click", function (e) {
 		e.preventDefault();
+
+        if( $(this) === $('.c-ttogglers .c-navbar a.is-active') )
+            return;
+
+        // Update URL with page tab parameter value (extracted from clicked link attribute)
+        // For the first item in navbar, we will remove the parameter from link
+        const currentURL = new URL(window.location.href);
+        if( $( this ).is(":first-child") ){
+            console.log( "A ");
+            if (currentURL.searchParams.has(pageTabParameter)){
+                currentURL.searchParams.delete(pageTabParameter);
+
+            }
+        }else{
+            const parameterValue = $(this).attr(pageTabDataParameter)
+            if (currentURL.searchParams.has(pageTabParameter)) {
+                // Replace the existing value
+                currentURL.searchParams.set(pageTabParameter, parameterValue);
+            } else {
+                // Add the parameter
+                currentURL.searchParams.append(pageTabParameter, parameterValue);
+            }
+        }
+
+        window.history.pushState(null, null, currentURL.toString());
 
 		// Toggle active class on tab buttons
 		$(this).addClass("is-active");
@@ -116,12 +161,95 @@ $(document).ready(function () {
 		$(activeTab).show();
 	});
 
+
+    // Page tab toggler menu (as seen on legal pages) trigger content change if a
+    // valid parameter found in link matches a navbar from the menu (based on link's
+    // data attribute
+    // Trigger click on that nav item if found
+    const urlTabTogglerVar = getURLQueryVariable('page-tab');
+
+    if( urlTabTogglerVar ){
+        const getTargetPageTab = document.querySelector(`[${pageTabDataParameter}="${urlTabTogglerVar}"]`);
+        if( getTargetPageTab ){
+            getTargetPageTab.click();
+        }
+    }
+
     // tabs training plan
-    $('.module--trainingplan .c-plan .c-nav__item:first-child').addClass('is-active');
+    //$('.module--trainingplan .c-plan .c-nav__item:first-child').addClass('is-active');
+    //all-plans-filter ,c-nav--coaches, c-nav--periods
 
-    $('.module--trainingplan .c-plan .c-nav__item').on("click", function (e) {
-		e.preventDefault();
+    const allPlansFilter = {
+        coach: null,
+        period: null
+    };
 
+    $('.module--trainingplan .c-plan .all-plans-filter .c-nav__item').on("click", function (e) {
+        e.preventDefault();
+
+
+        const   btnTypes = ['coach', 'period'],
+                btnType = this.hasAttribute('data-coach') ? 'coach': 'period',
+                isActive = this.classList.contains('is-active'),
+                otherFilters = btnTypes.filter( (entry) => entry !== btnType ),
+                attr = this.getAttribute('data-item'),
+                sectionParent = this.closest('.module--trainingplan'),
+                allItems = sectionParent.querySelectorAll( '.c-plan-content' ),
+                itemsContainer = sectionParent.querySelector( '.c-plan-body .container' );
+
+        //Update allPlansFilter according to the selected options
+        if( isActive ){
+            allPlansFilter[`${btnType}`] = null;
+
+        }else{
+            allPlansFilter[`${btnType}`] = this.getAttribute('data-item');
+        }
+
+        //Update allPlansFilter with the rest of the filters values
+        otherFilters.forEach( (filter) => {
+            const item = sectionParent.querySelector(`.c-nav__item.is-active[data-${filter}="true"]`);
+            if( item ){
+                allPlansFilter[`${filter}`] = item.getAttribute('data-item');
+            }
+        });
+
+        //Update is-active btn
+        this.parentElement.querySelectorAll('a').forEach((a) => {
+            if( a !== this )
+                a.classList.remove('is-active')
+        });
+        this.classList.toggle('is-active');
+
+        //Construct the selector to query the DOM
+        const selectorItem =`${allPlansFilter.coach !== null ? '[data-coach="' + allPlansFilter.coach + '"]': ''}${allPlansFilter.period !== null ? '[data-period="' + allPlansFilter.period + '"]': ''}`;
+
+        //Get the items
+        let getItems = [];
+        if( selectorItem !=='' ){
+            getItems = sectionParent.querySelectorAll( selectorItem );
+        }else{
+            getItems = allItems;
+        }
+        getItems = [...getItems];
+
+        //Update items visibility (hide all, show only those filtered)
+        allItems.forEach( (item) => {
+            item.classList.remove('is-active');
+        });
+
+        getItems.forEach( (item) => {
+            item.classList.add('is-active');
+        });
+
+        if( getItems.length === 0 ){
+            sectionParent.querySelector('.c-plan-content-error').classList.add('is-active');
+        }else{
+            sectionParent.querySelector('.c-plan-content-error').classList.remove('is-active');
+        }
+    });
+
+    $('.module--trainingplan .c-plan .c-plan-header:not(.all-plans-filter) .c-nav__item').on("click", function (e) {
+        e.preventDefault();
 		// Toggle active class on tab buttons
 		$(this).addClass("is-active");
 		$(this).siblings().removeClass("is-active");
@@ -133,9 +261,8 @@ $(document).ready(function () {
 		$(activeTab).show();
 	});
 
-    $('.module--trainingplan .c-plan .c-nav--coaches .c-nav__item').on("click", function (e) {
+    $('.module--trainingplan .c-plan .c-plan-header:not(.all-plans-filter) .c-nav--coaches .c-nav__item').on("click", function (e) {
 		e.preventDefault();
-
 		// Toggle active class on tab buttons
 		$(this).addClass("is-active");
 		$(this).siblings().removeClass("is-active");
@@ -200,16 +327,16 @@ $(document).ready(function () {
     $('.module--comments .row--bottom p.form-submit input').val('TRIMITE MESAJ');
 
     // wrap divs in rows
-    var divs = $(".c-cards--partners > .c-card");
-    for(var i = 0; i < divs.length; i+=3) {
-        divs.slice(i, i+3).wrapAll("<div class='row'></div>");
-    }
+    // var divs = $(".c-cards--partners > .c-card");
+    // for(var i = 0; i < divs.length; i+=3) {
+    //     divs.slice(i, i+3).wrapAll("<div class='row'></div>");
+    // }
 
     // wrap blog articles in rows
-    var divs = $(".c-cards--blog > .c-card");
-    for(var i = 0; i < divs.length; i+=3) {
-        divs.slice(i, i+3).wrapAll("<div class='row'></div>");
-    }
+    // var divs = $(".c-cards--blog > .c-card");
+    // for(var i = 0; i < divs.length; i+=3) {
+    //     divs.slice(i, i+3).wrapAll("<div class='row'></div>");
+    // }
 
     // wrap divs in rows
     var divs = $(".c-cards--camp > .c-card");
@@ -222,7 +349,137 @@ $(document).ready(function () {
 	if($lastRowCount <= 3) {
 		$lastRow.addClass('is-last');
 	}
+
+    //Scroll 1px if on page load window is scrolled
+    //We do this to fix some issues with sticky element (+background) etc.
+    const scrollY = window.scrollY;
+    if( scrollY > 0 ){
+        window.scrollTo(0,scrollY + 1);
+    }
+
+    function debounce(func, wait) {
+        let timeout;
+        return function(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+
+
+    /**
+     *             nextArrow: '<div class="c-ctrl c-ctrl--next"><svg xmlns="http://www.w3.org/2000/svg" width="20.417" height="35" viewBox="0 0 20.417 35"> <path id="Fill_1_Copy_3" data-name="Fill 1 Copy 3" d="M-17.909,0,0,17.5-17.909,35l-2.507-2.495L-5.059,17.5-20.417,2.493Z" transform="translate(0 35) rotate(-180)" fill="#2f4858"/></svg></div>',
+     *             prevArrow: '<div class="c-ctrl c-ctrl--prev"><svg xmlns="http://www.w3.org/2000/svg" width="20.417" height="35" viewBox="0 0 20.417 35"> <path id="Fill_1_Copy_3" data-name="Fill 1 Copy 3" d="M-17.909,0,0,17.5-17.909,35l-2.507-2.495L-5.059,17.5-20.417,2.493Z" transform="translate(0 35) rotate(-180)" fill="#2f4858"/></svg></div>',
+     */
+
+    const catsWrapperSelector = document.querySelectorAll('.c-cats');
+    if( catsWrapperSelector.length > 0 ){
+        const catsWrappers = [...catsWrapperSelector];
+        catsWrappers.forEach( (catWrapper) => {
+           const sizes = catWrapper.getBoundingClientRect();
+           console.log( sizes );
+        });
+    }
+
+    /** sticky **/
+    const stickyElement = document.querySelector('.all-plans-filter');
+    if( stickyElement ){
+        let header = document.querySelector('.c-header');
+        let headerHeight = header.getBoundingClientRect();
+        window.addEventListener( 'resize', function(){
+                header = document.querySelector('.c-header');
+                headerHeight = header.getBoundingClientRect();
+        });
+        window.addEventListener('scroll', function() {
+
+        });
+        const handleStickyScroll = (e) => {
+
+            if (window.scrollY > stickyElement.offsetTop - headerHeight.height - 2  ) {
+                if( ! stickyElement.classList.contains('sticky-header-plans sticky-bg') ){
+                    stickyElement.classList.add('sticky-header-plans');
+                    stickyElement.classList.add('sticky-bg');
+                }
+
+            } else {
+                stickyElement.classList.remove('sticky-header-plans');
+                stickyElement.classList.remove('sticky-bg');
+            }
+        }
+
+        window.addEventListener('scroll', debounce(handleStickyScroll, 50));
+    }
+
+    /**
+     * Plans toggle visibiliy
+     */
+
+    // Plans fix height issues (different height)
+    const getPlansSections = document.querySelectorAll('.c-plans.is-active');
+
+    window.addEventListener('resize', function(){
+        const getPlansSections = document.querySelectorAll('.c-plans.is-active');
+        resizeCardsOnLoad(getPlansSections);
+    })
+
+    const resizeCardsToEqualSizes = ( plans ) => {
+        let maxPlanHeight = 0;
+        const planInfoCards = plans.querySelectorAll('.c-card--info');
+        if( planInfoCards.length > 0 ){
+            [...planInfoCards].forEach( (card) => {
+                //reset card style height
+                card.style = "";
+                const sizes = card.getBoundingClientRect();
+                if( sizes.height > maxPlanHeight ) maxPlanHeight = sizes.height;
+            });
+
+            [...planInfoCards].forEach( (card) => {
+                const sizes = card.getBoundingClientRect();
+                console.log( card, sizes.height, maxPlanHeight );
+                if( sizes.height < maxPlanHeight ){
+                    card.style.flex = `1 0 ${parseInt( maxPlanHeight - 1 )}px`;
+                    card.style.maxHeight = `${parseInt( maxPlanHeight - 1 )}px`;
+                }
+
+            });
+        }
+    }
+
+    $('.c-plans__header').on("click", function(e){
+        e.preventDefault();
+        const element = this;
+        const plans = element.closest('.c-plans');
+        plans.classList.toggle('is-active');
+        if( plans.classList.contains('is-active' ) )
+            resizeCardsToEqualSizes(plans);
+    });
+
+    const resizeCardsOnLoad = ( planSections) => {
+        if( planSections.length > 0 ){
+            [...planSections].forEach( ( planSection ) => {
+                if( planSection.classList.contains('is-active' ) ){
+                    resizeCardsToEqualSizes(planSection);
+                }
+            });
+        }
+    }
+    resizeCardsOnLoad(getPlansSections);
 });
+
+
+/** @todo DELETE */
+// document.addEventListener("DOMContentLoaded", function() {
+//     const elements = document.querySelectorAll("*"); // Select all elements
+//     console.log( "A");
+//     elements.forEach(element => {
+//         if (element.scrollWidth > element.clientWidth) {
+//             console.log("Element causing horizontal scroll:", element);
+//         }
+//     });
+// });
 
 /*--------------------------------------------------------------
 # Gravity forms, labels effect on focus
