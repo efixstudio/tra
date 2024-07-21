@@ -1,12 +1,12 @@
 <?php $content = get_field('vomaster_g','options'); ?>
 
 <!-- vo master -->
-<section class="module module--trainingplan u-mg u-mg--md">
+<section class="module module--trainingplan u-mg u-mg--md module--trainingplan-vomaster" id="vomaster">
     <div class="container">
         <div class="c-plan vomaster">
             <div class="c-plan-body">
                 <div class="container">    
-                    <div class="c-plan-content">
+                    <div class="c-plan-content is-active">
                         <div class="u-cols fx">
                             <div class="u-col u-col--left">
                                 <div class="c-plan__image">
@@ -58,13 +58,17 @@
                                         </div>
 
                                         <div class="c-plan-footer__button">
-                                            <?php $btn = $content['button']; if($btn['url']) : ?>
-                                            <a href="<?php echo $btn['url']['url']; ?>" class="btn btn--primary btn--green">
-                                                <span>
-                                                    <?php echo $btn['label']; ?>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M 18.71875 6.78125 L 17.28125 8.21875 L 24.0625 15 L 4 15 L 4 17 L 24.0625 17 L 17.28125 23.78125 L 18.71875 25.21875 L 27.21875 16.71875 L 27.90625 16 L 27.21875 15.28125 Z"></path></svg>
-                                                </span>
-                                            </a>
+                                            <?php $btn = $content['button']; if( is_array( $btn['url'] ) && array_key_exists( 'url', $btn['url'] ) ) : ?>
+                                                <?php if( str_contains($btn['url']['url'] , 'https://calendly.com' ) ) : ?>
+                                                    <?php echo do_shortcode("[tra_calendly_btn tag='a' classes='btn btn--primary btn--green' calendly_url='" . $btn['url']['url']. "' btn_label='" . $btn['label'] . "'][/tra_calendly_btn]"); ?>
+                                                <?php else: ?>
+                                                <a href="<?php echo $btn['url']['url']; ?>" class="btn btn--primary btn--green">
+                                                    <span>
+                                                        <?php echo  $btn['label']; ?>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M 18.71875 6.78125 L 17.28125 8.21875 L 24.0625 15 L 4 15 L 4 17 L 24.0625 17 L 17.28125 23.78125 L 18.71875 25.21875 L 27.21875 16.71875 L 27.90625 16 L 27.21875 15.28125 Z"></path></svg>
+                                                    </span>
+                                                </a>
+                                                <?php endif; ?>
                                             <?php endif; ?>
                                         </div>
                                     </div>

@@ -225,6 +225,49 @@
             }
         }
     }
+
+    &--single-member-header{
+        &.is-coach{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            .c-text { display: flex; flex-direction: column; height: 100%;
+                &__title { padding-right: 40px; box-sizing: border-box; text-transform: lowercase; }
+                &__content { padding: 40px; box-sizing: border-box; border: 1px solid $green; margin: 50px 0 0; height: 100%; }
+                &__image { position: relative;
+                    img { @include object-fit; width: 100%; }
+                    .u-play { position: absolute; top: 20px; left: 20px; width: 65px; height: 65px; background-color: $orange; border-radius: 50%; z-index: 9; @include flex-center; justify-content: center; transition: 0.3s;
+                        svg { width: 45px; height: 45px; margin: 0 0 0 3px;
+                            path { fill: $white; }
+                        }
+
+                        &:hover { background-color: $green; }
+                    }
+                }
+            }
+
+            .c-details { border-right: 1px solid $green;
+                button{font-size: 1.125rem; width: 100%; border: none; cursor: pointer; font-family:$font-c1; outline: none; }
+                span, a, button { padding: 40px; box-sizing: border-box; display: flex; }
+                a, button{ background-color: $green; color: $white; text-transform: uppercase; font-weight: 700; transition: 0.3s; @include flex-center; justify-content: space-between;
+                    svg { width: 30px; height: 30px; transition: 0.3s;
+                        path { fill: $white; }
+                    }
+
+                    &:hover { background-color: $orange;
+                        svg { transform: translate(10px,0);}
+                    }
+                }
+
+                .c-detail { border-bottom: 1px solid $green;
+                    &--certificates { @include flex-center; justify-content: space-between;
+                        .c-logos { display: flex; margin: 0 40px 0 0;
+                            img{ height: 70px; width: auto;}
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 .c-cards {

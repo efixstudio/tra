@@ -232,7 +232,17 @@
     }
   }
 
-
+  &--benefit{
+    .c-card {
+      &__icon {
+        margin: 10px 15px 0 0;
+        svg{
+          width: 40px;
+          height: auto;
+        }
+      }
+    }
+  }
 
   &--testimonial { border: 1px solid $white;
     .c-card {
@@ -277,6 +287,40 @@
         a { color: $white; }
         svg {
           path { fill: $white; }
+        }
+      }
+    }
+  }
+
+  &--single-member-header {
+    &.is-coach {grid-template-columns: 1fr; gap: 30px;
+
+      .c-text{
+         &__content{ padding: 20px;}
+
+        &__image{
+
+          .u-play{
+            width: 50px;
+            height: 50px;
+
+            svg{
+              width: 30px;
+              height: 30px;
+            }
+          }
+        }
+      }
+      .c-details{
+        span, a, button { padding: 20px; text-align: left;}
+        button{ text-align: left;}
+
+        .c-detail { border-left: 1px solid $green;
+          &--certificates { flex-direction: column;
+            .c-logos { display: flex; margin: 0; padding: 0 20px 20px;
+              img{ height: 55px; width: auto;}
+            }
+          }
         }
       }
     }

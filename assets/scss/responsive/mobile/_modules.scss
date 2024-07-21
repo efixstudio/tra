@@ -1,8 +1,8 @@
 .c-events {  border-top: 1px solid $white;
   &:first-of-type{ border-top: none; }
   &__header {
-    a {  padding: 15px; font-size: 12px;
-      svg {
+    a {  padding: 15px; font-size: 16px;
+      svg { margin: 0;
         path {  }
       }
 
@@ -222,8 +222,8 @@
 
     .c-station {
       &__header { padding: 20px 15px;
-        span { }
-        a { text-align: right;}
+        span { font-size: $mobileNormalTextSize;}
+        a { text-align: right; font-size: $mobileNormalTextSize}
       }
 
       &__meta { padding: 20px 15px;
@@ -235,7 +235,7 @@
           flex-direction: row;
           .u-col { width: 50%; height: 70px;
             &--left { order: 1;
-              span { text-transform: uppercase; }
+              span { text-transform: uppercase; font-size: $mobileNormalTextSize; }
               &:after{content: "";
                 display: block;
                 width: 1px;
@@ -264,13 +264,13 @@
       .u-col {
         &--left { width: 100%;  }
         &--right {
-          img { @include object-fit; margin-top: 20px !important; max-width: 250px; }
+          img { @include object-fit; margin-top: 20px !important; max-width: 150px; }
 
           &:before { display: none; }
         }
       }
     }
-    &.has-bg { margin-top: 60px; padding: 60px 0;
+    &.has-bg { margin-top: 60px; padding: 60px 0; margin-bottom: 0;
       .container { }
 
       .u-cols {
@@ -295,12 +295,12 @@
         font-weight: 900;
 
         &.lg {
-          font-size: 48px;
+          font-size: 40px;
           line-height: 1.125em;
         }
 
         &.is-single {
-          font-size: 48px;
+          font-size: 40px;
           line-height: 1.125em;
           max-width: 100%;
         }
@@ -525,7 +525,7 @@
         }
       }
 
-      &:last-of-type { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 15px;
+      &:last-of-type { display: flex; flex-wrap: wrap; justify-content: space-between; row-gap: 15px;
         .c-gallery {
           &__item { width: 48%; padding-bottom: 0; margin-bottom: 0; position: relative;
 
@@ -558,10 +558,12 @@
         .c-box{
           &__title{
             padding: 20px;
-            border-right: 1px solid;
+            border-right: 1px solid !important;
+            border-left: 1px solid !important;
           }
           &__content{
-            border-right: 1px solid;
+            border-right: 1px solid !important;
+            border-left: 1px solid !important;
             padding: 20px;
 
             ul,ol{margin-left: 20px;}
@@ -614,6 +616,18 @@
     }
   }
 
+  &--textbtn {
+    .u-cols{
+      gap: 20px;
+
+      .u-col{
+        &--left{}
+        &--right{}
+      }
+
+    }
+  }
+
 
 }
 
@@ -622,9 +636,10 @@
     &--comunity { margin: 0 0 40px;
       a {  padding: 30px 15px;
         span {
-          &.letter { font-size: 50px;  }
+          &.letter { font-size: 50px; line-height: 1;
+            margin-bottom: 0;  }
 
-          &.title { font-size: 18px;  }
+          &.title { font-size: 16px;  }
         }
 
         svg {
@@ -762,4 +777,118 @@
       }
     }
   }
+}
+
+.c-box {
+  &__title { padding: 20px; width: 100%; }
+
+  &__content {  padding: 20px;
+    a{}
+  }
+
+  &__heading { margin: 0 0 50px; }
+
+  .u-cols {
+    .u-col { width: 50%; display: flex; flex-direction: column;
+      .c-box__title { width: 100%; }
+
+      &--left {
+        .c-box__title, .c-box__content { border-right: 1px solid $green; }
+      }
+
+      &--right {
+        .c-box__title, .c-box__content { border-left: 1px solid $green; }
+      }
+    }
+
+    &.bx {
+      &--equal {
+        .c-box {
+          &__content {  }
+        }
+      }
+
+      &--unset {
+        .u-col {
+          &--left {
+            .c-box__title, .c-box__content { border-right: 1px solid $green; }
+          }
+
+          &--right {
+            .c-box__title, .c-box__content { border-left: 1px solid $green; }
+          }
+        }
+
+        &:before { display: none; }
+      }
+    }
+  }
+
+  .c-atlet {
+    a { margin: 0; @include flex-center; justify-content: space-between; transition: 0.3s; padding: 10px 0; font-size: 1.15rem;
+      svg { width: 20px; height: 20px; transition: 0.3s;
+        path { fill: $green; }
+      }
+
+      &:last-of-type { margin: 0; }
+
+      &:hover { color: $orange;
+        svg { transform: translate(6px,0);
+          path { fill: $orange; }
+        }
+      }
+    }
+  }
+
+
+  &--nextstep {
+    .c-box {
+      &__content { @include flex-center; justify-content: space-between; }
+      &__button { width: 100%; margin: 0 0 0 50px; }
+    }
+  }
+
+  &--nextstep {
+    .c-box {
+      &__content { flex-direction: column; gap: 10px;
+      }
+      &__button {  flex:1 0 100%; margin: 0; }
+    }
+  }
+}
+
+.c-sh { margin: 0 0 5px;
+  &__title { margin: 0 0 30px;
+    &.lg { font-size: 30px; line-height: 1em; }
+  }
+}
+
+.c-nutrition {
+  &__title {  margin-top: 50px;}
+
+  .inner {  }
+
+  .c-items {
+    .c-item {  padding: 30px 20px;
+      &:first-of-type {
+        &:before {  }
+      }
+
+      &:after {  }
+
+      &__icon {  margin: 0 10px 0 0; svg{width: 25px; height: auto; }}
+
+      &__title {
+        span { display: block; font-weight: 700; font-size: 14px;
+          &:last-of-type { font-size: 18px; line-height: 22px; margin: 5px 0 0; }
+        }
+      }
+    }
+  }
+}
+
+.c-ttogglers .u-cols .u-col--left {
+  width: 100%;
+  position: relative;
+  top: 0;
 }

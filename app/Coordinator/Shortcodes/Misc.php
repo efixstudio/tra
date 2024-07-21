@@ -17,6 +17,9 @@ class Misc
             return '';
         }
 
+        $tag = isset( $attributes['tag'] ) && $attributes['tag'] === "a" ? "a" : 'button';
+        $classes = isset( $attributes['classes'] ) ? esc_attr( $attributes['classes'] ) : '';
+
         $output = '';
         $btnLabel   = ! isset( $attributes['btn_label'] ) ? 'Programeaza un video-call' : $attributes['btn_label'];
         $btnIcon    = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
@@ -24,10 +27,10 @@ class Misc
                         </svg>';
 
 
-        $output .= "<button class='callendly-btn' 
-                         onClick=\"Calendly.initPopupWidget({url: '" . $attributes['calendly_url'] . "'});return false;\">"
-                     . $btnLabel . $btnIcon .
-                    "</button>";
+        $output .= "<" . $tag . " id='calendly-btn' class='calendly-btn " . $classes . "' 
+                         onClick=\"Calendly.initPopupWidget({url: '" . $attributes['calendly_url'] . "?hide_gdpr_banner=1'});return false;\">"
+                     . ( $tag === "a" ? "<span>" : '' ) .$btnLabel . $btnIcon . ( $tag === "a" ? "</span>" : '' ) .
+                    "</" . $tag . ">";
 
 
         wp_enqueue_style( 'tra-calendly', 'https://assets.calendly.com/assets/external/widget.css', '', TRA_THEME_ASSETS_VERSION, 'all' );

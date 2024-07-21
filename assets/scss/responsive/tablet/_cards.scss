@@ -109,6 +109,25 @@
       }
     }
   }
+
+  &--single-member-header {
+    &.is-coach {
+      .grid-right{
+      }
+
+      .c-details{
+        span, a, button { padding: 20px;}
+
+        .c-detail {
+          &--certificates {
+            .c-logos { display: flex; margin: 0 20px 0 0;
+              img{ height: 55px; width: auto;}
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .c-cards {

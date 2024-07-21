@@ -1,11 +1,10 @@
 .c-tabs {
   &-nav {
     &--comunity { margin: 0 0 40px;
-      a {  padding: 30px 15px;
+      a {  padding: 15px;
         span {
-          &.letter { font-size: 50px;  }
 
-          &.title { font-size: 15px; flex-direction: column; align-items: flex-start; }
+          &.title { font-size: 12px; flex-direction: column; align-items: flex-start; }
         }
 
         svg {
@@ -80,6 +79,43 @@
         span { display: block;
           &.title {  }
           &.text {  }
+        }
+      }
+    }
+  }
+}
+
+.c-nutrition {
+  &__title {  }
+
+  .inner {  }
+
+  .c-items {
+    display: grid; grid-template-columns: repeat( 2, 1fr ); border: 1px solid $green; border-top: none;
+    .c-item {  padding: 20px; flex-direction: column; gap: 10px; width: 100%; border: none;
+      &:first-of-type {
+        border-right: 1px solid $green;
+      }
+
+      &:nth-of-type(2) {
+      }
+      &:nth-of-type(3) {
+        border-top: 1px solid $green;
+        border-right: 1px solid $green;
+      }
+
+      &:nth-of-type(4) {
+        border-top: 1px solid $green;
+      }
+
+      &:after { display: none; }
+      &:before { display: none; }
+
+      &__icon { margin: 0;  svg{height: 35px; width: auto;}}
+
+      &__title {
+        span { display: block; font-weight: 700; font-size: 14px; text-align: center;
+          &:last-of-type { font-size: 18px; line-height: 22px; margin: 5px 0 0; }
         }
       }
     }

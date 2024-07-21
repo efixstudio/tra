@@ -9,4 +9,39 @@
       }
     }
   }
+
+  &--trainingplan {
+    .c-plan{
+      &.vomaster {
+        .container{
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.c-nutrition {
+  &__title {  }
+
+  .inner {  }
+
+  .c-items {
+    .c-item {  padding: 50px 35px;
+      &:first-of-type {
+        &:before {  }
+      }
+
+      &:after {  }
+
+      &__icon {   svg{width: 40px; height: auto;}}
+
+      &__title {
+        span { display: block; font-weight: 700;
+          &:last-of-type { font-size: 25px; line-height: 30px; margin: 5px 0 0; }
+        }
+      }
+    }
+  }
 }

@@ -1,5 +1,5 @@
 
-.c-headroom { margin: 0 0 100px; position: relative; position: fixed; top: 0; left: 0; width: 100%;
+.c-headroom { margin: 0 0 100px; position: fixed; top: 0; left: 0; width: 100%;
     &:after { content: ""; width: calc(100% - 1090px); height: 1px; background-color: $green; position: absolute; bottom: 0; right: 0; transition: 0.3s; }
 
     &.is-scrolled, &.menu-opened { background-color: $white; z-index: 9999; 
@@ -16,6 +16,7 @@
 
         &:after { width: 0; }
     }
+
 }
 
 .c-header { position: relative; z-index: 9;

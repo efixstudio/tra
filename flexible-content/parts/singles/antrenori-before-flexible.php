@@ -2,10 +2,10 @@
     <?php $video = get_field('video'); ?>
 
     <!-- page header -->
-    <section class="module module--ph is-coach u-mg u-mg--md">
+    <section class="module module--ph u-mg u-mg--md">
         <div class="container">
-            <div class="u-cols fx">
-                <div class="u-col u-col--left">
+            <div class="c-card--single-member-header is-coach">
+                <div class="grid-column grid-column--left">
                     <div class="c-text">
                         <h1 class="c-text__title"><?php the_title(); ?></h1>
 
@@ -23,11 +23,10 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="u-col u-col--right">
+                <div class="grid-column grid-column--right">
                     <div class="c-text__image">
                         <?php if ($video['youtube_url']) : ?>
-                            <a href="<?php echo $video['youtube_url']; ?>" class="u-play">
+                            <a href="<?php echo $video['youtube_url']; ?>" class="u-play" data-fancybox="video-gallery">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
                                     <path d="M 9 5.15625 L 9 26.84375 L 10.53125 25.84375 L 25.84375 16 L 10.53125 6.15625 Z M 11 8.8125 L 22.15625 16 L 11 23.1875 Z"/>
                                 </svg>
@@ -47,7 +46,7 @@
                         <?php $logos = get_field('certificates');
                         if ($logos) : ?>
                             <div class="c-detail c-detail--certificates">
-                                <span>Antrenor certificat Training Peaks</span>
+                                <span><strong>Antrenor certificat Training Peaks</strong></span>
                                 <div class="c-logos">
                                     <?php foreach ($logos as $logo) : ?>
                                         <?php get_image($logo['certificate_image'], 'full'); ?>
@@ -57,7 +56,7 @@
                         <?php endif; ?>
 
                         <div class="c-detail">
-                            <span>UTMB Index: <?php the_field('utmb_index'); ?></span>
+                            <span><strong>UTMB Index:&nbsp;</strong><?php the_field('utmb_index'); ?></span>
                         </div>
 
                         <div class="c-detail">

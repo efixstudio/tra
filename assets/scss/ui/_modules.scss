@@ -97,46 +97,48 @@ body { background: url('assets/img/pattern.png'); }
             }
         }
 
-        &.is-coach {
-            .u-cols {
-                .u-col { width: 50%; }
-            }
 
-            .c-text { display: flex; flex-direction: column; height: 100%;
-                &__title { padding-right: 40px; box-sizing: border-box; text-transform: lowercase; }
-                &__content { padding: 40px; box-sizing: border-box; border: 1px solid $green; margin: 50px 0 0; height: 100%; }
-                &__image { position: relative; min-height: 630px;
-                    img { @include object-fit; position: absolute; top: 0; left: 0; }
-                    .u-play { position: absolute; top: 20px; left: 20px; width: 65px; height: 65px; background-color: $orange; border-radius: 50%; z-index: 9; @include flex-center; justify-content: center; transition: 0.3s;
-                        svg { width: 45px; height: 45px; margin: 0 0 0 3px; 
-                            path { fill: $white; }
-                        }
 
-                        &:hover { background-color: $green; }
-                    }
-                }
-            }
-
-            .c-details { border-right: 1px solid $green;
-                button{font-size: 1.125rem; width: 100%; border: none; cursor: pointer; font-family:$font-c1; outline: none; }
-                span, a, button { padding: 40px; box-sizing: border-box; display: flex; }
-                a, button{ background-color: $green; color: $white; text-transform: uppercase; font-weight: 700; transition: 0.3s; @include flex-center; justify-content: space-between;
-                    svg { width: 30px; height: 30px; transition: 0.3s;
-                        path { fill: $white; }
-                    }
-
-                    &:hover { background-color: $orange; 
-                        svg { transform: translate(10px,0);}
-                    }
-                }
-
-                .c-detail { border-bottom: 1px solid $green; 
-                    &--certificates { @include flex-center; justify-content: space-between;
-                        .c-logos { display: flex; margin: 0 40px 0 0; }
-                    }
-                }
-            }
-        }
+        //&.is-coach {
+        //    .u-cols {
+        //        .u-col { width: 50%; }
+        //    }
+        //
+        //    .c-text { display: flex; flex-direction: column; height: 100%;
+        //        &__title { padding-right: 40px; box-sizing: border-box; text-transform: lowercase; }
+        //        &__content { padding: 40px; box-sizing: border-box; border: 1px solid $green; margin: 50px 0 0; height: 100%; }
+        //        &__image { position: relative; min-height: 630px;
+        //            img { @include object-fit; position: absolute; top: 0; left: 0; }
+        //            .u-play { position: absolute; top: 20px; left: 20px; width: 65px; height: 65px; background-color: $orange; border-radius: 50%; z-index: 9; @include flex-center; justify-content: center; transition: 0.3s;
+        //                svg { width: 45px; height: 45px; margin: 0 0 0 3px;
+        //                    path { fill: $white; }
+        //                }
+        //
+        //                &:hover { background-color: $green; }
+        //            }
+        //        }
+        //    }
+        //
+        //    .c-details { border-right: 1px solid $green;
+        //        button{font-size: 1.125rem; width: 100%; border: none; cursor: pointer; font-family:$font-c1; outline: none; }
+        //        span, a, button { padding: 40px; box-sizing: border-box; display: flex; }
+        //        a, button{ background-color: $green; color: $white; text-transform: uppercase; font-weight: 700; transition: 0.3s; @include flex-center; justify-content: space-between;
+        //            svg { width: 30px; height: 30px; transition: 0.3s;
+        //                path { fill: $white; }
+        //            }
+        //
+        //            &:hover { background-color: $orange;
+        //                svg { transform: translate(10px,0);}
+        //            }
+        //        }
+        //
+        //        .c-detail { border-bottom: 1px solid $green;
+        //            &--certificates { @include flex-center; justify-content: space-between;
+        //                .c-logos { display: flex; margin: 0 40px 0 0; }
+        //            }
+        //        }
+        //    }
+        //}
     }
 
     &--plans{
@@ -629,6 +631,8 @@ body { background: url('assets/img/pattern.png'); }
     a { text-decoration: underline; }
 
     blockquote { padding: 40px; border: 1px solid $green; }
+
+    ol, ul { padding-left: 20px; }
 }
 
 .c-ss { display: flex; flex-direction: column; 
@@ -966,7 +970,8 @@ body { background: url('assets/img/pattern.png'); }
         a{
             font-size: 1.5rem;
             text-transform: none;
-            margin: 0 -40px -40px;
+            margin-top: 20px;
+            margin-left: 0;
             padding: 30px 20px;
 
             &.btn-b{
@@ -1023,8 +1028,9 @@ body { background: url('assets/img/pattern.png'); }
 
     &--nextstep {
         .c-box {
-            &__content { @include flex-center; justify-content: space-between; }
-            &__button { width: 100%; margin: 0 0 0 50px; }
+            &__content { @include flex-center; flex-direction: row; justify-content: space-between; gap: 40px;
+            }
+            &__button {  flex:1 0 50%; }
         }
     }
 }
