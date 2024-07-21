@@ -1,0 +1,16 @@
+/*--------------------------------------------------------------
+# Reset
+--------------------------------------------------------------*/
+* {margin:0; padding:0;}
+html { -webkit-text-size-adjust: 100%; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; scroll-behavior: smooth;}
+html, body {height: 100%;}
+.clear {display:block; clear:both; height:0;}
+a img {border:none; height: auto; }
+a {outline:none;}
+header, nav, section, article, aside, footer {display:block;}
+input { -webkit-appearance: none; appearance: none; border-radius: 0; 
+    &:focus { outline: none; }
+}
+textarea { border-radius: 0; }
+
+img { max-width: 100%; height: auto; display: flex; }

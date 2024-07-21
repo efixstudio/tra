@@ -1,0 +1,299 @@
+.c-card {
+    &--text { width: 45%; margin: 0 0 80px;
+        .c-card {
+            &__title { font-size: 72px; line-height: 72px; font-weight: 800; display: block; margin: 0 0 40px; }
+        }
+    }
+
+    &--benefit { width: 25%; display: flex;
+        .c-card {
+            &__icon { flex: none; margin: 0 30px 0 0; }
+            &__meta {
+                &-title { font-size: 24px; font-weight: 700; display: block; margin: 0 0 30px; min-height: 60px; }
+                &-text {
+                    p { font-size: 16px; line-height: 24px; }
+                }
+            }
+        }
+    }
+
+    &--blog { padding: 40px; box-sizing: border-box; 
+        .c-card {
+            &__box { display: flex; justify-content: space-between; }
+            &__image { width: 50%; flex: none; }
+            &__title { width: 50%; padding-left: 25px; box-sizing: border-box; display: flex; flex-direction: column; 
+                a.title { line-height: 26px; }
+                a.url { margin-top: auto; margin-left: auto; @include flex-center;
+                    svg { width: 20px; height: 20px; margin: 0 0 0 10px; transition: 0.3s;
+                        path { fill: $green; }
+                    }
+
+                    &:hover {
+                        svg { transform: translate(10px,0); }
+                    }
+                }
+            }
+            &__header { display: flex; justify-content: space-between; margin: 0 0 40px; }
+        }
+    } 
+
+    &--camp { width: 47%; display: flex; flex-direction: column;
+        .c-card {
+            &__image { height: 345px; display: flex; flex: none; margin: 0 0 50px; position: relative;
+                img { @include object-fit; position: relative; z-index: 9; transition: 0.3s; }
+
+                &:after { content: ""; position: absolute; top: 20px; left: 20px; border: 1px solid $green; width: 100%; height: 100%; transition: 0.3s; }
+            }
+
+            &__meta { padding: 0 40px; box-sizing: border-box; display: flex; flex-direction: column; height:100%;
+                &-header { margin: 0 0 28px; }
+                &-title { font-size: 30px; font-weight: 700; margin: 0 0 34px; display: block; }
+                &-button { margin-top: auto; }
+            }
+        }
+
+        &:hover {
+            .c-card {
+                &__image {
+                    &:after { background-color: $green; }
+                }
+            }
+        }
+    }
+
+    &--partner { width: 33.33333333%; padding-bottom: 200px; position: relative; border-bottom: 1px solid $green; 
+        a { position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto; @include flex-center; justify-content: center; 
+            img { transition: 0.3s; }
+
+            svg { width: 40px; height: 40px; position: absolute; bottom: 10px; right: 20px; transition: 0.3s;
+                path { fill: $green; }
+            }
+
+            &:hover {
+                img { opacity: 0.5; }
+
+                svg { transform: translate(10px,0); }
+            }
+        }
+
+        &:before { content: ""; width: 1px; height: 100%; background-color: $green; position: absolute; left: 0; }
+        
+        &:nth-child(3n) {
+            &:after { content: ""; width: 1px; height: 100%; background-color: $green; position: absolute; right: 0; }
+        }
+    }
+
+    &--person { width: 22%; margin-right: 3%; margin-bottom: 60px; position: relative; color: $white;
+        .c-card {
+            &__image { height: 345px; position: relative; 
+                &:after { content: ""; width: 100%; height: 100%; border: 1px solid $white; position: absolute; top: 10px; left: 10px; transition: 0.3s; }  
+                
+                img { @include object-fit; filter: grayscale(1); position: relative; z-index: 9; transition: 0.3s; }
+
+                a { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: #f9f9f9; display: flex; z-index: 9;}
+            }
+
+            &__meta { margin: 40px 0 0; transition: 0.3s;
+                &-name { display: flex; 
+                    svg { width: 30px; height: 30px; margin: 5px 30px 0 0; 
+                        path { fill: $white; }
+                    }
+
+                    span { display: block; font-weight: 400;
+                        &:last-of-type { font-weight: 700; }
+                    }
+                }
+            }
+        }
+
+        &:hover {
+            .c-card {
+                &__image {
+                    &:after { background-color: $orange; border-color: $orange; }
+                    img { filter: grayscale(0); }
+                }
+
+                &__meta { transform: translate(30px, 0); color: $orange; 
+                    svg {
+                        path { fill: $orange; }
+                    }
+                }
+            }
+        }
+    }
+
+    &--plan { position: relative; width: 33.33%; display: flex; flex-direction: column;
+        .inner { padding: 50px; box-sizing: border-box; position: relative;
+            &:last-of-type { border-bottom: 1px solid $green; }
+
+            &:after { content: ""; width: 1px; height: 100%; background-color: $green; position: absolute; top: 0; right: 0; }
+
+            &--includes { border-top: 1px solid $green; height: 100%; }
+        }
+
+        .c-card {
+            &__header { margin: 0 0 50px;
+                span { display: block;
+                    &.name { font-size: 16px; margin: 0 0 5px; }
+                    &.tagline { font-size: 24px; font-weight: 700; }
+                }
+            }
+
+            &__text { margin: 0 0 60px;
+                p { font-size: 16px; line-height: 24px; }
+            }
+
+            &__includes {
+                h4 { margin: 0 0 20px; }
+
+                ul { @include reset-list; 
+                    li { margin: 0 0 20px; display: flex; font-size: 16px;
+                        svg { margin: 7px 20px 0  0; flex: none; }
+                        &:last-of-type { margin: 0; }
+                    }
+                }
+            }
+
+            &__footer { display: flex; align-items: flex-end; flex-direction: column;
+                .price { display: flex; flex-direction: column; align-items: flex-end;
+                    span {
+                        &:last-of-type { display: flex; align-items: flex-start; }
+                    }
+                    strong { font-size: 34px; height: 34px; font-weight: 900; margin: 0 6px 0 0; }
+                    sup { font-size: 18px; line-height: 32px; }
+                }
+
+                .btn { margin-top: 20px; padding: 14px 30px; text-transform: initial; }
+            }
+        }
+    }
+
+    &--testimonial { border: 1px solid $white;
+        .c-card {
+            &__header { padding: 0 40px; box-sizing: border-box; border-bottom: 1px solid $white; @include flex-center; justify-content: space-between; 
+                a { padding: 40px 0; box-sizing: border-box; border-left: 1px solid $white; padding-left: 40px; }
+            }
+
+            &__text { padding: 40px; box-sizing: border-box; }
+        }
+
+        &.v2 { width: 50%; border: none; padding: 40px; box-sizing: border-box; border-bottom: 1px solid $green; border-right: 1px solid $green; transition: 0.3s;
+            .u-cols { display: flex;
+                .u-col { width: 50%; 
+                    &--right { padding: 0 20px; box-sizing: border-box; display: flex; flex-direction: column; }
+                }
+            }
+
+            .c-card {
+                &__title { font-weight: 700; font-size: 24px; }
+                &__url { margin-top: auto; margin-left: auto; }
+            }
+
+            &:hover { background-color: $green; color: $white; 
+                a { color: $white; }
+                svg {
+                    path { fill: $white; }
+                }
+            }
+        }
+    }
+}
+
+.c-cards {
+    &--blog { border: 1px solid $green; 
+        .row { display: flex; justify-content: space-between; flex-wrap: wrap; position: relative; flex-direction: column; width: 100%;
+            &:first-of-type { border-bottom: 1px solid $green;
+                .c-card { width: 50%; margin-left: auto;  
+                    &:first-of-type { position: absolute; top: 0; left: 0; height: 100%; display: flex; flex-direction: column;
+                        .c-card {
+                            &__box { flex-direction: column; height: 100%; justify-content: flex-start; }
+                            &__image { width: 100%; height: 50%; 
+                                img { height: 100%; object-fit: cover; }
+                            }
+                            &__title { padding-left: 0; margin-top: 40px; width: 100%; height: 100%;
+                                a.title { font-size: 24px; line-height: 30px; }
+                            }
+                        }
+
+                        &:after { content: ""; width: 1px; height: 100%; background-color: $green; position: absolute; right: 0; top: 0; }
+                    }
+
+                    &:nth-child(2) { border-bottom: 1px solid $green; }
+                }
+            }
+
+            &:nth-child(2) { flex-direction: row; border-bottom: 1px solid $green;
+                .c-card { width: 50%;
+                    &:first-of-type { width: 100%; border-bottom: 1px solid $green; 
+                        .c-card {
+                            &__image { display: none; }
+                            &__title { padding-left: 0; width: 100%; 
+                                a.title { font-size: 24px; width: 60%; line-height: 30px; margin-bottom: 60px; }
+                            }
+                        }
+                    }
+
+                    &:nth-child(2) { position: relative; display: flex; flex-direction: column;
+                        .c-card {
+                            &__box { height: 100%; }
+                            &__image { display: none; }
+                            &__title { width: 100%; padding-left: 0; }
+                        }
+
+                        &:after { content: ""; width: 1px; height: 100%; background-color: $green; position: absolute; top: 0; right: 0; }
+                    }
+                }
+            }
+
+            &:nth-child(3) {
+                .c-card {
+                    &__image { display: none; }
+                    &__title { width: 100%; padding-left: 0; 
+                        a.title { font-size: 24px; width: 60%; line-height: 30px; margin-bottom: 60px; }
+                    }
+                }
+            }
+        }
+    }
+
+    &--camp {
+        .row { width:100%; display: flex; flex-wrap: wrap; justify-content: space-between; border-bottom: 1px solid $green; margin-bottom: 40px; padding-bottom: 40px;  }
+    }
+
+    &--text { margin: 0 0 -80px; }
+    
+    &--partners { border-top: 1px solid $green;
+        .row { width: 100%; display: flex;
+            &.is-last {
+                .c-card {
+                    &:last-child { &:after { content: ""; width: 1px; height: 100%; background-color: $green; position: absolute; right: -1px; } }
+                }
+            }
+        }
+    }
+
+    &--person { margin: 0 -3% 0 0;
+        &.is-active { display: flex; }
+    }
+
+    &--plans { border-top: 1px solid $green; border-left: 1px solid $green; }
+
+    &--testimonials { display: flex; flex-wrap: wrap; justify-content: space-between; border-left: 1px solid $green; border-top: 1px solid $green; 
+        .row { display: block; flex-wrap: wrap; position: relative;
+            .c-card { margin-left: auto;
+                &:first-of-type { position: absolute; top: 0; left: 0; height: 100%;
+                    .u-cols { flex-wrap: wrap; height: 100%;
+                        .u-col { width: 100%;
+                            &--left { height: 280px; 
+                                img { @include object-fit; }
+                            }
+                            &--right { padding: 0; margin: 20px 0 0; }
+                        }
+                    }
+
+                    .inner { height: 100%;}
+                }
+            }
+        }
+    }
+}

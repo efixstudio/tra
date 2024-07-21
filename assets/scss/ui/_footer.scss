@@ -1,0 +1,111 @@
+.c-footer {
+    &-top { background-color: $green; background: url('assets/img/footer-bg.png'); background-size: cover; padding-bottom: 100px;
+        .inner { border-top: 1px solid $white; border-bottom: 1px solid $white; }
+
+        .row { padding: 80px 40px; box-sizing: border-box; border-left: 1px solid $white; border-right: 1px solid $white; color: $white; 
+            span { font-size: 48px; font-weight: 700; line-height: 60px; display: block; margin: 0 0 36px; }
+    
+            .u-cols { align-items: center;
+                .u-col { width: 48%; }
+            }
+    
+            &:first-of-type { border-bottom: 1px solid $white; }
+    
+            &__button {
+                a {  display: flex; align-items: center; justify-content: space-between; padding: 27px 35px; box-sizing: border-box; text-transform: uppercase; font-size: 18px; font-weight: 800; }
+                
+                &.is-outline { 
+                    a { border: 1px solid #fff; color: $white; }
+                }
+    
+                &.is-white { 
+                    a { background-color: $white; color: $green; }
+                }
+            }
+        }
+    }
+
+    &-partners {
+        &__title { font-size: 8vw; font-weight: 900; line-height: 180px; margin: -175px 0 50px; text-transform: lowercase; text-align: center; } 
+    }
+
+    &-bottom { background-color: $green; color: $white; border-top: 1px solid $white; 
+        .row {
+            &--top {
+                .u-cols { padding: 0 40px; box-sizing: border-box; border-left: 1px solid $white; border-right: 1px solid $white; border-bottom: 1px solid $white; align-items: flex-start;
+                    .u-col { padding: 60px 0;
+                        &--left { border-right: 1px solid $white; padding-right: 40px; box-sizing: border-box; }
+                        &--right { padding-left: 40px; padding-right: 40px; box-sizing: border-box;
+                            .c-menus { display: flex; 
+                                .c-menu { margin-right: 40px;
+                                    span { display: block; text-transform: uppercase; font-weight: 700; margin: 0 0 15px; }
+                                    &:last-of-type { margin: 0; }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .c-box {
+                    &__contact {
+                        p { margin: 0 0 10px;
+                            &:last-of-type { margin: 0; }
+                        }
+                    }
+                }
+            }
+
+            &--middle {
+                .u-cols {
+                    .u-col {
+                        &--right {
+                            .stripe { @include flex-center;
+                                svg { margin: 0 0 0 15px; }
+                            }
+                        }
+                    }
+                }
+
+                ul { display: inline-flex; 
+                    li { margin: 0 40px 0 0; }
+                }
+            }
+
+            &--bottom {
+                .u-cols {
+                    .u-col {
+                        &--right {
+                            a { @include flex-center; }
+                            .credits { @include flex-center;
+                                svg { margin: 0 0 0 15px; }
+                            }
+                        }
+                    }
+                }
+
+                ul { display: inline-flex; margin: 0 0 0 10px;
+                    li {
+                        &:after { content: "/"; margin: 0 6px; }
+                        &:last-of-type {
+                            &:after { content: none; }
+                        }
+                    }
+                }
+            }
+
+            &--lg {
+                .u-cols { padding: 40px; box-sizing: border-box; border-left: 1px solid $white; border-right: 1px solid $white; border-bottom: 1px solid $white; }
+            }
+
+            &__logo { margin: 0 0 44px; 
+                a { text-transform: uppercase; font-size: 26px; font-weight: 700; display: block; }
+            }
+        }
+
+        a { color: $white; transition: 0.3s;
+            &:hover { color: $orange; }
+        }
+
+        ul { @include reset-list; }
+    }
+}

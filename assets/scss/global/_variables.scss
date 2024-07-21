@@ -1,0 +1,26 @@
+/*--------------------------------------------------------------
+# Fonts
+--------------------------------------------------------------*/
+$font-c1: 'Inter Tight', -apple-system, BlinkMacSystemFont,
+"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+"Fira Sans", "Droid Sans", "Helvetica Neue",
+sans-serif;
+$font-c2: 'Inter Tight', -apple-system, BlinkMacSystemFont,
+"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+"Fira Sans", "Droid Sans", "Helvetica Neue",
+sans-serif;
+
+/*--------------------------------------------------------------
+# Theme Colors
+--------------------------------------------------------------*/
+$green: #006B38;
+$orange: #f9a61b;
+$error: #ffa6a6;
+$black: #555555;
+$white: #fff;
+$whitesmoke: #f8fcfc;
+
+
+body { font-family: $font-c1; font-size: 18px; font-weight: 400; color: $green; }
+
+a { text-decoration: none; color: $green; }

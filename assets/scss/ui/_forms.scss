@@ -1,0 +1,92 @@
+input[type=text],input[type=email],input[type=phone],input[type=submit], textarea { font-size: 18px; font-family: $font-c1; color: $green; padding: 30px 40px; box-sizing: border-box; width: 100%; border: 1px solid $green;
+    &::-webkit-input-placeholder {  color: $green; }
+    &::-moz-placeholder { color: $green; }
+    &:-ms-input-placeholder { color: $green; }
+    &:-moz-placeholder { color: $green; }
+    &:focus { outline: none; background-color: $green; color: $white; 
+        &::-webkit-input-placeholder {  color: $white; }
+        &::-moz-placeholder { color: $white; }
+        &:-ms-input-placeholder { color: $white; }
+        &:-moz-placeholder { color: $white; }    
+    }
+}
+
+input[type=checkbox] { width: 20px; height: 20px; border: 1px solid $green; padding: 0; margin: 5px 20px 0 0; flex: none; position: relative; @include flex-center; justify-content: center; cursor: pointer;
+    &:before { content: ""; width: 10px; height: 10px; background-color: $green; visibility: hidden; }
+    &:checked {
+        &:before { visibility: visible; }
+    }
+}
+
+input[type=submit] { border: 1px solid $green; border-top: none; background-color: transparent; text-transform: uppercase; font-weight: 600; cursor: pointer; }
+
+.gform {
+    &_heading { display: none; }
+
+    &_submission_error { font-size: 18px; line-height: 26px; margin: 0 0 20px; }
+
+    &-body {
+        .gfield { margin-bottom: -1px;
+            &_label { display: none; }
+            &_validation_message { display: none; }
+        }
+    }
+}
+
+.u-form {
+    form { position: relative; }
+
+    &--outline {
+        input { background-color: transparent; border: 1px solid $white; 
+            &::-webkit-input-placeholder {  color: $white; }
+            &::-moz-placeholder { color: $white; }
+            &:-ms-input-placeholder { color: $white; }
+            &:-moz-placeholder { color: $white; }
+            &:focus { outline: none; background-color: transparent; color: $white; 
+                &::-webkit-input-placeholder {  color: $white; }
+                &::-moz-placeholder { color: $white; }
+                &:-ms-input-placeholder { color: $white; }
+                &:-moz-placeholder { color: $white; }    
+            }
+        }
+    }
+
+    &--email {
+        .gform {
+            &_submission_error { display: none; }
+
+            &_footer { position: absolute; top: 0; right: 0; height: 100%; width: 100px; @include flex-center; justify-content: center;
+                input { font-size: 0; height: 100%; border: none; z-index: 9; }
+                svg { width: 40px; height: 40px; position: absolute;
+                    path { fill: $white; }
+                }
+            }
+        }
+
+        .gfield {
+            &_error {
+                input { border-color: $orange; }
+            }
+        }
+
+        &.u-form--white {
+            input {
+                &:focus { outline: none; background-color: $white; color: $green; 
+                    &::-webkit-input-placeholder {  color: $green; }
+                    &::-moz-placeholder { color: $green; }
+                    &:-ms-input-placeholder { color: $green; }
+                    &:-moz-placeholder { color: $green; }    
+                }
+            }
+
+            .gform {
+                &_footer {
+                    svg {
+                        path { fill: $green; }
+                    }
+                }
+            }
+        }
+    }
+    
+}
