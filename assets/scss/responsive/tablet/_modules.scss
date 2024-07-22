@@ -101,6 +101,33 @@
         }
       }
     }
+
+    &--comunity {
+      a {  padding: 30px;
+        span {
+          &.letter { font-size: 70px;  }
+
+          &.title { font-size: 20px;  }
+        }
+
+        svg {
+          path {  }
+        }
+
+        &:last-of-type { }
+
+        &:hover, &.is-active {
+          span {  }
+          svg {
+            path {  }
+          }
+        }
+
+        &:hover {
+          svg { }
+        }
+      }
+    }
   }
 }
 

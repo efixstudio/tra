@@ -144,6 +144,43 @@
   }
 }
 
+.u-table {
+  &-row {
+    &:after {  }
+  }
+
+  &-column {
+    &:after { }
+    &:last-of-type {
+      &:after { }
+    }
+
+    &.is-full { }
+
+    &.has-logo {
+      svg {  }
+    }
+
+    &.has-button {
+      a {  }
+    }
+
+    &.has-cta {
+      .c-cta {
+        &__title { }
+      }
+
+      .u-form { margin: 20px 0 0;  }
+    }
+  }
+
+  .u-text {
+    span {
+      &.title {  }
+      &.text {  }
+    }
+  }
+}
 /** MODULES **/
 .module {
 
@@ -181,7 +218,7 @@
         &.has-cta {
           width: 100%;
           .c-cta {
-            &__title {  }
+            &__title { font-size: 25px; }
           }
 
           .u-form {  }
@@ -195,6 +232,10 @@
         }
       }
     }
+  }
+
+  &--listing {
+    padding-bottom: 50px !important;
   }
 
   &--camps {
@@ -222,8 +263,8 @@
 
     .c-station {
       &__header { padding: 20px 15px;
-        span { font-size: $mobileNormalTextSize;}
-        a { text-align: right; font-size: $mobileNormalTextSize}
+        span { font-size: $mobileNormalTextSize; line-height: 20px;}
+        a { text-align: right; font-size: $mobileNormalTextSize; line-height: 20px;}
       }
 
       &__meta { padding: 20px 15px;
@@ -247,7 +288,7 @@
             }
 
             &--right {
-              svg { width: 40px; height: 40px;
+              svg { width: 30px; height: 30px;
                 path { fill: $white; }
               }
             }
@@ -476,7 +517,7 @@
 
       .u-cols {
         .u-col {
-          &--left { padding: 40px 15px; width: 100%; }
+          &--left { padding: 20px 15px; width: 100%; }
         }
       }
     }
@@ -513,7 +554,7 @@
       &:first-of-type {
         aspect-ratio: 16/9;
         .c-gallery {
-          &__item { position: relative; top: 0; left: 0; width: 100%; height: 100%; aspect-ratio: 1 / 1; }
+          &__item { position: relative; top: 0; left: 0; width: 100%; height: 100%; display: inline-block; a{ width: 100%; height: 100%; } }
         }
 
         .c-buttons {
@@ -633,7 +674,35 @@
 
 .c-tabs {
   &-nav {
-    &--comunity { margin: 0 0 40px;
+    &--comunity { margin: 0 0 30px;
+      a {  padding: 30px 15px;
+        span {
+          &.letter { font-size: 50px; line-height: 1;
+            margin-bottom: 0;  }
+
+          &.title { font-size: 16px;  }
+        }
+
+        svg {
+          path {  }
+        }
+
+        &:last-of-type { }
+
+        &:hover, &.is-active {
+          span {  }
+          svg {
+            path {  }
+          }
+        }
+
+        &:hover {
+          svg { }
+        }
+      }
+    }
+
+    &--listing-boxes  {
       a {  padding: 30px 15px;
         span {
           &.letter { font-size: 50px; line-height: 1;
@@ -891,4 +960,10 @@
   width: 100%;
   position: relative;
   top: 0;
+}
+
+.c-coaches { padding: 20px;
+  &__title { margin: 0 0 30px; }
+
+  .c-cards { }
 }

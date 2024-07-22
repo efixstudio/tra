@@ -60,7 +60,7 @@
             }
 
             &__meta { padding: 0 0 0 40px; box-sizing: border-box; display: flex; flex-direction: column; height:100%;
-                &-header { margin: 0 0 28px; }
+                &-header { margin: 0 0 28px; span{ &:last-of-type { text-align: right;} } }
                 &-title { font-size: 30px; font-weight: 700; margin: 0 0 34px; display: block; }
                 &-button { margin-top: auto; }
             }

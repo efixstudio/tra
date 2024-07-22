@@ -13,7 +13,7 @@
     width: 100%;
     margin-bottom: 30px;
     .c-card {
-      &__image { height: auto;
+      &__image { height: auto; margin: 0 0 30px;
         img { @include object-fit; aspect-ratio: 3/2;  }
 
         &:after { top: 10px; left: 10px;}
@@ -21,7 +21,7 @@
 
       &__meta { padding: 0;
         &-header { }
-        &-title { font-size: 25px; margin: 0 0 28px;  }
+        &-title { font-size: 25px; margin: 0;  }
         &-button {  }
       }
     }
@@ -88,14 +88,32 @@
 
 .c-cards {
   &--person {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding-right: 0;
+
     .c-card{
       &--person {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        margin-bottom: 10px;
 
       }
+
+      &__image{
+        height: 200px;
+        width: auto;
+
+        &:after{ top: 5px; left: 5px;}
+      }
       &__meta {
-        &-name {
+        margin: 0;
+        &-name { gap: 10px;
+          h3{ font-size: 18px;}
           span { display: inline-block;}
+          svg{ margin: 0px 0 0 0; height: 1.5em; width: auto;}
         }
       }
     }

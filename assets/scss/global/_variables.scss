@@ -30,3 +30,7 @@ $mobileSmallTextSize: 14px;
 body { font-family: $font-c1; font-size: 18px; font-weight: 400; color: $green; }
 
 a { text-decoration: none; color: $green; }
+
+@media screen and (max-width: 767px){
+  body { font-size: 16px; }
+}

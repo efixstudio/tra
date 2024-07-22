@@ -61,7 +61,7 @@
 
                                             <span class="price">
                                                 <strong id="<?php echo $option['price']; ?>"><?php echo $option['price']; ?></strong> 
-                                                <sup>Ron</sup> 
+                                                <sup><?php  echo get_currency( $option['currency'] ); ?></sup>
                                             </span>
                                         </div>
                                     </div>
@@ -204,7 +204,7 @@
 
                                                     <span class="price">
                                                         <strong id="<?php echo $option['price']; ?>"><?php echo $option['price']; ?></strong>
-                                                        <sup>Ron</sup>
+                                                        <sup><?php  echo get_currency( $option['currency'] ); ?></sup>
                                                     </span>
                                                 </div>
                                             </div>

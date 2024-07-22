@@ -2460,6 +2460,33 @@
                                             "parent_repeater": "field_65d85841953de"
                                         },
                                         {
+                                            "key": "field_669e1776483fd",
+                                            "label": "Currency",
+                                            "name": "currency",
+                                            "aria-label": "",
+                                            "type": "select",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "choices": {
+                                                "ron": "RON",
+                                                "eur": "EUR"
+                                            },
+                                            "default_value": "ron",
+                                            "return_format": "array",
+                                            "multiple": 0,
+                                            "allow_null": 0,
+                                            "ui": 0,
+                                            "ajax": 0,
+                                            "placeholder": "",
+                                            "parent_repeater": "field_65d85841953de"
+                                        },
+                                        {
                                             "key": "field_65d858dc953e9",
                                             "label": "Button URL",
                                             "name": "button_url",
@@ -2980,6 +3007,77 @@
                     "sub_fields": [],
                     "min": "",
                     "max": ""
+                },
+                "layout_669e4990bfdcf": {
+                    "key": "layout_669e4990bfdcf",
+                    "name": "module_widget_listing_boxes",
+                    "label": "Widget: Listing Boxes",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_669e49aebfdd1",
+                            "label": "Box",
+                            "name": "box",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "table",
+                            "min": 1,
+                            "max": 3,
+                            "collapsed": "",
+                            "button_label": "Add Row",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_669e49d3bfdd2",
+                                    "label": "Letter",
+                                    "name": "letter",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_669e49aebfdd1"
+                                },
+                                {
+                                    "key": "field_669e49e7bfdd3",
+                                    "label": "URL",
+                                    "name": "url",
+                                    "aria-label": "",
+                                    "type": "link",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "parent_repeater": "field_669e49aebfdd1"
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -3054,5 +3152,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1721146149
+    "modified": 1721649802
 }

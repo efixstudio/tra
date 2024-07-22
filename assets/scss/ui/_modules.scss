@@ -141,6 +141,10 @@ body { background: url('assets/img/pattern.png'); }
         //}
     }
 
+    &--listing{
+        padding-bottom: 20px;
+    }
+
     &--plans{
         .c-plans{
             border: none;
@@ -630,9 +634,9 @@ body { background: url('assets/img/pattern.png'); }
 
     a { text-decoration: underline; }
 
-    blockquote { padding: 40px; border: 1px solid $green; }
+    blockquote { padding: 40px; border: 1px solid $green; margin: 0 0 20px; }
 
-    ol, ul { padding-left: 20px; }
+    ol, ul { padding-left: 20px; margin: 0 0 20px; }
 }
 
 .c-ss { display: flex; flex-direction: column; 
@@ -848,11 +852,37 @@ body { background: url('assets/img/pattern.png'); }
 
 .c-tabs {
     &-nav {
-        &--comunity { margin: 0 0 40px;
+        &--comunity { margin:0 0 40px;
             a { width: 33.333333%; color: $white; border: 1px solid $white; border-right: none; padding: 40px; box-sizing: border-box; position: relative; transition: 0.3s;
                 span { display: block; opacity: 0.5;
                     &.letter { font-size: 100px; font-weight: 700; margin: 0 0 20px; }
                     
+                    &.title { font-size: 30px; font-weight: 700; line-height: 30px; @include flex-center; justify-content: space-between; }
+                }
+
+                svg { width: 30px; height: 30px; transition: 0.3s;
+                    path { fill: $white; }
+                }
+
+                &:last-of-type { border-right: 1px solid $white; }
+
+                &:hover, &.is-active { background-color: $white; color: $green;
+                    span { opacity: 1; }
+                    svg {
+                        path { fill: $green; }
+                    }
+                }
+
+                &:hover {
+                    svg { transform: translate(10px,0);}
+                }
+            }
+        }
+        &--listing-boxes { margin:0;
+            a { width: 33.333333%; color: $white; border: 1px solid $white; border-right: none; padding: 40px; box-sizing: border-box; position: relative; transition: 0.3s;
+                span { display: block; opacity: 0.5;
+                    &.letter { font-size: 100px; font-weight: 700; margin: 0 0 20px; }
+
                     &.title { font-size: 30px; font-weight: 700; line-height: 30px; @include flex-center; justify-content: space-between; }
                 }
 

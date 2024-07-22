@@ -88,14 +88,7 @@
 
                                                     <span class="price">
                                                         <strong><?php the_field('pret'); ?></strong>
-                                                        <?php
-                                                            $get_currency = get_field( 'currency' );
-                                                            $currency = 'RON';
-                                                            if( is_array( $get_currency ) && array_key_exists( 'label', $get_currency ) ){
-                                                                $currency = $get_currency['label'];
-                                                            }
-                                                        ?>
-                                                        <sup><?php echo $currency; ?></sup>
+                                                        <sup><?php echo get_currency( get_field( 'currency' ) ); ?></sup>
                                                     </span>
                                                 </div>
                                             </div>

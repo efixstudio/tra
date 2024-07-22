@@ -104,6 +104,33 @@
                             "parent_repeater": "field_65fad86ed3f1a"
                         },
                         {
+                            "key": "field_669e1a15fb874",
+                            "label": "Currency",
+                            "name": "currency",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "ron": "RON",
+                                "eur": "EUR"
+                            },
+                            "default_value": "ron",
+                            "return_format": "array",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "parent_repeater": "field_65fad86ed3f1a"
+                        },
+                        {
                             "key": "field_65faeacba4252",
                             "label": "URL",
                             "name": "url",
@@ -188,5 +215,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1710944555
+    "modified": 1721637432
 }

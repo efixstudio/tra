@@ -13,7 +13,7 @@
 
 
 <!-- listing comunity  -->
-<section class="module module--listing  u-pd u-pd--md bg bg--green">
+<section class="module module--listing  u-pd u-pd--md bg bg--green is-feed-listing" data-feed="<?php echo $content['feed']; ?>">
         <div class="container">
             <div class="c-cards c-cards--person">
                 <?php  

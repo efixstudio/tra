@@ -1,6 +1,33 @@
 .c-tabs {
   &-nav {
-    &--comunity { margin: 0 0 40px;
+    &--comunity { margin: 0 0 30px;
+      a {  padding: 15px;
+        span {
+
+          &.title { font-size: 12px; flex-direction: column; align-items: flex-start; }
+        }
+
+        svg {
+          height: 1.3em; width: auto;
+          path {  }
+        }
+
+        &:last-of-type { }
+
+        &:hover, &.is-active {
+          span {  }
+          svg {
+            path {  }
+          }
+        }
+
+        &:hover {
+          svg { }
+        }
+      }
+    }
+
+    &--listing-boxes {
       a {  padding: 15px;
         span {
 
@@ -58,7 +85,7 @@
         &.is-full {  }
 
         &.has-logo {
-          svg { }
+          svg { max-width: 70px; }
         }
 
         &.has-button {
@@ -77,7 +104,10 @@
 
       .u-text { position: relative;
         span { display: block;
-          &.title {  }
+          &.title {  font-size: 23px;
+            line-height: 20px;
+            margin: 0 0 15px;
+          }
           &.text {  }
         }
       }
@@ -116,6 +146,153 @@
       &__title {
         span { display: block; font-weight: 700; font-size: 14px; text-align: center;
           &:last-of-type { font-size: 18px; line-height: 22px; margin: 5px 0 0; }
+        }
+      }
+    }
+  }
+}
+
+.c-events {
+  &:first-of-type{ }
+  &__header { flex-direction: column; align-items: flex-start; padding: 20px 15px; gap: 15px;
+    a {  padding: 0; font-size: 16px; width: 100%; border-left: 0; gap: 10px;
+      svg { margin: 0; height: 1.125em; width: auto;
+        path {  }
+      }
+
+      span {  }
+
+      &:hover {
+        svg {
+          path {  }
+        }
+      }
+    }
+
+    span {
+
+      &.title { font-size: 25px; line-height: 25px; padding: 0; width: 100%; }
+    }
+  }
+
+  .c-table {
+    &-item {
+      position: relative;
+      border-bottom: none;
+      padding: 30px 15px;
+      box-sizing: border-box;
+      display: grid;
+      grid-template-columns:unset;
+      grid-template-areas: unset;
+      grid-template-rows: repeat(1, 1fr);
+      grid-auto-flow: row;
+      gap: 10px;
+      text-align: right;
+      &:last-of-type { }
+
+      &__column {
+        position: relative;
+        max-width: 100% !important;
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        &::before {
+          content: attr(data-label);
+          display: block;
+          font-weight: 600;
+          margin-bottom: 5px;
+          text-align: left;
+        }
+      }
+      &__date { grid-area: unset;  }
+      &__title { grid-area: unset; }
+      &__location { grid-area: unset;}
+      &__url {grid-area: unset;  display: flex; align-items: center; justify-content: flex-end; width: 100%; margin-top: 15px;
+        a {
+          svg {
+            path {  }
+          }
+
+          &:hover {
+            svg { }
+          }
+        }
+
+        &.is-active {
+          a {
+            svg { }
+          }
+        }
+      }
+    }
+
+    &-content {
+      .u-cols {
+        .u-col {
+          &--right {
+            .btn {  }
+          }
+        }
+
+        &.has-members {
+          .u-col {
+            &--left {  }
+            &--right {
+              a{
+
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .c-members-tagline {  }
+
+    .c-members-list {
+      &__item {
+        img { }
+      }
+    }
+
+    &-row {
+      &:last-of-type {  }
+    }
+  }
+
+  &.is-green {
+    .c-events {
+      &__header {  }
+    }
+
+    .c-table {
+      &-row { }
+
+      &-item {
+        &__url { }
+      }
+    }
+  }
+
+  &.is-white {
+    .c-events {
+      &__header {
+        a {
+          &:hover {  }
+        }
+      }
+    }
+
+    .c-table {
+      &-row {  }
+
+      &-item {
+        &__url {
+          a {
+            svg {
+              path { }
+            }
+          }
         }
       }
     }

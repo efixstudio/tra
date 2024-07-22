@@ -105,3 +105,13 @@ function custom_loop_pagination( $wp_query = false ){
 
     return paginate_links( $args );
 }
+
+
+function get_currency( $field ){
+    $currency = 'RON';
+    if( is_array( $field ) && array_key_exists( 'label', $field ) ){
+        $currency = $field['label'];
+    }
+
+    return $currency;
+}

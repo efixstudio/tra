@@ -29,7 +29,7 @@
 
                                             <span class="price">
                                                 <strong><?php echo $content['price']; ?></strong> 
-                                                <sup>Ron</sup> 
+                                                <sup><?php  echo get_currency( $content['currency'] ); ?></sup>
                                             </span>
                                         </div>
                                     </div>
