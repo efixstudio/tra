@@ -115,3 +115,14 @@ function get_currency( $field ){
 
     return $currency;
 }
+
+function calculate_age($date)
+{
+    if( isset( $date ) && ! empty($date) ){
+        $date = trim(str_replace(" ", "", $date) );
+        return (int)date_diff(date_create($date),date_create('today'))->y;
+    }
+
+    return false;
+
+}

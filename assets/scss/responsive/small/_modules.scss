@@ -113,6 +113,71 @@
       }
     }
   }
+
+  &--athlete-info {
+    padding-top: 20px;
+    .grid-member {
+
+      &--info {
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: unset;
+        grid-template-areas: unset;
+
+      }
+
+      &--info-social{
+        display: flex; gap: 5px;
+
+        a{ text-decoration: none; text-transform: none;}
+        .value{
+          display: flex; gap: 5px;
+        }
+      }
+
+      &--image{
+        position: relative;
+        width: 100%;
+        max-width: 200px;
+        margin: 0 auto 20px auto;
+
+        .u-play {
+          width: 50px;
+          height: 50px;
+
+          svg {
+            width: 30px;
+            height: 30px;
+            margin: 0 0 0 3px;
+            fill: #fff;
+          }
+        }
+      }
+
+      &--item {
+        position: relative;
+        padding: 20px;
+        grid-area: unset !important;
+        width: 100%;
+        border: none;
+        border-left: 1px solid $white !important;
+        border-right: 1px solid $white !important;
+        display: flex;
+        justify-content: space-between;
+
+        .label{ font-weight: 600; }
+        &:first-of-type {border: none !important; }
+        &:nth-of-type(2) {
+          border-top: 1px solid $white !important;
+        }
+
+        &:last-of-type{
+          border-bottom: 1px solid $white;
+        }
+
+      }
+    }
+  }
 }
 
 .c-nutrition {

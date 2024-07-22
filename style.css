@@ -2831,6 +2831,108 @@ body {
 .module--usps .c-usps .c-usp:last-of-type {
   border: none;
 }
+.module--athlete-info .grid-member--info {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "c1 c2 c0 c0" "c3 c4 c5 c5" "c6 c6 c7 c7" "c8 c8 c9 c9";
+}
+.module--athlete-info .grid-member--info a {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+.module--athlete-info .grid-member--info-social {
+  display: flex;
+  gap: 5px;
+}
+.module--athlete-info .grid-member--info-social a {
+  text-decoration: none;
+  text-transform: none;
+}
+.module--athlete-info .grid-member--info-social .value {
+  display: flex;
+  gap: 5px;
+}
+.module--athlete-info .grid-member--image {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-height: 630px;
+  overflow: hidden;
+}
+.module--athlete-info .grid-member--image img {
+  object-fit: cover;
+  vertical-align: middle;
+}
+.module--athlete-info .grid-member--image .u-play {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 65px;
+  height: 65px;
+  background-color: #f9a61b;
+  border-radius: 50%;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+.module--athlete-info .grid-member--image .u-play svg {
+  width: 45px;
+  height: 45px;
+  margin: 0 0 0 3px;
+  fill: #fff;
+}
+.module--athlete-info .grid-member--item {
+  position: relative;
+  padding: 40px 30px;
+}
+.module--athlete-info .grid-member--item .label {
+  font-weight: 600;
+}
+.module--athlete-info .grid-member--item:nth-of-type(1) {
+  grid-area: c5;
+}
+.module--athlete-info .grid-member--item:nth-of-type(2) {
+  border: 1px solid #fff;
+  border-top: none;
+  grid-area: c1;
+}
+.module--athlete-info .grid-member--item:nth-of-type(3) {
+  border-bottom: 1px solid #fff;
+  grid-area: c2;
+}
+.module--athlete-info .grid-member--item:nth-of-type(4) {
+  border: 1px solid #fff;
+  border-top: none;
+  grid-area: c3;
+}
+.module--athlete-info .grid-member--item:nth-of-type(5) {
+  border-bottom: 1px solid #fff;
+  border-left: none;
+  grid-area: c4;
+}
+.module--athlete-info .grid-member--item:nth-of-type(6) {
+  border: 1px solid #fff;
+  border-top: none;
+  grid-area: c6;
+}
+.module--athlete-info .grid-member--item:nth-of-type(7) {
+  border: 1px solid #fff;
+  border-top: none;
+  border-left: none;
+  grid-area: c7;
+}
+.module--athlete-info .grid-member--item:nth-of-type(8) {
+  border: 1px solid #fff;
+  border-top: none;
+  grid-area: c8;
+}
+.module--athlete-info .grid-member--item:nth-of-type(9) {
+  grid-area: c9;
+}
 
 .c-sh {
   margin: 0 0 100px;
@@ -4202,6 +4304,15 @@ body {
   .module--usps .c-usps .c-usp:last-of-type {
     border: none;
   }
+  .module--athlete-info .grid-member--image {
+    max-height: 530px;
+  }
+  .module--athlete-info .grid-member--item {
+    padding: 30px 20px;
+  }
+  .module--athlete-info .grid-member--item .label {
+    font-weight: 600;
+  }
   .c-tabs-nav--comunity {
     margin: 0 0 40px;
   }
@@ -5216,7 +5327,7 @@ body {
     padding: 20px;
   }
   .module--textbox .u-cols .u-col .c-box__content ul, .module--textbox .u-cols .u-col .c-box__content ol {
-    margin-left: 20px;
+    margin-left: 0;
   }
   .module--textbox .u-cols .u-col .c-box__button a {
     margin: 20px -20px -20px;
@@ -5890,6 +6001,66 @@ body {
     font-size: 23px;
     line-height: 20px;
     margin: 0 0 15px;
+  }
+  .module--athlete-info {
+    padding-top: 20px;
+  }
+  .module--athlete-info .grid-member--info {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: unset;
+    grid-template-areas: unset;
+  }
+  .module--athlete-info .grid-member--info-social {
+    display: flex;
+    gap: 5px;
+  }
+  .module--athlete-info .grid-member--info-social a {
+    text-decoration: none;
+    text-transform: none;
+  }
+  .module--athlete-info .grid-member--info-social .value {
+    display: flex;
+    gap: 5px;
+  }
+  .module--athlete-info .grid-member--image {
+    position: relative;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto 20px auto;
+  }
+  .module--athlete-info .grid-member--image .u-play {
+    width: 50px;
+    height: 50px;
+  }
+  .module--athlete-info .grid-member--image .u-play svg {
+    width: 30px;
+    height: 30px;
+    margin: 0 0 0 3px;
+    fill: #fff;
+  }
+  .module--athlete-info .grid-member--item {
+    position: relative;
+    padding: 20px;
+    grid-area: unset !important;
+    width: 100%;
+    border: none;
+    border-left: 1px solid #fff !important;
+    border-right: 1px solid #fff !important;
+    display: flex;
+    justify-content: space-between;
+  }
+  .module--athlete-info .grid-member--item .label {
+    font-weight: 600;
+  }
+  .module--athlete-info .grid-member--item:first-of-type {
+    border: none !important;
+  }
+  .module--athlete-info .grid-member--item:nth-of-type(2) {
+    border-top: 1px solid #fff !important;
+  }
+  .module--athlete-info .grid-member--item:last-of-type {
+    border-bottom: 1px solid #fff;
   }
   .c-nutrition .c-items {
     display: grid;

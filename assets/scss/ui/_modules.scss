@@ -619,6 +619,130 @@ body { background: url('assets/img/pattern.png'); }
             }
         }
     }
+
+    &--athlete-info {
+
+        .grid-member {
+
+
+
+            &--info {
+                display: grid;
+                grid-template-columns: repeat( 4, 1fr);
+                grid-template-areas: "c1 c2 c0 c0" "c3 c4 c5 c5" "c6 c6 c7 c7" "c8 c8 c9 c9";
+
+                a{
+                    color: $white;
+                    text-transform: uppercase;
+                    text-decoration: underline;
+                }
+            }
+
+            &--info-social{
+                display: flex; gap: 5px;
+
+                a{ text-decoration: none; text-transform: none;}
+                .value{
+                    display: flex; gap: 5px;
+                }
+            }
+
+            &--image{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                max-height:630px;
+                overflow: hidden;
+
+                img{
+                    object-fit: cover;
+                    vertical-align: middle;
+                }
+
+                .u-play {
+                    position: absolute;
+                    top: 20px;
+                    left: 20px;
+                    width: 65px;
+                    height: 65px;
+                    background-color: #f9a61b;
+                    border-radius: 50%;
+                    z-index: 9;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: 0.3s;
+
+                    svg {
+                        width: 45px;
+                        height: 45px;
+                        margin: 0 0 0 3px;
+                        fill: #fff;
+                    }
+                }
+            }
+
+            &--item {
+                position: relative;
+                padding: 40px 30px;
+
+                .label{ font-weight: 600; }
+                &:nth-of-type(1) {
+                    grid-area: c5
+                }
+
+                &:nth-of-type(2) {
+                    border: 1px solid $white;
+                    border-top: none;
+                    grid-area: c1
+                }
+
+                &:nth-of-type(3) {
+                    border-bottom: 1px solid $white;
+                    grid-area: c2
+                }
+
+                &:nth-of-type(4) {
+                    border: 1px solid $white;
+                    border-top: none;
+                    grid-area: c3
+                }
+
+                &:nth-of-type(5) {
+                    border-bottom: 1px solid $white;
+                    border-left: none;
+
+                    grid-area: c4
+                }
+
+                &:nth-of-type(6) {
+                    border: 1px solid $white;
+                    border-top: none;
+
+                    grid-area: c6
+                }
+
+                &:nth-of-type(7) {
+                    border: 1px solid $white;
+                    border-top: none;
+                    border-left: none;
+                    grid-area: c7
+                }
+
+                &:nth-of-type(8) {
+                    border: 1px solid $white;
+                    border-top: none;
+                    grid-area: c8
+
+                }
+
+                &:nth-of-type(9) {
+                    grid-area: c9
+                }
+            }
+        }
+    }
 }
 
 .c-sh { margin: 0 0 100px;

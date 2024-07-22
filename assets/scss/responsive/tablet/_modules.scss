@@ -71,6 +71,17 @@
       }
     }
   }
+
+  &--athlete-info {
+    .grid-member {
+      &--image{max-height:530px;}
+
+      &--item {
+        padding: 30px 20px;
+        .label{ font-weight: 600; }
+      }
+    }
+  }
 }
 
 .c-tabs {
