@@ -239,6 +239,33 @@
   }
 
   &--camps {
+
+    &.has-title{
+        margin-top: 80px;
+
+        &:before{}
+
+        .u-cols{
+          &--header{
+            width: calc(100% - 30px );
+            left: 15px;
+
+            .u-col{
+              &--left{
+                padding: 20px 15px;
+                width: 100%;
+                a{ }
+                h2{}
+                svg{
+                }
+              }
+            }
+          }
+
+
+        }
+      }
+
     .u-cols {
       .u-col { }
 
@@ -352,6 +379,13 @@
   &--trainingplan {
     .module {
       &__heading { }
+      &__headline{
+
+        .c-content{
+          padding: 20px 15px;
+        }
+
+      }
     }
 
     .container{
@@ -963,7 +997,12 @@
 }
 
 .c-coaches { padding: 20px;
-  &__title { margin: 0 0 30px; }
+  &__title { max-width: 100%; margin: 0 0 30px; }
 
   .c-cards { }
+}
+
+.c-athlete-single-testimonials {
+  padding: 50px 0;
+  margin-bottom: -70px;
 }

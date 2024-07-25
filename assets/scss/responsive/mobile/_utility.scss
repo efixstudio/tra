@@ -16,6 +16,11 @@
 .module {
   .u-cols{
     flex-direction: column;
+
+    &.is-reversed{
+      flex-direction: column-reverse;
+      gap: 30px;
+    }
     .u-col{
       width: 100%;
     }

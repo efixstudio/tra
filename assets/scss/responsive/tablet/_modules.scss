@@ -82,6 +82,24 @@
       }
     }
   }
+
+  &--social-links{
+    .row{ display: flex; align-items: flex-end; gap: 30px; flex-direction: column; flex-wrap: wrap;}
+    .col{
+      display: flex; gap: 15px; flex-wrap: wrap;
+      &--left{ width: 100%}
+      &--right{ width: 100%; padding-bottom: 0; column-gap: 10px;}
+
+      a{ display: flex; gap: 10px; flex: 1 1 auto;
+
+        &:hover{
+          svg{ translate: 5px;}
+        }
+      }
+      svg{
+      }
+    }
+  }
 }
 
 .c-tabs {

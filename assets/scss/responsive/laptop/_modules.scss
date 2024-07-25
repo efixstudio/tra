@@ -20,6 +20,33 @@
       }
     }
   }
+
+  &--camps {
+    &.has-title{
+
+      &:before{}
+
+      .u-cols{
+        &--header{
+          width: calc(100% - 30px );
+          left: 15px;
+
+          .u-col{
+            &--left{
+
+              a{ }
+              h2{}
+              svg{
+              }
+            }
+          }
+        }
+
+
+      }
+    }
+  }
+
 }
 
 .c-nutrition {

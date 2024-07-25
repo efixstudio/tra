@@ -1,0 +1,13 @@
+.c-text-back{
+  margin-bottom: 30px;
+  a{
+    display: flex;
+    gap: 20px;
+    font-weight: 700;
+    justify-content: flex-start;
+    align-items: center;
+
+    svg{ fill: $green; }
+  }
+}
+

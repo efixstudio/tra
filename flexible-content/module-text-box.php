@@ -1,16 +1,23 @@
 <?php 
     $layout = $content['layout'];
     $bgcolor = $content['bgcolor'];
+    $title = isset( $content[ 'title' ] ) && ! empty( $content[ 'title' ] ) ? $content[ 'title' ] : false;
+//    var_dump( $content );
 ?>
 
 <!-- text box -->
 <section class="module module--textbox <?php if($bgcolor === 'white' or $bgcolor === 'green'):?> u-pd u-pd--md bg bg--<?php echo $bgcolor; ?><?php else: ?> u-mg u-mg--md<?php endif; ?>">
     <div class="container">
+        <?php if( $title ) : ?>
+            <div class="headline"><h2><?php echo $title; ?></h2></div>
+        <?php endif;?>
         <?php if($layout === 'one') : ?>
             <div class="c-box">
-                <div class="c-box__title">
-                    <h3><?php echo $content['content_one']['title'];?></h3>
-                </div>
+                <?php if( isset($content['content_one']['title'] ) && ! empty($content['content_one']['title']) ): ?>
+                    <div class="c-box__title">
+                        <h3><?php echo $content['content_one']['title'];?></h3>
+                    </div>
+                <?php endif; ?>
 
                 <div class="c-box__content">
                     <div class="c-editor">

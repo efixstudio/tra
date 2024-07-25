@@ -34,11 +34,11 @@
                                 <span></span>
                             </div>
                         </div>
-                        <?php $members_page = get_general_page_url('general_pages', 'subscribe' ); ?>
-                        <?php if( $members_page ) : ?>
+                        <?php $members_page = get_general_page_url('general_pages', 'subscribe' );  ?>
+                        <?php if( $members_page && is_array( $members_page ) ) : ?>
                             <div class="c-header__button">
-                                <a href="<?php echo $members_page; ?>" class="btn btn--primary btn--green">
-                                    <span>Fii membru
+                                <a href="<?php echo $members_page['url']; ?>" class="btn btn--primary btn--green">
+                                    <span><?php echo $members_page['title']; ?>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M 18.71875 6.78125 L 17.28125 8.21875 L 24.0625 15 L 4 15 L 4 17 L 24.0625 17 L 17.28125 23.78125 L 18.71875 25.21875 L 27.21875 16.71875 L 27.90625 16 L 27.21875 15.28125 Z"></path></svg>
                                     </span>
                                 </a>
@@ -59,7 +59,7 @@
     </div>
 
     <main class="c-main">
-        <?php if(function_exists('yoast_breadcrumb') && ! is_front_page() ) : ?>
+        <?php if(function_exists('yoast_breadcrumb') && ! is_front_page() && ! is_404()) : ?>
         <section class="section-breadcrumbs">
             <div class="container">
                 <div class="fx fx--ac fx--je">

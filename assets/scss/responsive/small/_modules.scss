@@ -178,6 +178,57 @@
       }
     }
   }
+
+  &--countdown-timer{
+    padding: 0 0 50px 0;
+    .c{
+      &--timer-container{
+        display: flex;
+        gap: 25px;
+        flex-wrap: wrap;
+      }
+
+      &--label{
+        font-size: 16px;
+        font-weight: 500;
+        color: $green;
+      }
+
+      &--timer{
+        width: 360px;
+      }
+
+      &--seats{
+
+        ul{
+          li{
+            font-size: 45px;
+          }
+        }
+      }
+    }
+    ul{
+
+      li{
+        color: $green;
+        span {
+
+          &:not(.timer-section){
+
+          }
+
+          &:last-of-type{
+            font-size: 16px;
+            font-weight: 400;
+          }
+          &:first-of-type {
+            font-size: 45px;
+          }
+
+        }
+      }
+    }
+  }
 }
 
 .c-nutrition {

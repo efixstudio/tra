@@ -10,6 +10,7 @@ define( 'TRA_THEME_ASSETS_VERSION', '0.0.1' );
 require_once( __DIR__ . "/autoload.php" );
 add_action( 'after_setup_theme', [ TrailRunningAcademy\Controller::instance(), 'setup' ], 20 );
 
+
 require 'include/framework.php';
 require 'include/custom-functions.php';
 
@@ -106,7 +107,8 @@ $framework->register_post_type(array(
         'singular' => 'Testimonial',
         'plural' => 'Testimoniale',
     ),
-    'supports' => array('title', 'thumbnail')
+    'supports' => array('title', 'thumbnail'),
+    'rewrite' => array('slug' => 'testimoniale', 'with_front' => false),
 ));
 
 $framework->register_post_type(array(

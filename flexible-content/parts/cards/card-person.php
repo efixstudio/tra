@@ -1,6 +1,11 @@
 
 <!-- <?php echo get_the_title($post->ID); ?> -->
-<a class="c-card c-card--person" href="<?php echo get_the_permalink($post->ID); ?>">
+<?php
+$disable_links = isset( $args ) && is_array( $args ) && isset( $args['disable_links'] ) ? $args['disable_links'] : false;
+
+
+?>
+<a class="c-card c-card--person" href="<?php echo $disable_links ? 'javascript:void(0)' : get_the_permalink($post->ID); ?>">
     <div class="c-card__image"> 
         <?php echo get_the_post_thumbnail($post->ID); ?>
     </div>

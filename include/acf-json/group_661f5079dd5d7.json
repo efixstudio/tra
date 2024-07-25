@@ -23,7 +23,7 @@
                     "label": "Birthdate",
                     "name": "birthdate",
                     "aria-label": "",
-                    "type": "text",
+                    "type": "date_picker",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -32,11 +32,9 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": ""
+                    "display_format": "d\/m\/Y",
+                    "return_format": "d\/m\/Y",
+                    "first_day": 1
                 },
                 {
                     "key": "field_661f50b285121",
@@ -123,7 +121,7 @@
                     "label": "Member since",
                     "name": "member_since",
                     "aria-label": "",
-                    "type": "text",
+                    "type": "date_picker",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -132,11 +130,9 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": ""
+                    "display_format": "d\/m\/Y",
+                    "return_format": "d\/m\/Y",
+                    "first_day": 1
                 },
                 {
                     "key": "field_661f516385126",
@@ -221,6 +217,23 @@
                     "parent_repeater": "field_669e813cc98e5"
                 }
             ]
+        },
+        {
+            "key": "field_66a121b198a9e",
+            "label": "Link Testimoniale",
+            "name": "testimoniale",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
         }
     ],
     "location": [
@@ -241,5 +254,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1721663897
+    "modified": 1721836307
 }

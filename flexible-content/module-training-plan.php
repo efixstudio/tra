@@ -1,11 +1,11 @@
-<?php 
+<?php
+
     $feed = $content['feed'];
     
     if($feed === 'individual') :
         $post = $content['coach'];
-
-
         $options = $post ?  get_field('abonamente',$post->ID) : [];
+
     endif;
 ?>
 
@@ -20,12 +20,22 @@
         </div>
     </div>
     <?php endif; ?>
+
+    <?php if(isset( $content['title'] ) && ! empty( $content[ 'title' ] )) : ?>
+        <div class="module__headline">
+            <div class="container">
+                <div class="c-content">
+                    <h2><?php echo $content['title']; ?></h2>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
     
     <?php if($feed === 'individual' && ! empty( $options ) ) : ?>
         <div class="c-plan">
             <header class="c-plan-header">
                 <div class="container">
-                    <nav class="c-nav">
+                    <nav class="c-nav" data-count="<?php echo count( $options['subscription'] ); ?>">
                         <?php foreach($options['subscription'] as $option) : ?>
                             <a class="c-nav__item" href="#<?php echo $post->post_name;?>-<?php echo $option['price']; ?>"><?php echo $option['time']; ?></a>
                         <?php endforeach; ?>
@@ -165,7 +175,7 @@
                             <?php endif; ?>
                         <?php endwhile; wp_reset_postdata(); ?>
                     </div>
-                    <div class="c-nav c-nav--periods">
+                    <div class="c-nav c-nav--periods data-count="<?php echo count( $subscription_periods ); ?>"">
                         <?php $period_counter = 0; foreach( $subscription_periods as $slug => $name ): $period_counter++; ?>
                             <a href="#<?php echo $slug;?>" class="c-nav__item <?php  if( $period_counter === 1 ) echo "is-active"; ?>" data-item="<?php echo $slug; ?>" data-period="true"><?php echo ucwords( $name );?></a>
                         <?php endforeach; ?>

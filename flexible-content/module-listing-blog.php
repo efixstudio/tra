@@ -15,8 +15,7 @@
 
         if( $author_nicename ){
             $user = get_user_by( 'slug',  $author_nicename);
-            if( ! $user ) echo "no user found";
-            $args['author'] = $user->ID;
+            if( $user ) $args['author'] = $user->ID;
         }
 
         $cat_slug = false;
@@ -40,7 +39,7 @@
             <div class="container">
                 <?php $cats = get_terms('category'); if($cats) : ?>
                     <nav class="c-cats custom-scrollbar">
-                        <a href="<?php echo $get_blog_URL  ? $get_blog_URL . $author_URL_parameter : "#"; ?>" class="c-cat <?php echo ! $cat_slug ? 'is-active' : ''; ?>">Toate articolele</a>
+                        <a href="<?php echo $get_blog_URL && is_array( $get_blog_URL )  ? $get_blog_URL['url'] . $author_URL_parameter : "#"; ?>" class="c-cat <?php echo ! $cat_slug ? 'is-active' : ''; ?>">Toate articolele</a>
                         <?php foreach($cats as $cat) : ?>
                             <a href="<?php echo esc_url( home_url( '/' ) ); ?><?php echo $cat->taxonomy; ?>/<?php echo $cat->slug;?>/<?php echo $author_URL_parameter; ?> " class="c-cat <?php echo $cat_slug ===  $cat->slug ? 'is-active' : ''; ?>"><?php echo $cat->name; ?></a>
                         <?php endforeach; ?>

@@ -1,0 +1,13 @@
+#page-landing{
+  .btn-back-to-site{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    color: $green;
+    font-weight: 900;
+    text-decoration: none;
+
+    svg{ fill: $green ; transform: rotate(180deg); transform-origin: center; height: 1.25em; width: auto; }
+  }
+  a{}
+}

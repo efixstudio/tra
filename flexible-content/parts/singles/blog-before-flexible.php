@@ -14,6 +14,13 @@
     <!-- page header -->
     <section class="module module--ph u-mg u-mg--md">
         <div class="container">
+            <div class="c-text-back">
+                <?php $blog_page = get_general_page_url('general_pages', 'blog' ); ?>
+                <a href="<?php echo $blog_page && is_array( $blog_page ) ? $blog_page['url'] : '#'?>">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="" viewBox="0 0 256 256"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"></path></svg>
+                    <span><?php echo $blog_page && is_array( $blog_page ) ? $blog_page['title'] : ''?></span>
+                </a>
+            </div>
             <div class="c-text">
                 <h1 class="c-text__title is-single">
                     <?php the_title(); ?>

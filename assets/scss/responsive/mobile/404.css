@@ -1,0 +1,12 @@
+.page-404 .row .col--1 h1 {
+  margin-top: 15%;
+}
+.page-404 .row .col--1 .back-404 svg {
+  height: 50px;
+  width: auto;
+}
+.page-404 .row .col--2 .error-img img {
+  max-width: 100%;
+}
+
+/*# sourceMappingURL=404.css.map */

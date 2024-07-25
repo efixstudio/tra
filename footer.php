@@ -2,7 +2,8 @@
         <?php $social = get_field('social_links','options'); ?>
         </main>
         <div class="c-footer">
-            <?php if($footer['membership_cta_url'] || $footer['newsletter_form_shortcode'] ): ?>
+            <?php if( ! is_404() ) : ?>
+                <?php if($footer['membership_cta_url'] || $footer['newsletter_form_shortcode'] ): ?>
                 <div class="c-footer-top">
                 <div class="inner">
                     <div class="container">
@@ -55,7 +56,7 @@
             </div>
             <?php endif; ?>
         
-            <div class="c-footer-partners bg bg--white u-pd u-pd--md">
+                <div class="c-footer-partners bg bg--white u-pd u-pd--md">
                 <div class="container">
                     <h2 class="c-footer-partners__title"><fit-text><?php echo $footer['partners_title']; ?></fit-text></h2>
                     
@@ -70,7 +71,7 @@
                     </div>
                 </div>
             </div>
-
+            <?php endif; ?>
             <div class="c-footer-bottom">
                 <div class="container">
                     <div class="row row--top">

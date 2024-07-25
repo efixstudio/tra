@@ -1,0 +1,28 @@
+.page-404{
+  .row{
+
+    .col{
+      &--1{
+
+        h1{
+          font-size: 90px;
+        }
+
+        .back-404{
+          font-size: 30px;
+
+          svg{ height: 50px; width: auto;}
+        }
+      }
+
+      &--2{
+        .error-img{
+          img{
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+}

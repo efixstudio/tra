@@ -1,10 +1,21 @@
-<?php 
+<?php
+        $object = get_queried_object();
+        $paged  = (get_query_var('paged')) ? get_query_var('paged') : 1;
         $args = array(  
-            'post_type' => 'testimoniale',
-            'post_status' => 'publish',
-            'posts_per_page' => 11,
+            'post_type'         => 'testimoniale',
+            'post_status'       => 'publish',
+            'posts_per_page'    => 11,
+            'paged'             => $paged,
         );
-    
+
+        if( $object instanceof WP_Term ){
+            $args['tax_query'] = [ [
+                'taxonomy' => 'testimoniale_cat',
+                'field' => 'slug',
+                'terms' => $object->slug,
+            ] ];
+        }
+
         $loop = new WP_Query( $args );
 
         $testimonialItemCounter = 0;
@@ -27,7 +38,7 @@
             <h3>Niciun rezultat de afisat.</h3>
         <?php endif;  wp_reset_postdata(); ?>
         <div class="pagination">
-            <?php echo custom_loop_pagination( $loop ); ?>
+            <?php echo custom_loop_pagination( $loop , 999999898); ?>
         </div>
     </div>
 </section>

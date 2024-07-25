@@ -250,15 +250,23 @@ $(document).ready(function () {
 
     $('.module--trainingplan .c-plan .c-plan-header:not(.all-plans-filter) .c-nav__item').on("click", function (e) {
         e.preventDefault();
-		// Toggle active class on tab buttons
-		$(this).addClass("is-active");
-		$(this).siblings().removeClass("is-active");
 
-		// display only active tab content
-		var activeTab = $(this).attr("href");
-		$('.module--trainingplan .c-plan-content.is-single').not(activeTab).hide();
-		
-		$(activeTab).show();
+        if( this.classList.contains( 'is-active' ) ){
+            console.log( this );
+            $(this).removeClass("is-active");
+            $('.module--trainingplan .c-plan-content.is-single').show();
+        }else{
+            // Toggle active class on tab buttons
+            $(this).addClass("is-active");
+            $(this).siblings().removeClass("is-active");
+
+            // display only active tab content
+            var activeTab = $(this).attr("href");
+            $('.module--trainingplan .c-plan-content.is-single').not(activeTab).hide();
+
+            $(activeTab).show();
+        }
+
 	});
 
     $('.module--trainingplan .c-plan .c-plan-header:not(.all-plans-filter) .c-nav--coaches .c-nav__item').on("click", function (e) {
@@ -467,6 +475,25 @@ $(document).ready(function () {
         }
     }
     resizeCardsOnLoad(getPlansSections);
+
+
+    //404 page
+    const back404Btn = document.querySelector('.back-404');
+
+    const handleBack404 = (e) => {
+        e.preventDefault();
+        const currentEl = e.currentTarget;
+        const previousPageUrl = document.referrer;
+        if( previousPageUrl && previousPageUrl.includes( currentEl.getAttribute('data-homepage') ) ){
+            window.location.href = previousPageUrl;
+        }else{
+            window.location.href = currentEl.getAttribute('data-homepage');
+        }
+    }
+    if( back404Btn ){
+        back404Btn.addEventListener( 'click', handleBack404 );
+    }
+
 });
 
 

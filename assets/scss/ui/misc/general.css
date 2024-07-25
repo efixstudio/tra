@@ -1,0 +1,9 @@
+.c-text-back {
+  display: flex;
+  gap: 20px;
+  font-weight: 600;
+  justify-content: center;
+  align-items: center;
+}
+
+/*# sourceMappingURL=general.css.map */

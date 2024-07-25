@@ -223,6 +223,15 @@
     }
   }
 
+  &--person { width: 100%; margin-bottom: 60px; position: relative; color: $white;
+    &:hover {
+      .c-card {
+        &__meta { transform: translate(10px, 0);
+        }
+      }
+    }
+  }
+
   &--blog{
     display: flex;
     flex-direction: column;

@@ -1,4 +1,21 @@
 <?php if($post->post_type === 'atleti') : ?>
+    <?php
+        $details = get_field('details');
+
+        $is_all_empty   = true;
+        foreach( $details as $field ){
+            if( !!$field ) $is_all_empty = false;
+        }
+        $youtube_url    = $details['youtube_url'] ? $details['youtube_url'] : false;
+        $birthdate      = isset( $details['birthdate'] ) && ! empty( $details['birthdate'] ) ? $details['birthdate'] : '-';
+        $place_of_birth = isset( $details['place_of_birth'] ) && ! empty( $details['place_of_birth'] ) ? $details['place_of_birth'] : '-';
+        $job            = isset( $details['job'] ) && ! empty( $details['job'] ) ? $details['job'] : '-';
+        $favorite_try   = isset( $details['favorite_try'] ) && ! empty( $details['favorite_try'] ) ? $details['favorite_try'] : '-';
+        $member_since   = isset( $details['member_since'] ) && ! empty( $details['member_since'] ) ? $details['member_since'] : '-';
+        $trainer        = $details['trainer'] && isset( $details['trainer']->ID ) ? $details['trainer'] : false;
+        $calc_age       = calculate_age( $details['birthdate'] );
+        $age            = $calc_age ? $calc_age . ' ani' : '-';
+    ?>
     <!-- page header -->
     <section class="module module--ph is-athlete u-mg u-mg--md">
         <div class="container">
@@ -19,7 +36,8 @@
     <!-- page header -->
 
     <!-- text box -->
-    <section class="module module--athlete-info is-athlete bg bg--green">
+    <?php if( ! $is_all_empty ) : ?>
+        <section class="module module--athlete-info is-athlete bg bg--green">
         <div class="container">
             <?php $details = get_field('details');  ?>
             <div class="grid-member--info">
@@ -38,34 +56,40 @@
                 </div>
                 <div class="grid-member--item">
                     <span class="label"><strong>Data nasterii: </strong></span>
-                    <span class="value"><?php echo $details['birthdate']; ?></span>
+                    <span class="value"><?php echo  $birthdate; ?></span>
                 </div>
                 <div class="grid-member--item">
                     <span class="label"><strong>Varsta: </strong></span>
-                    <span class="value"><?php echo  calculate_age( $details['birthdate'] ) ; ?> ani</span>
+                    <?php ?>
+                    <span class="value"><?php echo $age; ?> </span>
                 </div>
 
                 <div class="grid-member--item">
                     <span class="label"><strong>Locul nasterii: </strong></span>
-                    <span class="value"><?php echo $details['place_of_birth']; ?></span>
+                    <span class="value"><?php echo $place_of_birth;  ?></span>
                 </div>
 
                 <div class="grid-member--item">
                     <span class="label"><strong>Job: </strong></span>
-                    <span class="value"><?php echo $details['job']; ?></span>
+                    <span class="value"><?php echo $job;?></span>
                 </div>
                 <div class="grid-member--item">
                     <span class="label"><strong>Proba preferata: </strong></span>
-                    <span class="value"><?php echo $details['favorite_try']; ?></span>
+                    <span class="value"><?php echo $favorite_try; ?></span>
                 </div>
                 <div class="grid-member--item">
                     <span class="label"><strong>Membru TRA: </strong></span>
-                    <span class="value"><?php echo $details['member_since']; ?></span>
+                    <span class="value"><?php echo $member_since; ?></span>
                 </div>
                 <div class="grid-member--item">
                     <span class="label"><strong>Antrenat de: </strong></span>
-                    <span class="value"><a href="<?php echo get_permalink( $details['trainer']->ID ); ?>"><?php echo $details['trainer']->post_title; ?></a></span>
-                </div>
+                    <span class="value">
+                        <?php if( $trainer ): ?>
+                            <a href="<?php echo  get_permalink( $trainer->ID ); ?>"><?php echo $trainer->post_title ?? ''; ?></a></span>
+                        <?php else: ?>
+                            <em>-</em>
+                        <?php endif; ?>
+                    </div>
 
                 <?php
                     $socialLinks = get_field('social_links');
@@ -85,20 +109,33 @@
             </div>
         </div>
     </section>
+    <?php endif; ?>
 
-
-
+    <?php $link_testimoniale = get_field('testimoniale'); ?>
+    <?php if( isset( $link_testimoniale ) && ! empty( $link_testimoniale ) ) : ?>
+        <section class="c-athlete-single-testimonials  bg bg--green">
+            <div class="container">
+                <a href="<?php echo $link_testimoniale; ?>" target="_blank">
+                    <span>Vezi testimonialele lui</span>
+                    <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M 18.71875 6.78125 L 17.28125 8.21875 L 24.0625 15 L 4 15 L 4 17 L 24.0625 17 L 17.28125 23.78125 L 18.71875 25.21875 L 27.21875 16.71875 L 27.90625 16 L 27.21875 15.28125 Z"></path></svg>
+                </a>
+            </div>
+        </section>
+    <?php endif; ?>
     <!-- text box -->
+    <?php $intro = get_field('intro'); ?>
+    <?php if( isset( $intro ) && ! empty( $intro ) ): ?>
     <section class="module module--textbox u-pd u-pd--md bg bg--green">
         <div class="container">
             <div class="c-box">
                 <div class="c-box__content">
                     <div class="c-editor">
-                        <?php the_field('intro');  ?>
+                        <?php echo $intro;  ?>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <?php endif; ?>
     <!-- text box -->
 <?php endif; ?>

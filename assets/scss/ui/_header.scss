@@ -64,7 +64,7 @@
             }
 
             a { text-decoration: underline; transition: 0.3s; 
-                &:hover { color: $orange; }
+                &:hover { color: $orange; svg{ path{ fill: $orange !important } } }
             }
 
             &.menu-item-has-children { display: flex; flex-direction: column;

@@ -3,9 +3,11 @@
 namespace TrailRunningAcademy;
 
 use TrailRunningAcademy\Coordinator\Assets;
+use TrailRunningAcademy\Coordinator\Breadcrumbs;
 use TrailRunningAcademy\Coordinator\Menus;
 use TrailRunningAcademy\Coordinator\Misc;
 use TrailRunningAcademy\Coordinator\Shortcodes;
+use TrailRunningAcademy\Coordinator\Taxonomy;
 
 class Controller
 {
@@ -32,6 +34,11 @@ class Controller
     public $assets;
 
     /**
+     * @var Breadcrumbs
+     */
+    public $breadcrumbs;
+
+    /**
      * @var Menus
      */
     public $menus;
@@ -46,10 +53,17 @@ class Controller
      */
     public $shortcodes;
 
+    /**
+     * @var Taxonomy
+     */
+    public $taxonomy;
+
     public function setup(){
         $this->assets       = new Assets();
+        $this->breadcrumbs  = new Breadcrumbs();
         $this->menus        = new Menus();
         $this->misc         = new Misc();
         $this->shortcodes   = new Shortcodes();
+        $this->taxonomy     = new Taxonomy();
     }
 }

@@ -452,6 +452,20 @@ a {
   fill: #006B38;
 }
 
+.c-text-back {
+  margin-bottom: 30px;
+}
+.c-text-back a {
+  display: flex;
+  gap: 20px;
+  font-weight: 700;
+  justify-content: flex-start;
+  align-items: center;
+}
+.c-text-back a svg {
+  fill: #006B38;
+}
+
 /*--------------------------------------------------------------
 # Container
 --------------------------------------------------------------*/
@@ -737,7 +751,7 @@ p, ul, ol {
   transform: rotate(-135deg);
 }
 
-input[type=text], input[type=email], input[type=phone], input[type=submit], textarea {
+input[type=text], input[type=email], input[type=phone], input[type=submit], textarea, select {
   font-size: 18px;
   font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   color: #006B38;
@@ -746,33 +760,33 @@ input[type=text], input[type=email], input[type=phone], input[type=submit], text
   width: 100%;
   border: 1px solid #006B38;
 }
-input[type=text]::-webkit-input-placeholder, input[type=email]::-webkit-input-placeholder, input[type=phone]::-webkit-input-placeholder, input[type=submit]::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+input[type=text]::-webkit-input-placeholder, input[type=email]::-webkit-input-placeholder, input[type=phone]::-webkit-input-placeholder, input[type=submit]::-webkit-input-placeholder, textarea::-webkit-input-placeholder, select::-webkit-input-placeholder {
   color: #006B38;
 }
-input[type=text]::-moz-placeholder, input[type=email]::-moz-placeholder, input[type=phone]::-moz-placeholder, input[type=submit]::-moz-placeholder, textarea::-moz-placeholder {
+input[type=text]::-moz-placeholder, input[type=email]::-moz-placeholder, input[type=phone]::-moz-placeholder, input[type=submit]::-moz-placeholder, textarea::-moz-placeholder, select::-moz-placeholder {
   color: #006B38;
 }
-input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder, input[type=phone]:-ms-input-placeholder, input[type=submit]:-ms-input-placeholder, textarea:-ms-input-placeholder {
+input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder, input[type=phone]:-ms-input-placeholder, input[type=submit]:-ms-input-placeholder, textarea:-ms-input-placeholder, select:-ms-input-placeholder {
   color: #006B38;
 }
-input[type=text]:-moz-placeholder, input[type=email]:-moz-placeholder, input[type=phone]:-moz-placeholder, input[type=submit]:-moz-placeholder, textarea:-moz-placeholder {
+input[type=text]:-moz-placeholder, input[type=email]:-moz-placeholder, input[type=phone]:-moz-placeholder, input[type=submit]:-moz-placeholder, textarea:-moz-placeholder, select:-moz-placeholder {
   color: #006B38;
 }
-input[type=text]:focus, input[type=email]:focus, input[type=phone]:focus, input[type=submit]:focus, textarea:focus {
+input[type=text]:focus, input[type=email]:focus, input[type=phone]:focus, input[type=submit]:focus, textarea:focus, select:focus {
   outline: none;
   background-color: #006B38;
   color: #fff;
 }
-input[type=text]:focus::-webkit-input-placeholder, input[type=email]:focus::-webkit-input-placeholder, input[type=phone]:focus::-webkit-input-placeholder, input[type=submit]:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder {
+input[type=text]:focus::-webkit-input-placeholder, input[type=email]:focus::-webkit-input-placeholder, input[type=phone]:focus::-webkit-input-placeholder, input[type=submit]:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder, select:focus::-webkit-input-placeholder {
   color: #fff;
 }
-input[type=text]:focus::-moz-placeholder, input[type=email]:focus::-moz-placeholder, input[type=phone]:focus::-moz-placeholder, input[type=submit]:focus::-moz-placeholder, textarea:focus::-moz-placeholder {
+input[type=text]:focus::-moz-placeholder, input[type=email]:focus::-moz-placeholder, input[type=phone]:focus::-moz-placeholder, input[type=submit]:focus::-moz-placeholder, textarea:focus::-moz-placeholder, select:focus::-moz-placeholder {
   color: #fff;
 }
-input[type=text]:focus:-ms-input-placeholder, input[type=email]:focus:-ms-input-placeholder, input[type=phone]:focus:-ms-input-placeholder, input[type=submit]:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {
+input[type=text]:focus:-ms-input-placeholder, input[type=email]:focus:-ms-input-placeholder, input[type=phone]:focus:-ms-input-placeholder, input[type=submit]:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder, select:focus:-ms-input-placeholder {
   color: #fff;
 }
-input[type=text]:focus:-moz-placeholder, input[type=email]:focus:-moz-placeholder, input[type=phone]:focus:-moz-placeholder, input[type=submit]:focus:-moz-placeholder, textarea:focus:-moz-placeholder {
+input[type=text]:focus:-moz-placeholder, input[type=email]:focus:-moz-placeholder, input[type=phone]:focus:-moz-placeholder, input[type=submit]:focus:-moz-placeholder, textarea:focus:-moz-placeholder, select:focus:-moz-placeholder {
   color: #fff;
 }
 
@@ -913,6 +927,51 @@ input[type=submit] {
 .u-form--email.u-form--white .gform_footer svg path {
   fill: #006B38;
 }
+.u-form.bg--green {
+  margin: 0 0 70px 0;
+}
+.u-form.bg--green input[type=text], .u-form.bg--green input[type=email], .u-form.bg--green input[type=phone], .u-form.bg--green input[type=submit], .u-form.bg--green textarea, .u-form.bg--green select {
+  font-size: 18px;
+  background: #006B38;
+  font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid #fff;
+}
+.u-form.bg--green input[type=text]::-webkit-input-placeholder, .u-form.bg--green input[type=email]::-webkit-input-placeholder, .u-form.bg--green input[type=phone]::-webkit-input-placeholder, .u-form.bg--green input[type=submit]::-webkit-input-placeholder, .u-form.bg--green textarea::-webkit-input-placeholder, .u-form.bg--green select::-webkit-input-placeholder {
+  color: #fff;
+}
+.u-form.bg--green input[type=text]::-moz-placeholder, .u-form.bg--green input[type=email]::-moz-placeholder, .u-form.bg--green input[type=phone]::-moz-placeholder, .u-form.bg--green input[type=submit]::-moz-placeholder, .u-form.bg--green textarea::-moz-placeholder, .u-form.bg--green select::-moz-placeholder {
+  color: #fff;
+}
+.u-form.bg--green input[type=text]:-ms-input-placeholder, .u-form.bg--green input[type=email]:-ms-input-placeholder, .u-form.bg--green input[type=phone]:-ms-input-placeholder, .u-form.bg--green input[type=submit]:-ms-input-placeholder, .u-form.bg--green textarea:-ms-input-placeholder, .u-form.bg--green select:-ms-input-placeholder {
+  color: #fff;
+}
+.u-form.bg--green input[type=text]:-moz-placeholder, .u-form.bg--green input[type=email]:-moz-placeholder, .u-form.bg--green input[type=phone]:-moz-placeholder, .u-form.bg--green input[type=submit]:-moz-placeholder, .u-form.bg--green textarea:-moz-placeholder, .u-form.bg--green select:-moz-placeholder {
+  color: #fff;
+}
+.u-form.bg--green input[type=text]:focus, .u-form.bg--green input[type=email]:focus, .u-form.bg--green input[type=phone]:focus, .u-form.bg--green input[type=submit]:focus, .u-form.bg--green textarea:focus, .u-form.bg--green select:focus {
+  outline: none;
+  background-color: #006B38;
+  color: #fff;
+}
+.u-form.bg--green input[type=text]:focus::-webkit-input-placeholder, .u-form.bg--green input[type=email]:focus::-webkit-input-placeholder, .u-form.bg--green input[type=phone]:focus::-webkit-input-placeholder, .u-form.bg--green input[type=submit]:focus::-webkit-input-placeholder, .u-form.bg--green textarea:focus::-webkit-input-placeholder, .u-form.bg--green select:focus::-webkit-input-placeholder {
+  color: #fff;
+}
+.u-form.bg--green input[type=text]:focus::-moz-placeholder, .u-form.bg--green input[type=email]:focus::-moz-placeholder, .u-form.bg--green input[type=phone]:focus::-moz-placeholder, .u-form.bg--green input[type=submit]:focus::-moz-placeholder, .u-form.bg--green textarea:focus::-moz-placeholder, .u-form.bg--green select:focus::-moz-placeholder {
+  color: #fff;
+}
+.u-form.bg--green input[type=text]:focus:-ms-input-placeholder, .u-form.bg--green input[type=email]:focus:-ms-input-placeholder, .u-form.bg--green input[type=phone]:focus:-ms-input-placeholder, .u-form.bg--green input[type=submit]:focus:-ms-input-placeholder, .u-form.bg--green textarea:focus:-ms-input-placeholder, .u-form.bg--green select:focus:-ms-input-placeholder {
+  color: #fff;
+}
+.u-form.bg--green input[type=text]:focus:-moz-placeholder, .u-form.bg--green input[type=email]:focus:-moz-placeholder, .u-form.bg--green input[type=phone]:focus:-moz-placeholder, .u-form.bg--green input[type=submit]:focus:-moz-placeholder, .u-form.bg--green textarea:focus:-moz-placeholder, .u-form.bg--green select:focus:-moz-placeholder {
+  color: #fff;
+}
+.u-form.bg--green input[type=submit] {
+  margin-top: -5px;
+}
 
 .c-headroom {
   margin: 0 0 100px;
@@ -1048,6 +1107,9 @@ input[type=submit] {
 }
 .c-mmenu ul li a:hover {
   color: #f9a61b;
+}
+.c-mmenu ul li a:hover svg path {
+  fill: #f9a61b !important;
 }
 .c-mmenu ul li.menu-item-has-children {
   display: flex;
@@ -1950,6 +2012,7 @@ body {
   justify-content: center;
   align-items: center;
   margin: auto;
+  width: 100%;
 }
 .u-table-column.has-cta {
   position: relative;
@@ -2154,6 +2217,41 @@ body {
 }
 .module--plans .c-plans.is-active .c-header-lines .inner svg {
   transform: rotate(0deg);
+}
+.module--camps.has-title {
+  position: relative;
+  margin-top: 130px;
+}
+.module--camps.has-title:before {
+  content: "";
+  position: absolute;
+  background: #fff;
+  left: 0;
+  bottom: 100%;
+  width: 100%;
+  height: 130px;
+}
+.module--camps.has-title .u-cols--header {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+.module--camps.has-title .u-cols--header .u-col--left {
+  padding: 40px;
+  width: 50%;
+  border: 1px solid #006B38;
+  border-bottom: none;
+}
+.module--camps.has-title .u-cols--header .u-col--left a {
+  display: flex;
+  justify-content: space-between;
+}
+.module--camps.has-title .u-cols--header .u-col--left svg {
+  fill: #006B38;
+  transform: rotate(90deg);
+  transform-origin: center;
 }
 .module--camps .u-cols .u-col {
   width: 50%;
@@ -2581,6 +2679,14 @@ body {
 .module--trainingplan .module__heading {
   margin: 0 0 50px;
 }
+.module--trainingplan .module__headline .c-content {
+  padding: 40px;
+  border: 1px solid #006B38;
+  border-bottom: none;
+}
+.module--trainingplan .module__headline .c-content h2 {
+  margin-bottom: 0;
+}
 .module--trainingplan .c-plan-header {
   border-top: 1px solid #006B38;
   border-bottom: 1px solid #006B38;
@@ -2624,6 +2730,9 @@ body {
 .module--trainingplan .c-plan .c-nav__item.is-active, .module--trainingplan .c-plan .c-nav__item:hover {
   background-color: #006B38;
   color: #fff;
+}
+.module--trainingplan .c-plan [data-count="2"] .c-nav__item {
+  width: 50%;
 }
 .module--trainingplan .c-plan-content {
   border: 1px solid #006B38;
@@ -2713,8 +2822,17 @@ body {
 .module--singlelatest .c-ss__header .c-ctrls svg path {
   fill: #006B38;
 }
+.module--singlelatest .c-ss__header .c-ctrls .c-ctrl--next {
+  transform: rotate(180deg);
+}
+.module--textbox .headline {
+  margin-bottom: 40px;
+}
 .module--textbox.bg--green .c-box .u-cols.bx--unset:before {
   background-color: #fff;
+}
+.module--textbox.bg--green .headline h2 {
+  color: #fff;
 }
 .module--textbtn .btn {
   justify-content: space-between;
@@ -2933,7 +3051,102 @@ body {
 .module--athlete-info .grid-member--item:nth-of-type(9) {
   grid-area: c9;
 }
-
+.module--countdown-timer {
+  padding: 0 0 50px 0;
+}
+.module--countdown-timer .c--timer-container {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+.module--countdown-timer .c--label {
+  font-size: 24px;
+  font-weight: 500;
+  color: #006B38;
+}
+.module--countdown-timer .c--timer {
+  width: 360px;
+}
+.module--countdown-timer .c--seats ul li {
+  color: #f9a61b;
+  font-size: 75px;
+  font-weight: 900;
+  line-height: 1em;
+  margin-bottom: 5px;
+}
+.module--countdown-timer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 0;
+}
+.module--countdown-timer ul li {
+  color: #006B38;
+}
+.module--countdown-timer ul li span {
+  display: block;
+  width: 100%;
+}
+.module--countdown-timer ul li span:not(.timer-section) {
+  line-height: 0.85em;
+}
+.module--countdown-timer ul li span:last-of-type {
+  font-size: 16px;
+  font-weight: 400;
+}
+.module--countdown-timer ul li span:first-of-type {
+  font-size: 75px;
+  font-weight: 900;
+  line-height: 1em;
+  margin-bottom: 5px;
+}
+.module--social-links .row {
+  display: flex;
+  align-items: flex-end;
+  gap: 80px;
+}
+.module--social-links .col {
+  display: flex;
+  gap: 60px;
+}
+.module--social-links .col--left {
+  width: 33.333333%;
+}
+.module--social-links .col--right {
+  width: 66%;
+  padding-bottom: 5px;
+}
+.module--social-links .col a {
+  display: flex;
+  gap: 30px;
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-weight: 500;
+}
+.module--social-links .col a:hover svg {
+  translate: 15px;
+}
+.module--social-links .col svg {
+  height: 1.25em;
+  width: auto;
+  fill: #006B38;
+  transition: all 0.3s linear;
+}
+.module--coaches:not(.has-border) .c-coaches {
+  border: none;
+  padding: 0;
+  box-sizing: border-box;
+}
+.module--coaches:not(.has-border) .c-coaches__title {
+  margin: 0 0 60px;
+}
+.module--form .c--title {
+  margin-bottom: 70px;
+}
+.module--form .u-form label {
+  display: none;
+}
 .c-sh {
   margin: 0 0 100px;
 }
@@ -2975,13 +3188,12 @@ body {
   margin: 0 10px;
 }
 .c-ss--testimonials .c-ctrls.to-right {
-  margin-top: 0;
-  margin-right: 0px;
+  margin-top: 10px;
+  margin-right: 0;
 }
 .c-ss--testimonials .c-ctrls.to-right .c-ctrl {
   width: 50px;
   height: 50px;
-  border: 1px solid #fff;
   border-top: none;
   margin: 0 !important;
   display: flex;
@@ -2989,8 +3201,8 @@ body {
   justify-content: center;
 }
 .c-ss--testimonials .c-ctrls.to-right .c-ctrl svg {
-  width: 15px;
-  height: 15px;
+  width: 25px;
+  height: 25px;
 }
 .c-ss--testimonials .c-ctrls.to-right .c-ctrl:last-of-type {
   border-left: none;
@@ -3067,9 +3279,6 @@ body {
 }
 .c-ss .c-ctrls .c-ctrl--next {
   margin-left: 6px;
-}
-.c-ss .c-ctrls .c-ctrl--next svg {
-  transform: rotate(180deg);
 }
 .c-ss .c-ctrls .c-ctrl svg {
   width: 25px;
@@ -3555,14 +3764,17 @@ body {
   box-sizing: border-box;
 }
 .c-box__content a {
-  font-size: 1.5rem;
   text-transform: none;
   margin-top: 20px;
   margin-left: 0;
-  padding: 30px 20px;
 }
 .c-box__content a.btn-b {
   box-shadow: -1px 0 0 0 #000;
+}
+.c-box:not(.c-box--nextstep) .c-box__content a.btn {
+  font-size: 1.5rem;
+  margin: 20px -40px -40px;
+  padding: 30px 20px;
 }
 .c-box__heading {
   margin: 0 0 50px;
@@ -3648,6 +3860,7 @@ body {
 }
 .c-coaches__title {
   margin: 0 0 60px;
+  max-width: 60%;
 }
 .c-coaches .c-cards {
   justify-content: center;
@@ -3915,6 +4128,28 @@ body {
   fill: #f9a61b;
 }
 
+.c-athlete-single-testimonials {
+  padding: 70px 0;
+  margin-bottom: -100px;
+}
+.c-athlete-single-testimonials.bg--green a {
+  display: flex;
+  gap: 15px;
+  color: #fff;
+  font-weight: 800;
+  font-size: 20px;
+}
+.c-athlete-single-testimonials.bg--green a span {
+  text-decoration: underline;
+  text-decoration-color: #fff;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+.c-athlete-single-testimonials.bg--green a svg {
+  height: 1em;
+  width: auto;
+}
+
 .c-footer-top {
   background: url("assets/img/footer-bg.png");
   background-color: #006B38;
@@ -4089,6 +4324,64 @@ body {
   list-style: none;
 }
 
+.page-404 {
+  padding: 120px 0;
+}
+.page-404 .row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.page-404 .row .col {
+  display: flex;
+  flex-direction: column;
+}
+.page-404 .row .col--1 {
+  justify-content: space-between;
+}
+.page-404 .row .col--1 h1 {
+  margin-top: 20%;
+  font-size: 130px;
+  line-height: 1.125em;
+  color: #006B38;
+  font-weight: 900;
+}
+.page-404 .row .col--1 .back-404 {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  text-decoration: none;
+  font-size: 35px;
+  font-weight: bold;
+  color: #006B38;
+}
+.page-404 .row .col--1 .back-404 svg {
+  transform: rotate(180deg);
+  transform-origin: center;
+  fill: #006B38;
+  height: 50px;
+  width: auto;
+}
+.page-404 .row .col--2 .error-img img {
+  max-width: 100%;
+}
+
+#page-landing .btn-back-to-site {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  color: #006B38;
+  font-weight: 900;
+  text-decoration: none;
+}
+#page-landing .btn-back-to-site svg {
+  fill: #006B38;
+  transform: rotate(180deg);
+  transform-origin: center;
+  height: 1.25em;
+  width: auto;
+}
 @media screen and (max-width: 1199px) {
   .container {
     padding-left: 15px;
@@ -4101,6 +4394,10 @@ body {
   .module--trainingplan .c-plan.vomaster .container {
     padding-left: 0;
     padding-right: 0;
+  }
+  .module--camps.has-title .u-cols--header {
+    width: calc(100% - 30px);
+    left: 15px;
   }
   .c-nutrition .c-items .c-item {
     padding: 50px 35px;
@@ -4117,6 +4414,19 @@ body {
     font-size: 25px;
     line-height: 30px;
     margin: 5px 0 0;
+  }
+  .page-404 .row .col--1 h1 {
+    font-size: 90px;
+  }
+  .page-404 .row .col--1 .back-404 {
+    font-size: 30px;
+  }
+  .page-404 .row .col--1 .back-404 svg {
+    height: 50px;
+    width: auto;
+  }
+  .page-404 .row .col--2 .error-img img {
+    max-width: 100%;
   }
 }
 @media screen and (max-width: 991px) {
@@ -4313,6 +4623,34 @@ body {
   .module--athlete-info .grid-member--item .label {
     font-weight: 600;
   }
+  .module--social-links .row {
+    display: flex;
+    align-items: flex-end;
+    gap: 30px;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .module--social-links .col {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  .module--social-links .col--left {
+    width: 100%;
+  }
+  .module--social-links .col--right {
+    width: 100%;
+    padding-bottom: 0;
+    column-gap: 10px;
+  }
+  .module--social-links .col a {
+    display: flex;
+    gap: 10px;
+    flex: 1 1 auto;
+  }
+  .module--social-links .col a:hover svg {
+    translate: 5px;
+  }
   .c-tabs-nav--comunity {
     margin: 0 0 40px;
   }
@@ -4396,6 +4734,16 @@ body {
   .c-footer-top .row__button a svg {
     width: 40px;
     height: auto;
+  }
+  .page-404 .row .col--1 h1 {
+    margin-top: 15%;
+  }
+  .page-404 .row .col--1 .back-404 svg {
+    height: 50px;
+    width: auto;
+  }
+  .page-404 .row .col--2 .error-img img {
+    max-width: 100%;
   }
 }
 @media screen and (max-width: 767px) {
@@ -4697,6 +5045,15 @@ body {
   .c-card--partner a:hover svg {
     transform: translate(10px, 0);
   }
+  .c-card--person {
+    width: 100%;
+    margin-bottom: 60px;
+    position: relative;
+    color: #fff;
+  }
+  .c-card--person:hover .c-card__meta {
+    transform: translate(10px, 0);
+  }
   .c-card--blog {
     display: flex;
     flex-direction: column;
@@ -4972,6 +5329,17 @@ body {
   .module--listing {
     padding-bottom: 50px !important;
   }
+  .module--camps.has-title {
+    margin-top: 80px;
+  }
+  .module--camps.has-title .u-cols--header {
+    width: calc(100% - 30px);
+    left: 15px;
+  }
+  .module--camps.has-title .u-cols--header .u-col--left {
+    padding: 20px 15px;
+    width: 100%;
+  }
   .module--camps .u-cols--main .u-col--left {
     position: relative;
     order: 2;
@@ -5083,6 +5451,9 @@ body {
     font-size: 40px;
     line-height: 1.125em;
     max-width: 100%;
+  }
+  .module--trainingplan .module__headline .c-content {
+    padding: 20px 15px;
   }
   .module--trainingplan .container {
     border: none;
@@ -5632,7 +6003,12 @@ body {
     padding: 20px;
   }
   .c-coaches__title {
+    max-width: 100%;
     margin: 0 0 30px;
+  }
+  .c-athlete-single-testimonials {
+    padding: 50px 0;
+    margin-bottom: -70px;
   }
   .c-footer-top {
     padding-bottom: 80px;
@@ -5752,6 +6128,10 @@ body {
   .module .u-cols {
     flex-direction: column;
   }
+  .module .u-cols.is-reversed {
+    flex-direction: column-reverse;
+    gap: 30px;
+  }
   .module .u-cols .u-col {
     width: 100%;
   }
@@ -5760,6 +6140,35 @@ body {
   }
   .u-pd--md {
     padding: 70px 0;
+  }
+  .page-404 {
+    padding: 0 0 60px 0;
+  }
+  .page-404 .row {
+    display: flex;
+    flex-direction: column;
+  }
+  .page-404 .row .col--1 {
+    order: 2;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+  }
+  .page-404 .row .col--1 h1 {
+    margin-top: 0;
+    font-size: 70px;
+  }
+  .page-404 .row .col--1 .back-404 {
+    font-size: 20px;
+    text-align: left;
+  }
+  .page-404 .row .col--1 .back-404 svg {
+    height: 30px;
+    width: auto;
+  }
+  .page-404 .row .col--2 .error-img img {
+    max-width: 150px;
+    margin: 0 auto;
   }
 }
 @media screen and (max-width: 576px) {
@@ -5923,8 +6332,8 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     border-bottom: 1px solid #006B38;
-    margin-bottom: 40px;
-    padding-bottom: 40px;
+    margin-bottom: 30px;
+    padding-bottom: 0;
   }
   .c-cards--benefits {
     grid-template-columns: 1fr;
@@ -6061,6 +6470,35 @@ body {
   }
   .module--athlete-info .grid-member--item:last-of-type {
     border-bottom: 1px solid #fff;
+  }
+  .module--countdown-timer {
+    padding: 0 0 50px 0;
+  }
+  .module--countdown-timer .c--timer-container {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+  }
+  .module--countdown-timer .c--label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #006B38;
+  }
+  .module--countdown-timer .c--timer {
+    width: 360px;
+  }
+  .module--countdown-timer .c--seats ul li {
+    font-size: 45px;
+  }
+  .module--countdown-timer ul li {
+    color: #006B38;
+  }
+  .module--countdown-timer ul li span:last-of-type {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .module--countdown-timer ul li span:first-of-type {
+    font-size: 45px;
   }
   .c-nutrition .c-items {
     display: grid;

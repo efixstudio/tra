@@ -80,12 +80,10 @@ function array_key_is_array( $array, $key ){
  * @param $wp_query
  * @return string|string[]|void
  */
-function custom_loop_pagination( $wp_query = false ){
+function custom_loop_pagination( $wp_query = false, $big = 9999999999 ){
     global $wp_rewrite;
     if( ! $wp_query )
         global $wp_query;
-
-    $big = 9999999999;
 
     $args = [
         'base'            => str_replace( $big, '%#%',  get_pagenum_link( $big , false ) ),
@@ -116,13 +114,40 @@ function get_currency( $field ){
     return $currency;
 }
 
-function calculate_age($date)
+/**
+ * @throws Exception
+ */
+function calculate_age($birthDate)
 {
-    if( isset( $date ) && ! empty($date) ){
-        $date = trim(str_replace(" ", "", $date) );
-        return (int)date_diff(date_create($date),date_create('today'))->y;
+    $date = DateTime::createFromFormat('d/m/Y', $birthDate);
+    if( $date ){
+        $date = $date->format('Y-m-d');
+        $birthDate = new DateTime($date);
+        $currentDate = new DateTime();
+        $age = $currentDate->diff($birthDate);
+        return $age->y;
     }
 
     return false;
 
+}
+
+/**
+ * @param int $post_id
+ * @param $links
+ * @return array
+ */
+function get_posts_array_ancestors( int $post_id, $links = [] ){
+
+    $links  = [];
+    $post   = get_post( $post_id, 'OBJECT');
+
+    if( ! $post ) return $links;
+
+    $links = array_merge( $links, [ $post ] );
+
+    if( $post->post_parent !== 0 ){
+        $links = array_merge( $links, get_posts_array_ancestors( $post->post_parent, $links ) );
+    }
+    return $links;
 }
