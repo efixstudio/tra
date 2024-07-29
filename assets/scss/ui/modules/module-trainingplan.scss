@@ -1,0 +1,225 @@
+@import '../../global/mixins';
+.module{
+  &--trainingplan {
+    .module {
+      &__heading { margin: 0 0 50px; }
+
+      &__headline{
+
+        .c-content{
+          padding: 40px;
+          border: 1px solid var(--tra-primary-color); border-bottom: none;
+          h2{ margin-bottom: 0; }
+        }
+
+      }
+    }
+
+    .c-plan {
+      &-header { border-top: 1px solid var(--tra-primary-color); border-bottom: 1px solid var(--tra-primary-color); }
+
+      .c-nav { display: inline-flex; justify-content: space-between; width: 100%;
+        &--coaches{
+          border-bottom: 1px solid;
+        }
+        &__item { padding: 40px; box-sizing: border-box; display: flex; position: relative; width: 33.33333333%; font-size: 24px; font-weight: 700; transition: 0.3s;
+          &:after { content: ""; width: 1px; height: 100%; background-color: var(--tra-primary-color); position: absolute; right: 0; top: 0; }
+
+          &:first-of-type {
+            &:before { content: ""; width: 1px; height: 100%; background-color: var(--tra-primary-color); position: absolute; left: 0; top: 0; }
+          }
+
+          &.is-active, &:hover { background-color: var(--tra-primary-color); color: var(--tra-light-color); }
+        }
+
+
+      }
+
+      [data-count="2"]{
+        .c-nav__item { width: 50%; }
+      }
+
+      &-content { border: 1px solid var(--tra-primary-color); border-top: none; padding: 40px; box-sizing: border-box; display: none;
+        .u-cols { display: flex; justify-content: space-between;
+          .u-col {
+            &--left { width: 30%; flex: none; }
+            &--right { width: 66%; }
+          }
+        }
+
+        &.is-active{ display:block;}
+        //&:first-of-type { display: block; }
+      }
+
+      &-features { margin: 0 0 50px;
+        .c-features { display: flex; flex-wrap: wrap; margin-right: -4%;
+          .c-feature { width: 30%; margin-right: 3%!important; margin: 0 0 30px; display: flex;
+            &__icon { flex: none; margin: 0 15px 0 0;
+              svg { width: 40px; height: 40px; display: flex; }
+            }
+
+            &__text {
+              span { font-weight: 600; font-size: 15px; line-height: 24px; }
+            }
+          }
+        }
+      }
+
+      &-meta { display: flex; justify-content: space-between; margin: 0 0 50px;
+        &__name { margin: 0 50px 0 0;
+          span { display: block;
+            &:last-of-type { font-size: 30px; font-weight: 800; line-height: 40px; }
+          }
+        }
+      }
+
+      &-footer { @include flex-center; justify-content: space-between; }
+
+      &.vomaster { border-top: 1px solid var(--tra-primary-color); }
+    }
+  }
+}
+
+@media screen and (max-width: 1199px){
+  .module{
+    &--trainingplan {
+      .c-plan{
+        &.vomaster {
+          .container{
+            padding-left: 0;
+            padding-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px){
+  .module{
+    &--trainingplan {
+      .module {
+        &__heading { }
+        &__headline{
+
+          .c-content{
+            padding: 20px 15px;
+          }
+
+        }
+      }
+
+      .container{
+        border: none;
+      }
+
+      .c-plan {
+        &-header { border: none;
+        }
+
+        .c-nav {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          overflow: auto;
+          -webkit-overflow-scrolling: touch;
+          scroll-behavior: smooth;
+          white-space: nowrap;
+          box-shadow: -1px 0 0 0 var(--tra-primary-color), 1px 0 0 0 var(--tra-primary-color);
+
+          &:first-child{
+            border-top: 1px solid;
+          }
+          &:last-child{
+            border-bottom: 1px solid;
+          }
+          &__item {
+            font-size: 1.1rem;
+            padding: 15px;
+            width: 50%;
+
+            &:after {  }
+            &:before { display: none; }
+
+            &:first-of-type {
+              &:before {  }
+            }
+
+            &:last-child{
+              &:after{
+                display: none;
+              }
+            }
+
+            &.is-active, &:hover {  }
+          }
+        }
+
+        &-content {
+          padding: 30px 15px;
+          .u-cols {
+            flex-direction: column;
+            gap: 15px;
+
+            .u-col {
+              &--left { width: 100%;
+                .c-plan__image{
+                  img{
+                    max-width: 100px;
+                  }
+                }
+              }
+              &--right { width: 100%; }
+            }
+          }
+
+          &.is-active{ }
+          //&:first-of-type { display: block; }
+        }
+
+        &-features {
+          margin: 0 0 20px;
+          .c-features {
+            .c-feature {
+              line-height: 1rem;
+              width: 45%;
+              &__icon {
+                svg {  width: 25px; height: 25px;}
+              }
+
+              &__text {
+                span {font-size: 13px; line-height: 1rem; }
+              }
+            }
+          }
+        }
+
+        &-meta {
+          margin: 0 0 25px;
+          &__name {
+            margin: 0 25px 0 0;
+            span {
+              font-size: 15px;
+              &:last-of-type {
+                font-size: 20px;
+                line-height: 1.25em;
+              }
+            }
+          }
+        }
+
+        &-footer {
+          &__notice{
+            p{
+              font-size: 16px;
+              line-height: 1.12em;
+            }
+          }
+        }
+
+        &.vomaster {  }
+      }
+    }
+  }
+}

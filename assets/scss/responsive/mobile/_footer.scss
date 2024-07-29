@@ -40,7 +40,7 @@
             padding-left: 15px;
             padding-right: 15px;
             &--left {
-              width: 100%; max-width: 100%; border-bottom: 1px solid $white; border-right: none;
+              width: 100%; max-width: 100%; border-bottom: 1px solid var(--tra-light-color); border-right: none;
             }
             &--right {
               width: 100%;
@@ -141,7 +141,7 @@
     span{ font-size: 14px;}
 
     a {
-      &:hover { color: $orange; }
+      &:hover { color: var(--tra-secondary-color); }
     }
 
     ul { @include reset-list; }

@@ -16,15 +16,15 @@
 # Backgrounds
 --------------------------------------------------------------*/
 .bg {
-    &--green { background-color: $green; color: $white; 
+    &--green { background-color: var(--tra-primary-color); color: var(--tra-light-color);
         .c-editor {
-            blockquote { border-color: $white; }
+            blockquote { border-color: var(--tra-light-color); }
         }
     }
     
-    &--white { background-color: $white; 
+    &--white { background-color: var(--tra-light-color);
         .c-editor {
-            blockquote { border-color: $green; }
+            blockquote { border-color: var(--tra-primary-color); }
         }
     }
 }

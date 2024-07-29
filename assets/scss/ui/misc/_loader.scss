@@ -18,7 +18,7 @@
     .circle-inner {
       transform: rotate(45deg);
       border-radius: 50%;
-      border: ($size/8) solid $green;
+      border: ($size/8) solid var(--tra-primary-color);
       border-right: ($size/8) solid transparent;
       border-bottom: ($size/8) solid transparent;
       width: 100%;

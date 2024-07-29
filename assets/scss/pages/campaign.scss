@@ -3,11 +3,11 @@
     display: flex;
     flex-direction: row;
     gap: 20px;
-    color: $green;
+    color: var(--tra-primary-color);
     font-weight: 900;
     text-decoration: none;
 
-    svg{ fill: $green ; transform: rotate(180deg); transform-origin: center; height: 1.25em; width: auto; }
+    svg{ fill: var(--tra-primary-color) ; transform: rotate(180deg); transform-origin: center; height: 1.25em; width: auto; }
   }
   a{}
 }

@@ -20,16 +20,34 @@ $black: #555555;
 $white: #fff;
 $whitesmoke: #f8fcfc;
 
-$headerHeight: 126px;
-$headerHeightMobile: 95px;
+$headerheight: 126px;
+$headerheightMobile: 95px;
 
 $mobileNormalTextSize: 16px;
 $mobileSmallTextSize: 14px;
 
+:root{
+  --tra-primary-color: #006B38;
+  --tra-secondary-color: #f9a61b;
+  --tra-error-color: #ffa6a6;
+  --tra-dark-color: #555555;
+  --tra-light-color: #fff;
+  --tra-white-smoke-color: #f8fcfc;
+  --tra-header-height: 126px;
+  --tra-header-height-mobile: 95px;
+  --tra-mobile-font-size: 16px;
+  --tra-mobile-font-size-small: 14px;
 
-body { font-family: $font-c1; font-size: 18px; font-weight: 400; color: $green; }
+  --tra-breakpoint-laptop: 1199px;
+  --tra-breakpoint-tablet: 991px;
+  --tra-breakpoint-mobile: 767px;
+  --tra-breakpoint-small: 576px;
+}
 
-a { text-decoration: none; color: $green; }
+
+body { font-family: $font-c1; font-size: 18px; font-weight: 400; color: var(--tra-primary-color); }
+
+a { text-decoration: none; color: var(--tra-primary-color); }
 
 @media screen and (max-width: 767px){
   body { font-size: 16px; }

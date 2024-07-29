@@ -1,15 +1,15 @@
 .c-footer {
-    &-top {  background: url('assets/img/footer-bg.png'); background-color: $green; background-size: cover; padding-bottom: 130px;
-        .inner { border-top: 1px solid $white; border-bottom: 1px solid $white; }
+    &-top {  background: url('assets/img/footer-bg.png'); background-color: var(--tra-primary-color); background-size: cover; padding-bottom: 130px;
+        .inner { border-top: 1px solid var(--tra-light-color); border-bottom: 1px solid var(--tra-light-color); }
 
-        .row { padding: 80px 40px; box-sizing: border-box; border-left: 1px solid $white; border-right: 1px solid $white; color: $white; 
+        .row { padding: 80px 40px; box-sizing: border-box; border-left: 1px solid var(--tra-light-color); border-right: 1px solid var(--tra-light-color); color: var(--tra-light-color);
             span { font-size: 48px; font-weight: 700; line-height: 60px; display: block; margin: 0 0 36px; }
     
             .u-cols { align-items: center;
                 .u-col { width: 48%; }
             }
     
-            &:first-of-type { border-bottom: 1px solid $white; }
+            &:first-of-type { border-bottom: 1px solid var(--tra-light-color); }
     
             &__button {
                 a {  display: flex; align-items: center; justify-content: space-between; padding: 27px 35px; box-sizing: border-box; text-transform: uppercase; font-size: 18px; font-weight: 800;
@@ -17,11 +17,11 @@
                 }
                 
                 &.is-outline { 
-                    a { border: 1px solid #fff; color: $white; }
+                    a { border: 1px solid #fff; color: var(--tra-light-color); }
                 }
     
                 &.is-white { 
-                    a { background-color: $white; color: $green; }
+                    a { background-color: var(--tra-light-color); color: var(--tra-primary-color); }
                 }
             }
         }
@@ -31,12 +31,12 @@
         &__title {  font-weight: 900;  margin: -2.4em 0 50px; text-transform: lowercase; text-align: center; }
     }
 
-    &-bottom { background-color: $green; color: $white; border-top: 1px solid $white; 
+    &-bottom { background-color: var(--tra-primary-color); color: var(--tra-light-color); border-top: 1px solid var(--tra-light-color);
         .row {
             &--top {
-                .u-cols { padding: 0 40px; box-sizing: border-box; border-left: 1px solid $white; border-right: 1px solid $white; border-bottom: 1px solid $white; align-items: flex-start;
+                .u-cols { padding: 0 40px; box-sizing: border-box; border-left: 1px solid var(--tra-light-color); border-right: 1px solid var(--tra-light-color); border-bottom: 1px solid var(--tra-light-color); align-items: flex-start;
                     .u-col { padding: 60px 0;
-                        &--left { max-width: 350px; border-right: 1px solid $white; padding-right: 40px; box-sizing: border-box; }
+                        &--left { max-width: 350px; border-right: 1px solid var(--tra-light-color); padding-right: 40px; box-sizing: border-box; }
                         &--right { max-width: calc(100% - 350px); padding-left: 40px; padding-right: 40px; box-sizing: border-box;
                             .c-menus { display: flex; 
                                 .c-menu { margin-right: 40px;
@@ -96,7 +96,7 @@
             }
 
             &--lg {
-                .u-cols { padding: 40px; box-sizing: border-box; border-left: 1px solid $white; border-right: 1px solid $white; border-bottom: 1px solid $white; }
+                .u-cols { padding: 40px; box-sizing: border-box; border-left: 1px solid var(--tra-light-color); border-right: 1px solid var(--tra-light-color); border-bottom: 1px solid var(--tra-light-color); }
             }
 
             &__logo { margin: 0 0 44px; 
@@ -104,8 +104,8 @@
             }
         }
 
-        a { color: $white; transition: 0.3s;
-            &:hover { color: $orange; }
+        a { color: var(--tra-light-color); transition: 0.3s;
+            &:hover { color: var(--tra-secondary-color); }
         }
 
         ul { @include reset-list; }

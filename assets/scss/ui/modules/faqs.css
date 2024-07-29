@@ -1,0 +1,35 @@
+.module--faqs .c-togglers {
+  border: 1px solid var(--tra-primary-color);
+}
+.module--faqs .c-togglers__header {
+  padding: 40px;
+}
+.module--faqs .c-togglers .c-toggler__header {
+  padding: 40px;
+}
+.module--faqs .c-togglers .c-toggler__content {
+  padding: 30px 40px;
+}
+
+@media screen and (max-width: 1199px) {
+  .module--faqs .module--trainingplan .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .module--faqs .c-togglers {
+    border: 1px solid var(--tra-primary-color);
+  }
+  .module--faqs .c-togglers__header {
+    padding: 20px;
+  }
+  .module--faqs .c-togglers .c-toggler__header {
+    padding: 20px;
+  }
+  .module--faqs .c-togglers .c-toggler__content {
+    padding: 20px;
+  }
+}
+
+/*# sourceMappingURL=faqs.css.map */

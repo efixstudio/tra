@@ -15,17 +15,15 @@
 
 .sticky-header-plans{
   position: sticky;
-  top: 126px;
+  top: var(--tra-header-height);
   overflow-anchor: none;
   transform: translate3d(0, 0, 0);
 
 }
 
-
-
 .sticky-bg{
   z-index: 1000;
-  background: $white;
+  background: var(--tra-light-color);
 
   .c-nav__item{
     padding: 15px 40px !important;
@@ -36,7 +34,7 @@
 @media screen and (max-width: 767px){
   .sticky-header-plans{
     position: sticky;
-    top: 110px;
+    top: var(--tra-header-height-mobile);
     overflow-anchor: none;
     transform: translate3d(0, 0, 0);
 
@@ -44,7 +42,7 @@
 
   .sticky-bg{
     z-index: 1000;
-    background: $white;
+    background: var(--tra-light-color);
 
     .c-nav__item{
       padding: 15px !important;

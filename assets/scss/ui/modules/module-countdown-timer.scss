@@ -1,0 +1,122 @@
+.module{
+  &--countdown-timer{
+    padding: 0 0 50px 0;
+    .c{
+      &--timer-container{
+        display: flex;
+        gap: 50px;
+        flex-wrap: wrap;
+      }
+
+      &--label{
+        font-size: 24px;
+        font-weight: 500;
+        color: var(--tra-primary-color);
+      }
+
+      &--timer{
+        width: 360px;
+      }
+
+      &--seats{
+        ul{
+          li{
+            color: var(--tra-secondary-color);
+            font-size: 75px;
+            font-weight: 900;
+            line-height: 1em;
+            margin-bottom: 5px;
+          }
+        }
+      }
+    }
+    ul{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 0;
+
+
+      li{
+        color: var(--tra-primary-color);
+        span {
+          display: block;
+          width: 100%;
+
+          &:not(.timer-section){
+            line-height: .85em;
+          }
+
+          &:last-of-type{
+            font-size: 16px;
+            font-weight: 400;
+          }
+          &:first-of-type {
+            font-size: 75px;
+            font-weight: 900;
+            line-height: 1em;
+            margin-bottom: 5px;
+          }
+
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 576px){
+  .module{
+    &--countdown-timer{
+      padding: 0 0 50px 0;
+      .c{
+        &--timer-container{
+          display: flex;
+          gap: 25px;
+          flex-wrap: wrap;
+        }
+
+        &--label{
+          font-size: 16px;
+          font-weight: 500;
+          color: var(--tra-primary-color);
+        }
+
+        &--timer{
+          width: 360px;
+        }
+
+        &--seats{
+
+          ul{
+            li{
+              font-size: 45px;
+            }
+          }
+        }
+      }
+      ul{
+
+        li{
+          color: var(--tra-primary-color);
+          span {
+
+            &:not(.timer-section){
+
+            }
+
+            &:last-of-type{
+              font-size: 16px;
+              font-weight: 400;
+            }
+            &:first-of-type {
+              font-size: 45px;
+            }
+
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,24 +1,24 @@
-input[type=text],input[type=email],input[type=phone],input[type=submit], textarea, select { font-size: 18px; font-family: $font-c1; color: $green; padding: 20px; box-sizing: border-box; width: 100%; border: 1px solid $green;
-    &::-webkit-input-placeholder {  color: $green; }
-    &::-moz-placeholder { color: $green; }
-    &:-ms-input-placeholder { color: $green; }
-    &:-moz-placeholder { color: $green; }
-    &:focus { outline: none; background-color: $green; color: $white; 
-        &::-webkit-input-placeholder {  color: $white; }
-        &::-moz-placeholder { color: $white; }
-        &:-ms-input-placeholder { color: $white; }
-        &:-moz-placeholder { color: $white; }    
+input[type=text],input[type=email],input[type=phone],input[type=submit], textarea, select { font-size: 18px; font-family: $font-c1; color: var(--tra-primary-color); padding: 20px; box-sizing: border-box; width: 100%; border: 1px solid var(--tra-primary-color);
+    &::-webkit-input-placeholder {  color: var(--tra-primary-color); }
+    &::-moz-placeholder { color: var(--tra-primary-color); }
+    &:-ms-input-placeholder { color: var(--tra-primary-color); }
+    &:-moz-placeholder { color: var(--tra-primary-color); }
+    &:focus { outline: none; background-color: var(--tra-primary-color); color: var(--tra-light-color);
+        &::-webkit-input-placeholder {  color: var(--tra-light-color); }
+        &::-moz-placeholder { color: var(--tra-light-color); }
+        &:-ms-input-placeholder { color: var(--tra-light-color); }
+        &:-moz-placeholder { color: var(--tra-light-color); }
     }
 }
 
-input[type=checkbox] { width: 20px; height: 20px; border: 1px solid $green; padding: 0; margin: 5px 20px 0 0; flex: none; position: relative; @include flex-center; justify-content: center; cursor: pointer;
-    &:before { content: ""; width: 10px; height: 10px; background-color: $green; visibility: hidden; }
+input[type=checkbox] { width: 20px; height: 20px; border: 1px solid var(--tra-primary-color); padding: 0; margin: 5px 20px 0 0; flex: none; position: relative; @include flex-center; justify-content: center; cursor: pointer;
+    &:before { content: ""; width: 10px; height: 10px; background-color: var(--tra-primary-color); visibility: hidden; }
     &:checked {
         &:before { visibility: visible; }
     }
 }
 
-input[type=submit] { border: 1px solid $green; border-top: none; background-color: transparent; text-transform: uppercase; font-weight: 600; cursor: pointer; }
+input[type=submit] { border: 1px solid var(--tra-primary-color); border-top: none; background-color: transparent; text-transform: uppercase; font-weight: 600; cursor: pointer; }
 
 .gform {
     &_heading { display: none; }
@@ -37,16 +37,16 @@ input[type=submit] { border: 1px solid $green; border-top: none; background-colo
     form { position: relative; }
 
     &--outline {
-        input { background-color: transparent; border: 1px solid $white; 
-            &::-webkit-input-placeholder {  color: $white; }
-            &::-moz-placeholder { color: $white; }
-            &:-ms-input-placeholder { color: $white; }
-            &:-moz-placeholder { color: $white; }
-            &:focus { outline: none; background-color: transparent; color: $white; 
-                &::-webkit-input-placeholder {  color: $white; }
-                &::-moz-placeholder { color: $white; }
-                &:-ms-input-placeholder { color: $white; }
-                &:-moz-placeholder { color: $white; }    
+        input { background-color: transparent; border: 1px solid var(--tra-light-color);
+            &::-webkit-input-placeholder {  color: var(--tra-light-color); }
+            &::-moz-placeholder { color: var(--tra-light-color); }
+            &:-ms-input-placeholder { color: var(--tra-light-color); }
+            &:-moz-placeholder { color: var(--tra-light-color); }
+            &:focus { outline: none; background-color: transparent; color: var(--tra-light-color);
+                &::-webkit-input-placeholder {  color: var(--tra-light-color); }
+                &::-moz-placeholder { color: var(--tra-light-color); }
+                &:-ms-input-placeholder { color: var(--tra-light-color); }
+                &:-moz-placeholder { color: var(--tra-light-color); }
             }
         }
     }
@@ -58,31 +58,31 @@ input[type=submit] { border: 1px solid $green; border-top: none; background-colo
             &_footer { position: absolute; top: 0; right: 0; height: 100%; width: 100px; @include flex-center; justify-content: center;
                 input { font-size: 0; height: 100%; border: none; z-index: 9; }
                 svg { width: 40px; height: 40px; position: absolute;
-                    path { fill: $white; }
+                    path { fill: var(--tra-light-color); }
                 }
             }
         }
 
         .gfield {
             &_error {
-                input { border-color: $orange; }
+                input { border-color: var(--tra-secondary-color); }
             }
         }
 
         &.u-form--white {
             input {
-                &:focus { outline: none; background-color: $white; color: $green; 
-                    &::-webkit-input-placeholder {  color: $green; }
-                    &::-moz-placeholder { color: $green; }
-                    &:-ms-input-placeholder { color: $green; }
-                    &:-moz-placeholder { color: $green; }    
+                &:focus { outline: none; background-color: var(--tra-light-color); color: var(--tra-primary-color);
+                    &::-webkit-input-placeholder {  color: var(--tra-primary-color); }
+                    &::-moz-placeholder { color: var(--tra-primary-color); }
+                    &:-ms-input-placeholder { color: var(--tra-primary-color); }
+                    &:-moz-placeholder { color: var(--tra-primary-color); }
                 }
             }
 
             .gform {
                 &_footer {
                     svg {
-                        path { fill: $green; }
+                        path { fill: var(--tra-primary-color); }
                     }
                 }
             }
@@ -92,16 +92,16 @@ input[type=submit] { border: 1px solid $green; border-top: none; background-colo
     &.bg--green {
         margin: 0 0 70px 0;
 
-        input[type=text],input[type=email],input[type=phone],input[type=submit], textarea, select { font-size: 18px; background: $green; font-family: $font-c1; color: $white; padding: 20px; box-sizing: border-box; width: 100%; border: 1px solid $white;
-            &::-webkit-input-placeholder {  color: $white; }
-            &::-moz-placeholder { color: $white; }
-            &:-ms-input-placeholder { color: $white; }
-            &:-moz-placeholder { color: $white; }
-            &:focus { outline: none; background-color: $green; color: $white;
-                &::-webkit-input-placeholder {  color: $white; }
-                &::-moz-placeholder { color: $white; }
-                &:-ms-input-placeholder { color: $white; }
-                &:-moz-placeholder { color: $white; }
+        input[type=text],input[type=email],input[type=phone],input[type=submit], textarea, select { font-size: 18px; background: var(--tra-primary-color); font-family: $font-c1; color: var(--tra-light-color); padding: 20px; box-sizing: border-box; width: 100%; border: 1px solid var(--tra-light-color);
+            &::-webkit-input-placeholder {  color: var(--tra-light-color); }
+            &::-moz-placeholder { color: var(--tra-light-color); }
+            &:-ms-input-placeholder { color: var(--tra-light-color); }
+            &:-moz-placeholder { color: var(--tra-light-color); }
+            &:focus { outline: none; background-color: var(--tra-primary-color); color: var(--tra-light-color);
+                &::-webkit-input-placeholder {  color: var(--tra-light-color); }
+                &::-moz-placeholder { color: var(--tra-light-color); }
+                &:-ms-input-placeholder { color: var(--tra-light-color); }
+                &:-moz-placeholder { color: var(--tra-light-color); }
             }
         }
 

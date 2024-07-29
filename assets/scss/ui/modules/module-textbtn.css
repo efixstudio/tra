@@ -1,0 +1,11 @@
+.module--textbtn .btn {
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 767px) {
+  .module--textbtn .u-cols {
+    gap: 20px;
+  }
+}
+
+/*# sourceMappingURL=module-textbtn.css.map */

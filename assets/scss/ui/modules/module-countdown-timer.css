@@ -1,0 +1,84 @@
+.module--countdown-timer {
+  padding: 0 0 50px 0;
+}
+.module--countdown-timer .c--timer-container {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+.module--countdown-timer .c--label {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--tra-primary-color);
+}
+.module--countdown-timer .c--timer {
+  width: 360px;
+}
+.module--countdown-timer .c--seats ul li {
+  color: var(--tra-secondary-color);
+  font-size: 75px;
+  font-weight: 900;
+  line-height: 1em;
+  margin-bottom: 5px;
+}
+.module--countdown-timer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 0;
+}
+.module--countdown-timer ul li {
+  color: var(--tra-primary-color);
+}
+.module--countdown-timer ul li span {
+  display: block;
+  width: 100%;
+}
+.module--countdown-timer ul li span:not(.timer-section) {
+  line-height: 0.85em;
+}
+.module--countdown-timer ul li span:last-of-type {
+  font-size: 16px;
+  font-weight: 400;
+}
+.module--countdown-timer ul li span:first-of-type {
+  font-size: 75px;
+  font-weight: 900;
+  line-height: 1em;
+  margin-bottom: 5px;
+}
+
+@media screen and (max-width: 576px) {
+  .module--countdown-timer {
+    padding: 0 0 50px 0;
+  }
+  .module--countdown-timer .c--timer-container {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+  }
+  .module--countdown-timer .c--label {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--tra-primary-color);
+  }
+  .module--countdown-timer .c--timer {
+    width: 360px;
+  }
+  .module--countdown-timer .c--seats ul li {
+    font-size: 45px;
+  }
+  .module--countdown-timer ul li {
+    color: var(--tra-primary-color);
+  }
+  .module--countdown-timer ul li span:last-of-type {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .module--countdown-timer ul li span:first-of-type {
+    font-size: 45px;
+  }
+}
+
+/*# sourceMappingURL=module-countdown-timer.css.map */

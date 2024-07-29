@@ -1,0 +1,48 @@
+.module--plans .c-plans {
+  border: none;
+}
+.module--plans .c-plans__cards {
+  display: none;
+}
+.module--plans .c-plans:last-of-type .c-header-lines {
+  border-bottom: 1px solid var(--tra-primary-color);
+}
+.module--plans .c-plans:first-child .c-header-lines {
+  border-top: 1px solid var(--tra-primary-color);
+}
+.module--plans .c-plans .c-header-lines {
+  user-select: none;
+}
+.module--plans .c-plans .c-header-lines .inner {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+}
+.module--plans .c-plans .c-header-lines .inner svg {
+  fill: #fff;
+  transform: rotate(-90deg);
+  transition: transform 0.15s linear;
+  transform-origin: 50% 50%;
+}
+.module--plans .c-plans:not(.is-active):not(:last-child) .c-header-lines {
+  border-bottom: none;
+}
+.module--plans .c-plans:not(.is-active):not(:last-child) .c-header-lines .inner {
+  border-bottom: 1px solid var(--tra-light-color);
+}
+.module--plans .c-plans.is-active .c-plans__cards {
+  display: block;
+}
+.module--plans .c-plans.is-active .c-header-lines .inner svg {
+  transform: rotate(0deg);
+}
+
+@media screen and (max-width: 767px) {
+  .module--plans .c-plans .c-header-lines .inner {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+}
+
+/*# sourceMappingURL=module-plans.css.map */

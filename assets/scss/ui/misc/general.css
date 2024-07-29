@@ -1,9 +1,15 @@
 .c-text-back {
+  margin-bottom: 30px;
+}
+.c-text-back a {
   display: flex;
   gap: 20px;
-  font-weight: 600;
-  justify-content: center;
+  font-weight: 700;
+  justify-content: flex-start;
   align-items: center;
+}
+.c-text-back a svg {
+  fill: var(--tra-primary-color);
 }
 
 /*# sourceMappingURL=general.css.map */

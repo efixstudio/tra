@@ -8,7 +8,7 @@
   max-width: 1170px;
   margin: 30px auto;
   padding: 40px 15px 50px 15px;
-  background: $green;
+  background: var(--tra-primary-color);
   color: #fff;
   box-sizing: border-box;
   svg{
@@ -37,16 +37,16 @@
     max-width: 500px;
     box-sizing: border-box;
     font-size: 1rem;
-    border: 1px solid $white;
+    border: 1px solid var(--tra-light-color);
   }
   [type="submit"]{
     color: #fff;
-    border: 1px solid $white;
+    border: 1px solid var(--tra-light-color);
     padding: 15px;
 
     &:hover{
-      background: $orange;
-      border-color: $orange;
+      background: var(--tra-secondary-color);
+      border-color: var(--tra-secondary-color);
     }
   }
 }

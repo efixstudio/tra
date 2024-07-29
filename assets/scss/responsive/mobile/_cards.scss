@@ -26,7 +26,7 @@
         &-item-1 {
           border-right: none;
           &:not([data-total-posts="1"]){
-            border-bottom: 1px solid $green;
+            border-bottom: 1px solid var(--tra-primary-color);
           }
 
 
@@ -47,7 +47,7 @@
 
           grid-area: c2;
           border: none;
-          border-right: 1px solid $green;
+          border-right: 1px solid var(--tra-primary-color);
 
           .c-card {
             &__header{ margin: 0;}
@@ -67,7 +67,7 @@
 
         &-item-4 {
           grid-area: c4;
-          border-top: 1px solid $green;
+          border-top: 1px solid var(--tra-primary-color);
           .c-card {
             &__box {  }
             &__image { display: none;
@@ -78,16 +78,16 @@
           }
 
           &[data-total-posts="5"]{
-            border-bottom: 1px solid $green;
+            border-bottom: 1px solid var(--tra-primary-color);
           }
         }
 
         &-item-5 {
           grid-area: c5;
           border-top: none;
-          border-right: 1px solid $green;
+          border-right: 1px solid var(--tra-primary-color);
           &:not(&[data-total-posts="5"]){
-            border-top: 1px solid $green;
+            border-top: 1px solid var(--tra-primary-color);
           }
 
           .c-card {
@@ -106,7 +106,7 @@
 
         &-item-7 {
           grid-area: c7;
-          border-top: 1px solid $green;
+          border-top: 1px solid var(--tra-primary-color);
           .c-card {
             &__box {  }
             &__image { display: none;
@@ -122,13 +122,13 @@
 
   }
 
-  &--testimonials { display: grid; grid-template-columns: repeat( 2, 1fr); grid-template-areas: unset; border: 1px solid $green;
+  &--testimonials { display: grid; grid-template-columns: repeat( 2, 1fr); grid-template-areas: unset; border: 1px solid var(--tra-primary-color);
     .c-card { margin-left: auto;
-      border-bottom: 1px solid $green;
+      border-bottom: 1px solid var(--tra-primary-color);
       grid-area: unset !important;
 
       &:nth-of-type(n+3):nth-of-type(even){border-right: none; }
-      &:nth-of-type(odd){ border-right: 1px solid $green;}
+      &:nth-of-type(odd){ border-right: 1px solid var(--tra-primary-color);}
       &:last-of-type{ border-bottom: none;}
 
       &:nth-last-of-type(2):nth-of-type(odd){ border-bottom: none;}
@@ -189,8 +189,8 @@
       flex-direction: column;
       padding: 10px 10px 40px;
       justify-content: center;
-      border-right: 1px solid $green;
-      border-bottom: 1px solid $green;
+      border-right: 1px solid var(--tra-primary-color);
+      border-bottom: 1px solid var(--tra-primary-color);
 
       img {
         transition: 0.3s;
@@ -207,7 +207,7 @@
         transition: 0.3s;
 
         path {
-          fill: $green;
+          fill: var(--tra-primary-color);
         }
       }
 
@@ -223,7 +223,7 @@
     }
   }
 
-  &--person { width: 100%; margin-bottom: 60px; position: relative; color: $white;
+  &--person { width: 100%; margin-bottom: 60px; position: relative; color: var(--tra-light-color);
     &:hover {
       .c-card {
         &__meta { transform: translate(10px, 0);
@@ -269,7 +269,7 @@
     }
   }
 
-  &--testimonial { border: 1px solid $white;
+  &--testimonial { border: 1px solid var(--tra-light-color);
     .c-card {
       &__header { padding: 0 20px; font-size: 12px;
         a { padding: 20px 0; padding-left: 20px; }
@@ -308,10 +308,10 @@
         &__url { margin-top: auto; margin-left: auto; }
       }
 
-      &:hover { background-color: $green; color: $white;
-        a { color: $white; }
+      &:hover { background-color: var(--tra-primary-color); color: var(--tra-light-color);
+        a { color: var(--tra-light-color); }
         svg {
-          path { fill: $white; }
+          path { fill: var(--tra-light-color); }
         }
       }
     }
@@ -340,7 +340,7 @@
         span, a, button { padding: 20px; text-align: left;}
         button{ text-align: left;}
 
-        .c-detail { border-left: 1px solid $green;
+        .c-detail { border-left: 1px solid var(--tra-primary-color);
           &--certificates { flex-direction: column;
             .c-logos { display: flex; margin: 0; padding: 0 20px 20px;
               img{ height: 55px; width: auto;}

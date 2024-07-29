@@ -1,0 +1,23 @@
+.module{
+  &--textbanner {
+    h2 { font-weight: 900; line-height: 0.9; }
+    .u-cols { align-items: flex-end;
+      .u-col {
+        &--left { width: 40%; }
+        &--right { width: 56%; }
+      }
+    }
+
+  }
+}
+
+@media screen and (max-width: 767px){
+  .module{
+    &--textbanner {
+      h2 {  }
+      .u-cols { gap: 30px;
+      }
+
+    }
+  }
+}

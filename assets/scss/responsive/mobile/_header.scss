@@ -66,15 +66,15 @@ $logoSize: 60px;
   }
 }
 
-.c-mmenu {height: 100vh; padding-top: calc( $headerHeightMobile + 10px);
+.c-mmenu {height: 100vh; padding-top: calc( var(--tra-header-height-mobile) + 10px);
   ul { @include reset-list;
 
     &.menu{
       position: fixed;
       width: 100%;
       max-width: 100%;
-      top: calc( $headerHeightMobile + 10px);
-      height: calc( 100vh - $headerHeightMobile );
+      top: calc( var(--tra-header-height-mobile) + 10px);
+      height: calc( 100vh - var(--tra-header-height-mobile) );
       overflow-y: auto;
 
       > li{

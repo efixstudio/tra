@@ -21,6 +21,7 @@ function pr($var, $sticky = false)
     }
 }
 
+
 /**
  * Helper function for displaying ACF Flexible Content fields.
  *
@@ -40,7 +41,20 @@ function flexible_content($contents = null)
             $content['_total'] = count($contents);
 
             if (locate_template('flexible-content/' . str_replace('_', '-', $content['acf_fc_layout']) . '.php')) {
-                // @todo
+                // @todo Maybe create a helper function to return an array of assets based on module found
+
+                //Enqueue CSS for module if it exists
+                if( file_exists( get_template_directory() . '/assets/scss/ui/modules/' . str_replace('_', '-', $content['acf_fc_layout']) . '.min.css' ) ){
+                    wp_enqueue_style(
+                        str_replace('_', '-', $content['acf_fc_layout']),
+                        get_template_directory_uri() . '/assets/scss/ui/modules/' . str_replace('_', '-', $content['acf_fc_layout']) . '.min.css',
+                        '',
+                        '',
+                        'all'
+                    );
+
+                    //var_dump( "YES - " . get_template_directory() . '/assets/scss/ui/modules/' . str_replace('_', '-', $content['acf_fc_layout']) . '.min.css' );
+                }
                 //echo "<div class='template-name' style='position:relative'><pre>" . 'flexible-content/' . str_replace('_', '-', $content['acf_fc_layout']) . '.php' . "</pre></div>";
                 include locate_template('flexible-content/' . str_replace('_', '-', $content['acf_fc_layout']) . '.php');
             } elseif (current_user_can('administrator')) {

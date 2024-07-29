@@ -1,0 +1,85 @@
+@import "../../global/mixins";
+.module {
+  &--ph {
+    .c-text {
+      &__title { color: var(--tra-primary-color); font-weight: 900;
+        &.lg { font-size: 7.5vw; line-height: 7.5vw; }
+        &.is-single { font-size: 48px; line-height: 58px; max-width: 80%; }
+      }
+    }
+
+    &.is-athlete {
+      .u-cols {
+        .u-col { width: 50%;
+          &--left { display: flex; flex-direction: column;
+            .c-details {
+              &.inner { margin-top: auto; display: flex; flex-wrap: wrap; border: 1px solid var(--tra-primary-color); border-bottom: none; border-right: none;
+                .c-details__item { width: 50%; border-bottom: 1px solid var(--tra-primary-color); position: relative; padding: 40px 30px; box-sizing: border-box;
+                  &:after { content: ""; width: 1px; height: 100%; position: absolute; right: 0; top: 0; background-color: var(--tra-primary-color); }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .c-details {
+        &.outer { display: flex; flex-wrap: wrap; border-left: 1px solid var(--tra-primary-color);
+          .c-details__item { width: 50%; border-bottom: 1px solid var(--tra-primary-color); position: relative; padding: 40px 30px; box-sizing: border-box;
+            &:after { content: ""; width: 1px; height: 100%; position: absolute; right: 0; top: 0; background-color: var(--tra-primary-color); }
+          }
+        }
+      }
+
+      .c-text {
+        &__title { text-transform: lowercase; max-width: 50%;  }
+
+        &__image { position: relative; min-height: 630px;
+          img { @include object-fit; position: absolute; top: 0; left: 0; }
+          .u-play { position: absolute; top: 20px; left: 20px; width: 65px; height: 65px; background-color: var(--tra-secondary-color); border-radius: 50%; z-index: 9; @include flex-center; justify-content: center; transition: 0.3s;
+            svg { width: 45px; height: 45px; margin: 0 0 0 3px;
+              path { fill: var(--tra-light-color); }
+            }
+
+            &:hover { background-color: var(--tra-primary-color);}
+          }
+        }
+      }
+    }
+  }
+}
+
+
+//Tablet
+@media screen and (max-width: 991px ){
+  .module {
+    &--ph {
+      margin: 70px 0;
+    }
+  }
+}
+
+//Mobile
+@media screen and (max-width: 767px ){
+  .module {
+    &--ph {
+      .c-text {
+        &__title {
+          color: var(--tra-primary-color);
+          font-weight: 900;
+
+          &.lg {
+            font-size: 40px;
+            line-height: 1.125em;
+          }
+
+          &.is-single {
+            font-size: 40px;
+            line-height: 1.125em;
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

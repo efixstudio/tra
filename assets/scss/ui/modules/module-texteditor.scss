@@ -1,0 +1,9 @@
+.module{
+  &--texteditor {
+    .u-cols {
+      &--even {
+        .u-col { width: 46%; }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.module{
+  &--coaches{
+    &:not(.has-border){
+      .c-coaches { border: none; padding: 0; box-sizing: border-box;
+        &__title { margin: 0 0 60px; }
+      }
+    }
+
+    .c-coaches { border: 1px solid; padding: 40px; box-sizing: border-box;
+      &__title { margin: 0 0 60px; max-width: 60%;}
+
+      .c-cards { justify-content: center; }
+    }
+  }
+}
+
+@media screen and (max-width: 767px){
+  .module{
+    &--coaches{
+      .c-coaches { padding: 20px;
+        &__title { max-width: 100%; margin: 0 0 30px; }
+
+        .c-cards { }
+      }
+    }
+  }
+}

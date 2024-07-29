@@ -99,7 +99,7 @@
     }
   }
 
-  &--testimonial { border: 1px solid $white;
+  &--testimonial { border: 1px solid var(--tra-light-color);
 
     &.v2 {
       .inner{gap: 30px; padding: 30px;}

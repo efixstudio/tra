@@ -5,11 +5,46 @@ define( 'TRA_THEME_DIR', get_template_directory() );
 define( 'TRA_THEME_URI', get_template_directory_uri() );
 define( 'TRA_THEME_DIR_APP', get_template_directory() . '/app');
 define( 'TRA_THEME_DIR_APP_URI', get_template_directory_uri() . '/app');
-define( 'TRA_THEME_ASSETS_VERSION', '0.0.1' );
+define( 'TRA_THEME_ASSETS_VERSION', '1.0.33' );
 
 require_once( __DIR__ . "/autoload.php" );
 add_action( 'after_setup_theme', [ TrailRunningAcademy\Controller::instance(), 'setup' ], 20 );
 
+/*
+function tra_modules_assets( string $module ){
+    if( empty( $module ) ) return false;
+
+    $template_directory = get_template_directory_uri();
+
+    $style_assets = [
+        'module-page-header'    => $template_directory . '/assets/scss/ui/modules/module-page-header.min.css',
+        'module-listing'        => $template_directory . '/assets/scss/ui/modules/module-listing.min.css',
+        'module-plans'          => $template_directory . '/assets/scss/ui/modules/module-plans.min.css',
+        'module-camps'          => $template_directory . '/assets/scss/ui/modules/module-camps.min.css',
+        'module-benefits'       => $template_directory . '/assets/scss/ui/modules/module-benefits.min.css',
+        'module-faqs'           => $template_directory . '/assets/scss/ui/modules/module-faqs.min.css',
+        'module-cta'            => $template_directory . '/assets/scss/ui/modules/module-cta.min.css',
+        'module-story'          => $template_directory . '/assets/scss/ui/modules/module-story.min.css',
+        'module-comunity'       => $template_directory . '/assets/scss/ui/modules/module-comunity.min.css',
+        'module-trainingplan'   => $template_directory . '/assets/scss/ui/modules/module-trainingplan.min.css',
+        'module-textbox'        => $template_directory . '/assets/scss/ui/modules/module-textbox.min.css',
+        'module-textbtn'        => $template_directory . '/assets/scss/ui/modules/module-textbtn.min.css',
+        'module-texteditor'     => $template_directory . '/assets/scss/ui/modules/module-texteditor.min.css',
+        'module-ti'             => $template_directory . '/assets/scss/ui/modules/module-ti.min.css',
+        'module-testimonial'    => $template_directory . '/assets/scss/ui/modules/module-testimonial.min.css',
+        'module-textbanner'     => $template_directory . '/assets/scss/ui/modules/module-textbanner.min.css',
+        'module-usps'           => $template_directory . '/assets/scss/ui/modules/module-usps.min.css',
+        'module-countdown-timer'=> $template_directory . '/assets/scss/ui/modules/module-countdown-timer.min.css',
+        'module-social-links'   => $template_directory . '/assets/scss/ui/modules/module-social-links.min.css',
+        'module-coaches'        => $template_directory . '/assets/scss/ui/modules/module-coaches.min.css',
+        'module-gallery'        => $template_directory . '/assets/scss/ui/modules/module-gallery.min.css',
+
+    ];
+
+    return array_key_exists( $module, $style_assets ) ? [ $module => $style_assets[ $module] ] : false;
+
+}
+*/
 
 require 'include/framework.php';
 require 'include/custom-functions.php';
@@ -58,7 +93,7 @@ $framework->enqueue_style(array(
 
  $framework->enqueue_style(array(
     'handle' => 'site-style',
-    'src' => 'style.css',
+    'src' => 'style.min.css',
 ));
 
 /**
@@ -158,7 +193,15 @@ $framework->register_menus(array(
  * Image Sizes
  * 
  */
-$framework->add_image_size('square', 200, 200);
+$framework->add_image_size('rectangle-medium', 550, 350); //posts
+$framework->add_image_size('rectangle-small', 300, 215); //posts small
+$framework->add_image_size('rectangle-portrait-medium', 650, 520); //gallery big
+$framework->add_image_size('square-medium', 600, 600);
+$framework->add_image_size('square-small', 250, 250);
+$framework->add_image_size('square-xsmall', 80, 80);
+$framework->add_image_size('original-900', 600, 0);
+$framework->add_image_size('original-600', 600, 0);
+$framework->add_image_size('original-300', 300, 0);
 
 /**
  * Login Screen

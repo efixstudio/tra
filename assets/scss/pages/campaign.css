@@ -1,8 +1,17 @@
-#page-landing {
-  padding: 100px 0;
+#page-landing .btn-back-to-site {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  color: var(--tra-primary-color);
+  font-weight: 900;
+  text-decoration: none;
 }
 #page-landing .btn-back-to-site svg {
-  fill: #000;
+  fill: var(--tra-primary-color);
+  transform: rotate(180deg);
+  transform-origin: center;
+  height: 1.25em;
+  width: auto;
 }
 
 /*# sourceMappingURL=campaign.css.map */

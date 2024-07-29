@@ -1,0 +1,209 @@
+@import '../../global/mixins';
+.module{
+  &--camps {
+
+    &.has-title{
+      position: relative;
+      margin-top: 130px;
+      &:before{content: ""; position: absolute; background: var(--tra-light-color); left: 0; bottom: 100%; width: 100%; height: 130px;}
+
+      .u-cols{
+        &--header{
+          position: absolute;
+          bottom: 100%;
+          left: 0;
+          width: 100%;
+          z-index: 100;
+
+          .u-col{
+            &--left{
+              padding: 40px;
+              width: 50%;
+              border: 1px solid var(--tra-primary-color);
+              border-bottom: none;
+
+              a{ display: flex; justify-content: space-between;}
+              h2{}
+              svg{
+                fill: var(--tra-primary-color);
+                transform: rotate(90deg);
+                transform-origin: center;
+              }
+            }
+          }
+        }
+
+
+      }
+    }
+    .u-cols {
+      .u-col { width: 50%; }
+
+      &--main { border: 1px solid var(--tra-light-color);
+        .u-col {
+          &--left { position: relative;
+            &:after { content: ""; width: 1px; height: 100%; background-color: var(--tra-light-color); position: absolute; top: 0; right: 0; }
+          }
+
+          &--right { position: relative;  }
+        }
+      }
+    }
+
+    .c-camps { margin: 0 0 100px;
+      .c-camp {
+        &__image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 40px; box-sizing: border-box;
+          img { @include object-fit; }
+        }
+      }
+    }
+
+    .c-station {
+      &__header { padding: 40px; box-sizing: border-box;
+        span { font-size: 20px; font-weight: 700; line-height: 30px; }
+        a { font-size: 20px; line-height: 30px; text-decoration: underline; color: var(--tra-light-color); }
+      }
+
+      &__meta { padding: 40px; box-sizing: border-box; border-top: 1px solid var(--tra-light-color);
+        &-title { margin: 0 0 30px; }
+      }
+
+      &__footer {
+        .u-cols {
+          .u-col { height: 100px; @include flex-center; justify-content: center;
+            &--left { border-top: 1px solid var(--tra-light-color);
+              span { text-transform: uppercase; }
+            }
+
+            &--right {
+              svg { width: 40px; height: 40px;
+                path { fill: var(--tra-light-color); }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1199px){
+  .module{
+    &--camps {
+      &.has-title{
+
+        &:before{}
+
+        .u-cols{
+          &--header{
+            width: calc(100% - 30px );
+            left: 15px;
+
+            .u-col{
+              &--left{
+
+                a{ }
+                h2{}
+                svg{
+                }
+              }
+            }
+          }
+
+
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px){
+  .module{
+    &--camps {
+
+      &.has-title{
+        margin-top: 80px;
+
+        &:before{}
+
+        .u-cols{
+          &--header{
+            width: calc(100% - 30px );
+            left: 15px;
+
+            .u-col{
+              &--left{
+                padding: 20px 15px;
+                width: 100%;
+                a{ }
+                h2{}
+                svg{
+                }
+              }
+            }
+          }
+
+
+        }
+      }
+
+      .u-cols {
+        .u-col { }
+
+        &--main {
+          .u-col {
+            &--left { position: relative; order: 2;
+              &:after { display: none; }
+            }
+
+            &--right { position: relative;  order: 1;}
+          }
+        }
+      }
+
+      .c-camps {
+        .c-camp {
+          &__image { position: relative; padding: 0;
+            img { }
+          }
+        }
+      }
+
+      .c-station {
+        &__header { padding: 20px 15px;
+          span { font-size: var(--tra-mobile-font-size); line-height: 20px;}
+          a { text-align: right; font-size: var(--tra-mobile-font-size); line-height: 20px;}
+        }
+
+        &__meta { padding: 20px 15px;
+          &-title {  }
+        }
+
+        &__footer {
+          .u-cols {
+            flex-direction: row;
+            .u-col { width: 50%; height: 70px;
+              &--left { order: 1;
+                span { text-transform: uppercase; font-size: var(--tra-mobile-font-size); }
+                &:after{content: "";
+                  display: block;
+                  width: 1px;
+                  height: 100%;
+                  background-color: #fff;
+                  position: absolute;
+                  top: 0;
+                  right: 0;}
+              }
+
+              &--right {
+                svg { width: 30px; height: 30px;
+                  path { fill: var(--tra-light-color); }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -13,7 +13,7 @@
           margin-top: 20%;
           font-size: 130px;
           line-height: 1.125em;
-          color: $green;
+          color: var(--tra-primary-color);
           font-weight: 900;
         }
 
@@ -25,9 +25,9 @@
           text-decoration: none;
           font-size: 35px;
           font-weight: bold;
-          color: $green;
+          color: var(--tra-primary-color);
 
-          svg{ transform: rotate( 180deg); transform-origin: center; fill: $green; height: 50px; width: auto;}
+          svg{ transform: rotate( 180deg); transform-origin: center; fill: var(--tra-primary-color); height: 50px; width: auto;}
         }
       }
 
