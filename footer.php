@@ -78,7 +78,7 @@
                         <div class="u-cols fx">
                             <div class="u-col u-col--left ">
                                 <div class="row__logo">
-                                    <a href="<?php echo site_url(); ?>">
+                                    <a href="<?php echo site_url(); ?>" title="TrailRunning Academy">
                                         <svg height=60 viewBox="0 0 287 60"width=287 xmlns=http://www.w3.org/2000/svg xmlns:xlink=http://www.w3.org/1999/xlink><defs><clipPath id=clip-path-footerlogo-1><rect fill=none height=60 id=crop width=287 /></clipPath><clipPath id=clip-path-footerlogo-2><rect fill=none height=60.001 id=Rectangle_113 width=287 data-name="Rectangle 113"transform="translate(0 -0.001)"/></clipPath></defs><g data-name="Vector Smart Object"id=Vector_Smart_Object clip-path=url(#clip-path-footer-logo-1)><g data-name="Group 198"id=Group_198><g data-name="Group 197"id=Group_197 clip-path=url(#clip-path-footerlogo-2)><text fill=#fff font-family=Helvetica font-size=26 id=TRAILRUNNING transform="translate(0 22.222)"><tspan y=0 letter-spacing=-0.099em x=0>TR</tspan><tspan y=0 letter-spacing=-0.1em>AI</tspan><tspan y=0 letter-spacing=-0.099em>L</tspan><tspan y=0 letter-spacing=-0.104em>R</tspan><tspan y=0 letter-spacing=-0.099em>UN</tspan><tspan y=0 letter-spacing=-0.1em>N</tspan><tspan y=0 letter-spacing=-0.099em>I</tspan><tspan y=0 letter-spacing=-0.1em>N</tspan><tspan y=0>G</tspan></text><text fill=#fff font-family=Helvetica font-size=26 id=ACADEMY transform="translate(0 53.596)"><tspan y=0 letter-spacing=-0.12em x=0>A</tspan><tspan y=0 letter-spacing=-0.099em>C</tspan><tspan y=0 letter-spacing=-0.1em>A</tspan><tspan y=0 letter-spacing=-0.099em>DEM</tspan><tspan y=0>Y</tspan></text></g></g></g></svg>
                                     </a>
                                 </div>
@@ -89,11 +89,11 @@
                                     ?>
                                 </div>
                                 <div class="fx fx--ac fx--jc" style="gap: 15px; margin-top: 30px">
-                                    <a href="https://anpc.ro/ce-este-sal/" target="_blank" rel=”nofollow”>
-                                        <img src="<?php echo  TRA_THEME_URI . '/assets/img/SAL.svg'; ?>" />
+                                    <a href="https://anpc.ro/ce-este-sal/" target="_blank" rel=”nofollow” title="ANPC SAL">
+                                        <img src="<?php echo  TRA_THEME_URI . '/assets/img/SAL.svg'; ?>" alt="ANPC SAL" />
                                     </a>
-                                    <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel=”nofollow”>
-                                        <img src="<?php echo TRA_THEME_URI . '/assets/img/SOL.svg'; ?>" />
+                                    <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel=”nofollow” title="ANPC SOL">
+                                        <img src="<?php echo TRA_THEME_URI . '/assets/img/SOL.svg'; ?>" alt="ANPC SOL"/>
                                     </a>
                                 </div>
                             </div>
