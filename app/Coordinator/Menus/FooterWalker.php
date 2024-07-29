@@ -24,7 +24,6 @@ class FooterWalker extends Walker_Nav_Menu
     }
 
 
-
     public function start_el(&$output, $item, $depth = 0, $args = null, $item_id = 0)
     {
 
@@ -37,7 +36,7 @@ class FooterWalker extends Walker_Nav_Menu
         $classes    .=  ' mil-' . $depth;
 
         if( $depth === 0 ){
-            $output .= "<div class='c-menu'><span>" . esc_html( $item->title ) . "</span>";
+            $output .= "<li class='c-menu'><span>" . esc_html( $item->title ) . "</span>";
         }else{
             $output     .= '<li class="' . $classes . ' ">';
             $item_link  = ( ! $item->url || $item->url == "#" ) ? 'javascript:void(0)' : $item->url;
@@ -46,13 +45,5 @@ class FooterWalker extends Walker_Nav_Menu
 
     }
 
-    public function end_el(&$output, $item, $depth = 0, $args = null, $item_id = 0)
-    {
-        if( $depth === 0 ){
-            $output .= "</div>";
-        }else{
-            $output     .= '</li>';
-        }
-    }
 
 }
