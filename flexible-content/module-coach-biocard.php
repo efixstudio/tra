@@ -2,7 +2,7 @@
     if( isset( $content['coach'] ) && $content[ 'coach'] !== false ):
         $coach = $content['coach'];
 
-        $image = get_the_post_thumbnail($coach->ID);
+        $image = get_the_post_thumbnail($coach->ID, 'original-600');
 ?>
 
 <!-- coach bio -->

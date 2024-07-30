@@ -1,4 +1,51 @@
 .module {
+  &--faqs {
+    .module{
+      &--trainingplan{
+        .container{
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+    }
+  }
+
+  &--trainingplan {
+    .c-plan{
+      &.vomaster {
+        .container{
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+    }
+  }
+
+  &--camps {
+    &.has-title{
+
+      &:before{}
+
+      .u-cols{
+        &--header{
+          width: calc(100% - 30px );
+          left: 15px;
+
+          .u-col{
+            &--left{
+
+              a{ }
+              h2{}
+              svg{
+              }
+            }
+          }
+        }
+
+
+      }
+    }
+  }
 
 }
 

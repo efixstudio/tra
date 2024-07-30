@@ -8,7 +8,7 @@ $countPosts = $countPosts ?? false;
         <div class="c-card__head"><span></span><span class="c-card__date"><?php echo  get_the_date('d.m.Y'); ?></span></div>
         <div class="c-card__box">
             <div class="u-col u-col--left">
-                <a href="<?php echo get_the_permalink(); ?>" class="c-card__image"><?php echo get_the_post_thumbnail(); ?></a>
+                <a href="<?php echo get_the_permalink(); ?>" class="c-card__image"><?php echo get_the_post_thumbnail(null, 'original-600'); ?></a>
             </div>
             <div class="u-col u-col--right">
 

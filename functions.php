@@ -5,7 +5,7 @@ define( 'TRA_THEME_DIR', get_template_directory() );
 define( 'TRA_THEME_URI', get_template_directory_uri() );
 define( 'TRA_THEME_DIR_APP', get_template_directory() . '/app');
 define( 'TRA_THEME_DIR_APP_URI', get_template_directory_uri() . '/app');
-define( 'TRA_THEME_ASSETS_VERSION', '1.0.35' );
+define( 'TRA_THEME_ASSETS_VERSION', '1.0.36' );
 
 require_once( __DIR__ . "/autoload.php" );
 add_action( 'after_setup_theme', [ TrailRunningAcademy\Controller::instance(), 'setup' ], 20 );
@@ -199,7 +199,7 @@ $framework->add_image_size('rectangle-portrait-medium', 650, 520); //gallery big
 $framework->add_image_size('square-medium', 600, 600);
 $framework->add_image_size('square-small', 250, 250);
 $framework->add_image_size('square-xsmall', 80, 80);
-$framework->add_image_size('original-900', 600, 0);
+$framework->add_image_size('original-900', 900, 0);
 $framework->add_image_size('original-600', 600, 0);
 $framework->add_image_size('original-300', 300, 0);
 

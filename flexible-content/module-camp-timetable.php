@@ -38,7 +38,7 @@
 
                 <div class="u-cols fx fx--">
                     <div class="u-col u-col--left">
-                        <?php get_image($organisers['image'],'full'); ?>
+                        <?php get_image($organisers['image'],'original-300'); ?>
                     </div>
 
                     <div class="u-col u-col--right">
@@ -66,7 +66,7 @@
                                 <div class="u-cols fx">
                                     <div class="u-col u-col--left">
                                         <div class="c-plan__image">
-                                            <?php echo get_the_post_thumbnail($post->ID); ?>
+                                            <?php echo get_the_post_thumbnail($post->ID, 'original-600'); ?>
                                         </div>
                                     </div>
 

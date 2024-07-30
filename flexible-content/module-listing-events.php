@@ -77,7 +77,7 @@
                                         <div class="c-members-list">
                                             <?php foreach($members as $post ) : ?>
                                                 <div class="c-members-list__item">
-                                                    <?php echo get_the_post_thumbnail($post->ID); ?>
+                                                    <?php echo get_the_post_thumbnail($post->ID, 'square-xsmall'); ?>
                                                 </div>
                                             <?php endforeach; ?>
                                         </div>

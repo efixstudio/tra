@@ -10,7 +10,7 @@
                         <div class="u-cols fx">
                             <div class="u-col u-col--left">
                                 <div class="c-plan__image">
-                                    <?php get_image($content['image'],'full'); ?>
+                                    <?php get_image($content['image'],'original-300'); ?>
                                 </div>
                             </div>
 

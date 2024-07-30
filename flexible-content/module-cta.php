@@ -45,7 +45,7 @@
                     <div class="u-col u-col--left">
                         <div class="c-cta__meta">
                             <div class="c-cta__icon">
-                                <?php get_image($cta['icon'],'full'); ?>
+                                <?php get_image($cta['icon'],'original-300'); ?>
                             </div>
                             <h2 class="c-cta__meta-title"><?php echo $cta['title']; ?></h2>
                         </div>

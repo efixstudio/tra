@@ -1,6 +1,6 @@
 <div class="c-card c-card--camp">
     <a href="<?php echo get_the_permalink(); ?>" class="c-card__image">
-        <?php echo get_the_post_thumbnail(); ?>
+        <?php echo get_the_post_thumbnail(null, 'original-600'); ?>
     </a>
 
     <div class="c-card__meta">

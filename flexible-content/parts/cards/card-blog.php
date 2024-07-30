@@ -23,7 +23,7 @@
 
     <div class="c-card__box">
         <a href="<?php the_permalink(); ?>" class="c-card__image">
-            <?php the_post_thumbnail(); ?>
+            <?php the_post_thumbnail('original-600'); ?>
         </a>
 
         <div class="c-card__title">

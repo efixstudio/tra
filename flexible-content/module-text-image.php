@@ -31,7 +31,7 @@
             </div>
 
             <div class="u-col u-col--right">
-                <?php echo get_image($content['image'],'full'); ?>
+                <?php echo get_image($content['image'],'original-900'); ?>
             </div>
         </div>
     </div>

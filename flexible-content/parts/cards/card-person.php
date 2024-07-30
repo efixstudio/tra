@@ -7,7 +7,7 @@ $disable_links = isset( $args ) && is_array( $args ) && isset( $args['disable_li
 ?>
 <a class="c-card c-card--person" href="<?php echo $disable_links ? 'javascript:void(0)' : get_the_permalink($post->ID); ?>">
     <div class="c-card__image"> 
-        <?php echo get_the_post_thumbnail($post->ID); ?>
+        <?php echo get_the_post_thumbnail($post->ID, 'original-300'); ?>
     </div>
     
     <div class="c-card__meta">

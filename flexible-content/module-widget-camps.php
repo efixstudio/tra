@@ -62,7 +62,7 @@
 
                     <div class="u-col u-col--right">
                         <div class="c-camp__image">
-                            <?php echo get_the_post_thumbnail($post->ID); ?>
+                            <?php echo get_the_post_thumbnail($post->ID, 'original-600'); ?>
                         </div>
                     </div>
                 </div>

@@ -35,9 +35,9 @@
 
                         <?php
                         if ($video['bgimage']) :
-                            get_image($video['bgimage'], 'full');
+                            get_image($video['bgimage'], 'original-600');
                         else:
-                            the_post_thumbnail();
+                            the_post_thumbnail('original-600');
                         endif;
                         ?>
                     </div>
@@ -49,7 +49,7 @@
                                 <span><strong>Antrenor certificat Training Peaks</strong></span>
                                 <div class="c-logos">
                                     <?php foreach ($logos as $logo) : ?>
-                                        <?php get_image($logo['certificate_image'], 'full'); ?>
+                                        <?php get_image($logo['certificate_image'], 'square-xsmall'); ?>
                                     <?php endforeach; ?>
                                 </div>
                             </div>

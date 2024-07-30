@@ -32,7 +32,7 @@
             <div class="c-gallery__column">
                 <?php  $countImages = 0; foreach($images as $item ) : $countImages++; ?>
                     <a href="<?php echo $item['url']; ?>" data-fancybox="gallery" class="c-gallery__item fancybox <?php echo $countImages < 5 ? 'is-visible' : ''; ?>">
-                        <?php get_image($item, 'full'); ?>
+                        <?php get_image($item, 'original-300'); ?>
                     </a>
                 <?php endforeach; ?>
             </div>

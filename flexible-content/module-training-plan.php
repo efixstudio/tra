@@ -51,7 +51,7 @@
                             <div class="u-col u-col--left">
                                 <div class="c-plan__image">
                                     <?php if($post->post_type === 'antrenori') : ?>
-                                        <?php echo get_the_post_thumbnail($post->ID); ?>
+                                        <?php echo get_the_post_thumbnail($post->ID, 'original-600'); ?>
                                     <?php endif; ?>
                                 </div>
                             </div>
@@ -194,7 +194,7 @@
                                     <div class="u-col u-col--left">
                                         <div class="c-plan__image">
                                             <?php if($post->post_type === 'antrenori') : ?>
-                                                <?php echo get_the_post_thumbnail(null, 'post-thumbnail', ['loading' => 'lazy']); ?>
+                                                <?php echo get_the_post_thumbnail(null, 'original-600', ['loading' => 'lazy']); ?>
                                             <?php endif; ?>
                                         </div>
                                     </div>

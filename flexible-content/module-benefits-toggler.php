@@ -6,7 +6,7 @@
         <div class="u-cols<?php if($image) : ?> has-image<?php endif; ?>">
             <?php if($image) : ?>
                 <div class="u-col u-col--left">
-                    <?php get_image($image, 'full'); ?>
+                    <?php get_image($image, 'original-300'); ?>
                 </div>
             <?php endif; ?>
 

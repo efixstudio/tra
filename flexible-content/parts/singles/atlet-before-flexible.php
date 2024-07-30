@@ -43,7 +43,7 @@
             <div class="grid-member--info">
                 <div class="grid-member--item c-text__image">
                     <div class="grid-member--image">
-                        <?php the_post_thumbnail(); ?>
+                        <?php the_post_thumbnail('original-600'); ?>
                         <?php if ($details['youtube_url']) : ?>
                             <a href="<?php echo $details['youtube_url']; ?>" class="u-play" data-fancybox="video-gallery">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">

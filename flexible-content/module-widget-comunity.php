@@ -42,7 +42,7 @@
                 </div>
 
                 <div class="u-col u-col--right">
-                    <?php get_image($content['image'],'full'); ?>
+                    <?php get_image($content['image'],'original-600'); ?>
 
                     <?php $btn = $content['button_2']; if($btn['url']) : ?>
                     <div class="c-button">

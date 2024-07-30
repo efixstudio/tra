@@ -64,7 +64,7 @@
                         <div class="u-ss u-ss--partners">
                             <?php foreach($footer['partners_gallery'] as $item ) : ?>
                                 <div class="u-ss__slide">
-                                    <?php get_image($item, 'full'); ?>
+                                    <?php get_image($item, 'original-300'); ?>
                                 </div>
                             <?php endforeach; ?>
                         </div>
