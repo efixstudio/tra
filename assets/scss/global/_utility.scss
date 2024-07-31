@@ -118,5 +118,41 @@
     }
 }
 
+.hide-scrollbar{
+    scrollbar-width: none;
+    &:hover{
+        &::-webkit-scrollbar-thumb {
+            background: transparent;
+            display: none;
+        }
+    }
+    &::-webkit-scrollbar {
+        width: 7px;
+        height: 7px;
+        border-radius: 5px;
+        background: transparent;
+        display: none;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: transparent;
+        display: none;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: transparent;
+        display: none;
+        cursor: grabbing;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: transparent;
+        display: none;
+    }
+}
+
 
 

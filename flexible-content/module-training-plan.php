@@ -36,8 +36,8 @@
             <header class="c-plan-header">
                 <div class="container">
                     <nav class="c-nav" data-count="<?php echo count( $options['subscription'] ); ?>">
-                        <?php foreach($options['subscription'] as $option) : ?>
-                            <a class="c-nav__item" href="#<?php echo $post->post_name;?>-<?php echo $option['price']; ?>"><?php echo $option['time']; ?></a>
+                        <?php $counterNavIndividualPlans = 0; foreach($options['subscription'] as $option) : $counterNavIndividualPlans++;?>
+                            <a class="c-nav__item <?php echo $counterNavIndividualPlans === 1 ? 'is-active': ''; ?>" href="#<?php echo $post->post_name;?>-<?php echo $option['price']; ?>"><?php echo $option['time']; ?></a>
                         <?php endforeach; ?>
                     </nav>
                 </div>
@@ -45,8 +45,8 @@
             
             <div class="c-plan-body">
                 <div class="container">
-                    <?php foreach($options['subscription'] as $option) : ?>
-                    <div class="c-plan-content is-single is-active" id="<?php echo $post->post_name; ?>-<?php echo $option['price']; ?>">
+                    <?php $counterIndividualPlans = 0; foreach($options['subscription'] as $option) : $counterIndividualPlans++ ?>
+                    <div class="c-plan-content is-single <?php echo $counterIndividualPlans === 1 ? 'is-active': ''; ?>" id="<?php echo $post->post_name; ?>-<?php echo $option['price']; ?>">
                         <div class="u-cols fx">
                             <div class="u-col u-col--left">
                                 <div class="c-plan__image">

@@ -52,7 +52,7 @@
         <div class="c-mmenu">
             <div class="inner">
                 <div class="container">
-                    <?php wp_nav_menu( array( 'theme_location' => 'header','container'=> false ) ); ?>
+                    <?php wp_nav_menu( array( 'theme_location' => 'header','container'=> false, 'menu_class' => 'menu hide-scrollbar' ) ); ?>
                 </div>
             </div>
         </div>

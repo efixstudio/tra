@@ -4,7 +4,7 @@ Theme URI: https://www.addmark.nl/
 Author: Addmark
 Author URI: https://www.addmark.nl/
 Description: A basic theme, containing a few helpful functions to get your project started. Perfect for developing custom websites.
-Version: 1.0.36
+Version: 1.0.37
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: trailrunningacademy
@@ -296,6 +296,37 @@ a {
 }
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: rgb(0, 107, 56);
+}
+
+.hide-scrollbar {
+  scrollbar-width: none;
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+.hide-scrollbar:hover::-webkit-scrollbar-thumb {
+  background: transparent;
+  display: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+  border-radius: 5px;
+  background: transparent;
+  display: none;
+}
+.hide-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  display: none;
+}
+.hide-scrollbar::-webkit-scrollbar-thumb {
+  background: transparent;
+  display: none;
+  cursor: grabbing;
+}
+.hide-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+  display: none;
 }
 
 .post-protected-password-section {
@@ -1110,6 +1141,7 @@ input[type=submit] {
   overflow-y: auto;
   padding-right: 15px;
   margin-right: -15px;
+  padding-bottom: 80px;
 }
 .c-mmenu ul.menu > li:not(.menu-item-has-children) {
   margin-bottom: 45px;
