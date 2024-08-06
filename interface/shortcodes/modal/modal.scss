@@ -1,0 +1,136 @@
+.modal-element {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(8px);
+  transition: all 140ms ease-in-out;
+  pointer-events: none;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  z-index: 999999999;
+
+  .modal-content-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      width: 100%;
+      height: 100vh;
+      border: none;
+      background-color:  #fff;
+      position: relative;
+      opacity: 0;
+      transform: scale(1.2);
+      transition: all 300ms ease-in-out;
+      overflow-y: auto;
+      padding: 80px 2rem 150px 2rem;
+
+      span{
+        padding: 0 !important;
+      }
+  }
+
+  &.open {
+      opacity: 1;
+      pointer-events: auto;
+
+      .modal-content-wrapper {
+        opacity: 1;
+        transform: scale(1);
+      }
+  }
+
+  .close-button{
+    background: transparent;
+    border: none;
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    cursor: pointer;
+
+    span{
+      padding: 0 !important;
+    }
+  }
+
+  .modal-body{
+    width: 100%;
+    max-width: 800px;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  form{
+    fieldset{
+      border: none;
+    }
+
+    label{
+      display: none;
+    }
+
+    input[type="tel"]{
+      font-size: 18px;
+      font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+      color: var(--tra-primary-color);
+      padding: 20px;
+      box-sizing: border-box;
+      width: 100%;
+      border: 1px solid var(--tra-primary-color);
+    }
+
+    input:not([type=submit]), textarea{
+
+      &::-webkit-input-placeholder {  color: var(--tra-primary-color) !important; }
+      &::-moz-placeholder { color: var(--tra-primary-color) !important; }
+      &:-ms-input-placeholder { color: var(--tra-primary-color) !important; }
+      &:-moz-placeholder { color: var(--tra-primary-color) !important; }
+
+      &:focus{
+        background: #f2f2f2;
+        color: #000000;
+        &::-webkit-input-placeholder {  color: var(--tra-primary-color) !important; }
+        &::-moz-placeholder { color: var(--tra-primary-color) !important; }
+        &:-ms-input-placeholder { color: var(--tra-primary-color) !important; }
+        &:-moz-placeholder { color: var(--tra-primary-color) !important; }
+      }
+    }
+  }
+  .gform_footer{
+    margin-top: -5px;
+  }
+
+}
+
+@media screen and (max-width: 767px){
+  .modal-element {
+    max-width: 100vw;
+    .modal-content-wrapper {
+      padding: 100px 15px 100px 15px;
+    }
+
+    .modal-body{
+      margin-top: 70px;
+      margin-bottom: 150px;
+    }
+
+    .close-button{
+      top: 15px;
+      right: 15px;
+    }
+  }
+}

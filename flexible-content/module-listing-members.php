@@ -15,7 +15,11 @@
 <!-- listing comunity  -->
 <section class="module module--listing  u-pd u-pd--md bg bg--green is-feed-listing" data-feed="<?php echo $content['feed']; ?>">
         <div class="container">
+            <div class="module--headline">
+                <h2><?php echo $content['title'] ;?></h2>
+            </div>
             <div class="c-cards c-cards--person">
+
                 <?php  
                     if($content['feed']==='atleti') :
                         while ( $loop->have_posts() ) : $loop->the_post();

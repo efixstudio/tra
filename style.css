@@ -1,10 +1,10 @@
 /*!
-Theme Name: Addmark WP theme
-Theme URI: https://www.addmark.nl/
-Author: Addmark
-Author URI: https://www.addmark.nl/
-Description: A basic theme, containing a few helpful functions to get your project started. Perfect for developing custom websites.
-Version: 1.0.37
+Theme Name: TrailRunning Academy
+Theme URI: https://trailrunningacademy.com/
+Author: TrailRunning Academy
+Author URI: https://trailrunningacademy.com/
+Description: A basic theme.
+Version: 1.0.42
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: trailrunningacademy
@@ -82,6 +82,10 @@ img {
 
 * {
   box-sizing: border-box;
+}
+
+.fade {
+  opacity: 0;
 }
 
 /*--------------------------------------------------------------
@@ -182,6 +186,9 @@ a {
 }
 .bg--green .c-editor blockquote {
   border-color: var(--tra-light-color);
+}
+.bg--green a {
+  color: var(--tra-light-color);
 }
 .bg--white {
   background-color: var(--tra-light-color);
@@ -329,6 +336,18 @@ a {
   display: none;
 }
 
+.show-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .show-mobile {
+    display: block;
+  }
+  .hide-mobile {
+    display: none;
+  }
+}
 .post-protected-password-section {
   display: flex;
   flex-direction: column;
@@ -1191,7 +1210,8 @@ input[type=submit] {
   color: var(--tra-secondary-color);
 }
 .c-mmenu ul.sub-menu {
-  max-width: 70%;
+  max-width: 700px;
+  width: 100%;
 }
 .c-mmenu ul.sub-menu > li > a svg {
   width: 15px;
@@ -2242,6 +2262,9 @@ body {
 .module--listing {
   padding-bottom: 20px;
 }
+.module--listing .module--headline h2 {
+  margin-bottom: 1em;
+}
 .module--plans .c-plans {
   border: none;
 }
@@ -2304,15 +2327,19 @@ body {
 .module--camps.has-title .u-cols--header .u-col--left {
   padding: 40px;
   width: 50%;
-  border: 1px solid #006B38;
+  border: 1px solid var(--tra-primary-color);
   border-bottom: none;
 }
 .module--camps.has-title .u-cols--header .u-col--left a {
   display: flex;
   justify-content: space-between;
+  color: var(--tra-primary-color);
+}
+.module--camps.has-title .u-cols--header .u-col--left a:hover {
+  color: var(--tra-secondary-color);
 }
 .module--camps.has-title .u-cols--header .u-col--left svg {
-  fill: #006B38;
+  fill: var(--tra-primary-color);
   transform: rotate(90deg);
   transform-origin: center;
 }
@@ -2891,11 +2918,17 @@ body {
 .module--textbox .headline {
   margin-bottom: 40px;
 }
+.module--textbox svg path {
+  fill: var(--tra-primary-color);
+}
 .module--textbox.bg--green .c-box .u-cols.bx--unset:before {
   background-color: #fff;
 }
 .module--textbox.bg--green .headline h2 {
   color: #fff;
+}
+.module--textbox.bg--green svg path {
+  fill: var(--tra-light-color);
 }
 .module--textbtn .btn {
   justify-content: space-between;
@@ -3834,10 +3867,17 @@ body {
 .c-box__content a.btn-b {
   box-shadow: -1px 0 0 0 #000;
 }
+.c-box__button a {
+  border-top: 1px solid;
+}
 .c-box:not(.c-box--nextstep) .c-box__content a.btn {
   font-size: 1.5rem;
   margin: 20px -40px -40px;
-  padding: 30px 20px;
+  padding: 30px 40px;
+}
+.c-box:not(.c-box--nextstep) .c-box__content a:hover svg {
+  transform: translate(10px, 0);
+  transition: 0.3s;
 }
 .c-box__heading {
   margin: 0 0 50px;
@@ -5247,6 +5287,10 @@ body {
   }
   .c-card--single-member-header.is-coach .c-text__content {
     padding: 20px;
+    margin-top: 30px;
+  }
+  .c-card--single-member-header.is-coach .c-text__image {
+    margin-top: 30px;
   }
   .c-card--single-member-header.is-coach .c-text__image .u-play {
     width: 50px;
@@ -5340,10 +5384,117 @@ body {
     width: 100%;
     margin-top: 15px;
   }
+  .c-events .c-table-content .u-cols .u-col {
+    width: 100% !important;
+    padding: 30px 15px;
+    border-right: none !important;
+  }
   .u-table-column.has-cta .u-form {
     margin: 20px 0 0;
   }
   /** MODULES **/
+  .module--comments {
+    visibility: hidden;
+  }
+  .module--comments.is-logged .inner .row {
+    width: 100%;
+  }
+  .module--comments.is-logged .inner .row--right .comment-form-comment {
+    height: 250px;
+  }
+  .module--comments.is-logged .inner .row::before {
+    background-color: transparent;
+  }
+  .module--comments.is-logged .row--bottom {
+    justify-content: flex-end;
+  }
+  .module--comments.is-logged .logged-in-as {
+    display: none;
+  }
+  .module--comments.is-visible {
+    visibility: visible;
+  }
+  .module--comments h3.comment-reply-title {
+    font-weight: 700;
+    margin: 0 0 30px;
+  }
+  .module--comments h3#comments {
+    border-top: 1px solid var(--tra-primary-color);
+    border-bottom: 1px solid var(--tra-primary-color);
+    padding: 20px 0;
+  }
+  .module--comments .commentlist .comment .u-cols .u-col--left {
+    width: 100%;
+  }
+  .module--comments .commentlist .comment .u-cols .u-col--left .author {
+    margin-bottom: 10px;
+  }
+  .module--comments .commentlist .comment .u-cols .u-col--left .author-avatar {
+    display: none;
+  }
+  .module--comments .commentlist .comment .u-cols .u-col--right {
+    width: 100%;
+  }
+  .module--comments .inner {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid var(--tra-primary-color);
+    flex-direction: column;
+  }
+  .module--comments .inner .row--left {
+    order: -1;
+    width: 100%;
+  }
+  .module--comments .inner .row--right {
+    position: relative;
+    width: 100%;
+  }
+  .module--comments .inner .row--right:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background-color: var(--tra-primary-color);
+  }
+  .module--comments .inner .row--right textarea {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    border: none;
+    background-color: transparent;
+  }
+  .module--comments .row--bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  .module--comments .row--bottom label {
+    display: flex !important;
+  }
+  .module--comments .row--bottom p {
+    width: 100%;
+  }
+  .module--comments .row--bottom p.form-submit {
+    width: 100%;
+    margin-top: 10px;
+  }
+  .module--comments .row--bottom p.form-submit input {
+    border: 1px solid var(--tra-primary-color);
+  }
+  .module--comments .row--bottom p.form-submit input:hover {
+    background-color: var(--tra-primary-color);
+    color: #fff;
+  }
+  .module--comments .row--bottom p.comment-form-cookies-consent {
+    width: 100%;
+    margin-top: 15px;
+  }
   .module--story .u-table-row {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -5476,14 +5627,14 @@ body {
     object-fit: cover;
     object-position: center;
     margin-top: 20px !important;
-    max-width: 150px;
+    max-width: 100%;
   }
   .module--ti .u-cols .u-col--right:before {
     display: none;
   }
   .module--ti.has-bg {
     margin-top: 60px;
-    padding: 60px 0;
+    padding: 60px 0 0 0;
     margin-bottom: 0;
   }
   .module--ti.has-bg .u-cols .u-col--left {
@@ -5497,13 +5648,17 @@ body {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    margin: 20px auto auto;
+    margin-top: 20px;
+    margin-left: -15px;
+    margin-right: -15px;
+    width: calc(100% + 30px);
+    max-width: max-content;
   }
   .module--ti.has-bg .u-cols .u-col--right:before {
     display: none;
   }
   .module--ph .c-text__title {
-    color: #006B38;
+    color: var(--tra-primary-color);
     font-weight: 900;
   }
   .module--ph .c-text__title.lg {
@@ -5533,7 +5688,7 @@ body {
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
     white-space: nowrap;
-    box-shadow: -1px 0 0 0 #006B38, 1px 0 0 0 #006B38;
+    box-shadow: -1px 0 0 0 var(--tra-primary-color), 1px 0 0 0 var(--tra-primary-color);
   }
   .module--trainingplan .c-plan .c-nav:first-child {
     border-top: 1px solid;
@@ -5608,7 +5763,7 @@ body {
   }
   .module--benefits.has-togglers .u-cols.has-image .u-col--left {
     position: relative;
-    border-bottom: 1px solid #006B38;
+    border-bottom: 1px solid var(--tra-primary-color);
   }
   .module--benefits.has-togglers .u-cols.has-image .u-col--left img {
     width: 100%;
@@ -5625,7 +5780,7 @@ body {
     display: none;
   }
   .module--comunity {
-    border-top: 1px solid #006B38;
+    border-top: 1px solid var(--tra-primary-color);
     padding-bottom: 100px;
     background-color: #fff;
   }
@@ -5637,7 +5792,7 @@ body {
     border: none;
   }
   .module--comunity .inner .u-cols .u-col--right img {
-    max-width: 200px;
+    max-width: 100%;
   }
   .module--comunity .inner .c-links {
     margin: 20px 0 0;
@@ -5653,7 +5808,7 @@ body {
   .module--comunity .module-header {
     position: relative;
     display: flex;
-    border-bottom: 1px solid #006B38;
+    border-bottom: 1px solid var(--tra-primary-color);
   }
   .module--comunity .module-header:before, .module--comunity .module-header:after {
     display: none;
@@ -5785,7 +5940,7 @@ body {
     margin-right: -15px;
   }
   .module--faqs .c-togglers {
-    border: 1px solid #006B38;
+    border: 1px solid var(--tra-primary-color);
   }
   .module--faqs .c-togglers__header {
     padding: 20px;
@@ -5816,6 +5971,9 @@ body {
   }
   .module--textbtn .u-cols {
     gap: 20px;
+  }
+  .c-badge--author {
+    padding: 30px 20px;
   }
   .c-tabs-nav--comunity {
     margin: 0 0 30px;
@@ -5939,7 +6097,7 @@ body {
     margin-bottom: 20px;
   }
   .c-bio__body .u-cols .u-col--left img {
-    max-width: 200px !important;
+    max-width: 100% !important;
     margin: 0 auto;
   }
   .c-navbars--blog .c-nav-blog .c-cats .c-cat {
@@ -6498,8 +6656,8 @@ body {
   .module--athlete-info .grid-member--image {
     position: relative;
     width: 100%;
-    max-width: 200px;
-    margin: 0 auto 20px auto;
+    max-width: 100%;
+    margin: 20px auto;
   }
   .module--athlete-info .grid-member--image .u-play {
     width: 50px;
@@ -6527,6 +6685,7 @@ body {
   }
   .module--athlete-info .grid-member--item:first-of-type {
     border: none !important;
+    padding: 0;
   }
   .module--athlete-info .grid-member--item:nth-of-type(2) {
     border-top: 1px solid #fff !important;

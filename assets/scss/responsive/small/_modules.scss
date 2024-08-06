@@ -138,8 +138,8 @@
       &--image{
         position: relative;
         width: 100%;
-        max-width: 200px;
-        margin: 0 auto 20px auto;
+        max-width: 100%;
+        margin: 20px auto;
 
         .u-play {
           width: 50px;
@@ -166,7 +166,7 @@
         justify-content: space-between;
 
         .label{ font-weight: 600; }
-        &:first-of-type {border: none !important; }
+        &:first-of-type {border: none !important; padding: 0; }
         &:nth-of-type(2) {
           border-top: 1px solid $white !important;
         }

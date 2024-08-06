@@ -96,7 +96,9 @@
 
                                     <div class="c-plan-footer">
                                         <div class="c-plan-footer__notice">
-                                            <p><strong>Nu uita:</strong> Planul se factureaza trimestrial!</p>
+                                            <?php if( $option[ 'time'] ) : ?>
+                                                <p><strong>Nu uita:</strong> Planul se factureaza <?php echo payment_plans_get_period_label( $option['time'] ); ?>!</p>
+                                            <?php endif; ?>
                                         </div>
 
                                         <?php if( isset( $option['url'] ) && is_array( $option['url'] ) ): ?>
@@ -187,6 +189,7 @@
                 <div class="container">
                     <?php  while ( $loop->have_posts() ) : $loop->the_post(); $options = get_field('abonamente',$post->ID); ?>
                     <?php if( array_key_is_array( $options, 'subscription',  ) ): ?>
+
                         <div class="item" id="<?php echo $post->post_name; ?>">
                             <?php  foreach($options['subscription'] as $option) : ?>
                                 <div class="c-plan-content has-multiple <?php echo $subscription_first_period === sanitize_title( $option['time'] ) ? 'is-active' : '';?>" id="<?php echo $post->post_name; ?>-<?php echo $option['price']; ?>" data-coach="<?php echo $post->post_name;?>" data-period="<?php echo sanitize_title( $option[ 'time' ] ); ?>">
@@ -239,10 +242,10 @@
 
                                             <div class="c-plan-footer">
                                                 <div class="c-plan-footer__notice">
-                                                    <p><strong>Nu uita:</strong> Planul se factureaza trimestrial!</p>
+                                                    <?php if( $option[ 'time'] ) : ?>
+                                                        <p><strong>Nu uita:</strong> Planul se factureaza <?php echo payment_plans_get_period_label( $option['time'] ); ?>!</p>
+                                                    <?php endif; ?>
                                                 </div>
-
-
 
                                                 <div class="c-plan-footer__button">
                                                     <a href="<?php echo isset( $option['url'] ) && is_array($option['url']) ? $option['url']['url'] : ''; ?>" class="btn btn--primary btn--green" id="<?php echo $post->post_name; ?>-url-<?php echo $option['price']; ?>">

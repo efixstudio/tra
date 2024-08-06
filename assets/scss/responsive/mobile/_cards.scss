@@ -321,10 +321,10 @@
     &.is-coach {grid-template-columns: 1fr; gap: 30px;
 
       .c-text{
-         &__content{ padding: 20px;}
+         &__content{ padding: 20px; margin-top: 30px;}
 
         &__image{
-
+          margin-top: 30px;
           .u-play{
             width: 50px;
             height: 50px;

@@ -5,7 +5,7 @@ define( 'TRA_THEME_DIR', get_template_directory() );
 define( 'TRA_THEME_URI', get_template_directory_uri() );
 define( 'TRA_THEME_DIR_APP', get_template_directory() . '/app');
 define( 'TRA_THEME_DIR_APP_URI', get_template_directory_uri() . '/app');
-define( 'TRA_THEME_ASSETS_VERSION', '1.0.37' );
+define( 'TRA_THEME_ASSETS_VERSION', '1.0.41' );
 
 require_once( __DIR__ . "/autoload.php" );
 add_action( 'after_setup_theme', [ TrailRunningAcademy\Controller::instance(), 'setup' ], 20 );
@@ -208,7 +208,7 @@ $framework->add_image_size('original-300', 300, 0);
  * 
  */
 $framework->login_screen(array(
-    'logo' => 'assets/img/logo.png',
+    'logo' => 'assets/img/logo-site.png',
     'logo_width' => '100px',
     'color' => '#000',
     'color_hover' => '#666',

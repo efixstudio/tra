@@ -2948,6 +2948,26 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_66b099eae57a5",
+                            "label": "Title",
+                            "name": "title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
                             "key": "field_662fbe8dd8c9b",
                             "label": "Feed",
                             "name": "feed",
@@ -3497,5 +3517,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1721891690
+    "modified": 1722849788
 }

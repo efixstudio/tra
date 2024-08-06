@@ -151,3 +151,25 @@ function get_posts_array_ancestors( int $post_id, $links = [] ){
     }
     return $links;
 }
+
+function payment_plans_get_period_label( $data ){
+    switch( intval( $data ) ){
+        case "1":
+            $payment_plan_interval_text = "lunar";
+            break;
+        case "3":
+            $payment_plan_interval_text = "trimestrial";
+            break;
+        case "6":
+            $payment_plan_interval_text = "semestrial";
+            break;
+        case "12":
+            $payment_plan_interval_text = "anual";
+            break;
+        default:
+            $payment_plan_interval_text = "lunar";
+
+    }
+
+    return $payment_plan_interval_text;
+}

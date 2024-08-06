@@ -143,6 +143,14 @@ body { background: url('assets/img/pattern.png'); }
 
     &--listing{
         padding-bottom: 20px;
+
+        .module{
+            &--headline{
+                h2{
+                    margin-bottom: 1em;
+                }
+            }
+        }
     }
 
     &--plans{
@@ -224,13 +232,17 @@ body { background: url('assets/img/pattern.png'); }
                         &--left{
                             padding: 40px;
                             width: 50%;
-                            border: 1px solid $green;
+                            border: 1px solid var(--tra-primary-color);
                             border-bottom: none;
 
-                            a{ display: flex; justify-content: space-between;}
+                            a{ display: flex; justify-content: space-between; color: var(--tra-primary-color);
+                                &:hover{
+                                    color: var(--tra-secondary-color);
+                                }
+                            }
                             h2{}
                             svg{
-                                fill: $green;
+                                fill: var(--tra-primary-color);
                                 transform: rotate(90deg);
                                 transform-origin: center;
                             }
@@ -590,6 +602,7 @@ body { background: url('assets/img/pattern.png'); }
             h2{
             }
         }
+        svg{ path{ fill: var(--tra-primary-color); }}
         &.bg {
             &--green {
                 .c-box {
@@ -607,6 +620,7 @@ body { background: url('assets/img/pattern.png'); }
                         color: $white;
                     }
                 }
+                svg{ path{ fill: var(--tra-light-color); }}
             }
         }
     }
@@ -1318,6 +1332,12 @@ body { background: url('assets/img/pattern.png'); }
         }
     }
 
+    &__button{
+        a{
+            border-top: 1px solid;
+        }
+    }
+
     &:not(.c-box--nextstep){
         .c-box__content {
             a{
@@ -1328,7 +1348,11 @@ body { background: url('assets/img/pattern.png'); }
                 &.btn{
                     font-size: 1.5rem;
                     margin: 20px -40px -40px;
-                    padding: 30px 20px;
+                    padding: 30px 40px;
+                }
+
+                &:hover{
+                    svg{ transform: translate(10px, 0); transition: .3s;}
                 }
             }
         }
