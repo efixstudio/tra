@@ -5,7 +5,7 @@ define( 'TRA_THEME_DIR', get_template_directory() );
 define( 'TRA_THEME_URI', get_template_directory_uri() );
 define( 'TRA_THEME_DIR_APP', get_template_directory() . '/app');
 define( 'TRA_THEME_DIR_APP_URI', get_template_directory_uri() . '/app');
-define( 'TRA_THEME_ASSETS_VERSION', '1.0.41' );
+define( 'TRA_THEME_ASSETS_VERSION', '1.0.43' );
 
 require_once( __DIR__ . "/autoload.php" );
 add_action( 'after_setup_theme', [ TrailRunningAcademy\Controller::instance(), 'setup' ], 20 );

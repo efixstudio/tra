@@ -24,7 +24,7 @@
     </div>
 
     <div class="container">
-        <div class="c-events is-green">
+        <div class="c-events c-events-listing is-green">
             <div class="c-table">
                 <?php while ( $cloneLoop->have_posts() ) : $cloneLoop->the_post();
                     $btn = get_field('cta');
@@ -33,7 +33,7 @@
                     $text = get_field('event_description');
                     $members = get_field('membri');
                 ?>
-                <div class="c-table-row">
+                <div class="c-table-row" data-id="<?php echo get_the_ID(); ?>">
                     <div class="c-table-item">
                         <div class="c-table-item__column c-table-item__date" data-label="Data">
                             <?php if($date) : ?>

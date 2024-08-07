@@ -49,11 +49,39 @@ $(document).ready(function () {
 	})
 
     // toggle events list
-    $('.c-events .c-table-item .c-table-item__url').click(function(){
+    $('.c-events.c-events-listing .c-table-item .c-table-item__url').click(function(){
 		event.preventDefault();
 		$(this).toggleClass('is-active');
 		$(this).closest('.c-table-row').find('.c-table-content').slideToggle();
 	})
+
+    const eventsListingElement = document.querySelector('.c-events-listing');
+    if( eventsListingElement ){
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const event = urlParams.get('event');
+
+        console.log(event );
+        console.log(`.c-events.c-events-listing .c-table-row[data-id="${event}"] .c-table-item .c-table-item__url` );
+
+        if( event ){
+            const rowElement = document.querySelector(`.c-events.c-events-listing .c-table-row[data-id="${event}"]`);
+            console.log( rowElement );
+            if( rowElement ){
+                rowElement.querySelector('.c-table-item .c-table-item__url').classList.toggle('is-active');
+                $(rowElement).find('.c-table-content').slideToggle();
+                const elementPosition = rowElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.scrollY - 140;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }
+        }
+
+        console.log( urlParams );
+    }
 
     $('.c-togglers .c-toggler').click(function(){
 		event.preventDefault();
