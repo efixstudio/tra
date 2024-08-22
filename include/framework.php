@@ -221,11 +221,9 @@ class Framework
             $style = array_merge($defaults, $style);
 
             $src = (filter_var($style['src'], FILTER_VALIDATE_URL)) ? $style['src'] : get_bloginfo('template_url') . '/' . $style['src'];
-            $ver = (filter_var($style['src'], FILTER_VALIDATE_URL)) ? get_bloginfo('version') : filemtime(get_template_directory() . '/' . $style['src']);
-            //@todo REMOVE when DONE
-            $ver = '';
-
-            wp_register_style($style['handle'], $src, $style['dependencies'], $ver, $style['media']);
+            //$ver = (filter_var($style['src'], FILTER_VALIDATE_URL)) ? get_bloginfo('version') : filemtime(get_template_directory() . '/' . $style['src']);
+            //$ver = TRA_THEME_ASSETS_VERSION;
+            wp_register_style($style['handle'], $src, $style['dependencies'], TRA_THEME_ASSETS_VERSION, $style['media']);
             wp_enqueue_style($style['handle']);
 
         }

@@ -3436,6 +3436,65 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_66c4bbf2727eb": {
+                    "key": "layout_66c4bbf2727eb",
+                    "name": "module_widget_atleti",
+                    "label": "Widget: Atleti",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_66c4bc1b727ed",
+                            "label": "Title",
+                            "name": "title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_66c4bc25727ee",
+                            "label": "Atleti",
+                            "name": "feed",
+                            "aria-label": "",
+                            "type": "relationship",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "atleti"
+                            ],
+                            "post_status": "",
+                            "taxonomy": "",
+                            "filters": [
+                                "search"
+                            ],
+                            "return_format": "object",
+                            "min": "",
+                            "max": "",
+                            "elements": [
+                                "featured_image"
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -3517,5 +3576,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1722849788
+    "modified": 1724169367
 }

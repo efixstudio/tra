@@ -71,7 +71,7 @@
                     </div>
                 </div>
             </div>
-            <?php endif; ?>
+
             <div class="c-footer-bottom">
                 <div class="container">
                     <div class="row row--top">
@@ -170,6 +170,7 @@
                     </div>
                 </div>
             </div>
+            <?php endif; ?>
         </div>
 
         </div><!-- end of site wrapper -->

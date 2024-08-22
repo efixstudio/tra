@@ -96,7 +96,7 @@
                     if( is_array( $socialLinks ) ):
                         $links = [];
                         foreach( $socialLinks as $link ):
-                            $links[] = '<a href="' . $link[ 'link' ]['url'] . '" target="_blank">' . $link[ 'link' ]['title'] . '</a>';
+                            $links[] = '<a href="' . ( isset( $link[ 'link' ]['url'] )  ?  $link[ 'link' ]['url'] : '' ) . '" target="_blank">' . (isset( $link[ 'link' ]['title'] ) ? $link[ 'link' ]['title'] : '' ) . '</a>';
                         endforeach;
                 ?>
                     <div class="grid-member--item grid-member--info-social">

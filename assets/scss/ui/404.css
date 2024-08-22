@@ -1,5 +1,10 @@
 .page-404 {
   padding: 120px 0;
+  min-height: 80vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 .page-404 .row {
   display: grid;

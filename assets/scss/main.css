@@ -4,7 +4,7 @@ Theme URI: https://trailrunningacademy.com/
 Author: TrailRunning Academy
 Author URI: https://trailrunningacademy.com/
 Description: A basic theme.
-Version: 1.0.43
+Version: 1.0.46
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: trailrunningacademy
@@ -2448,7 +2448,7 @@ body {
   height: 100%;
   object-fit: contain;
   object-position: center;
-  max-width: 350px;
+  max-width: 100%;
   margin: auto;
 }
 .module--benefits.has-togglers .u-cols.has-image .u-col--right {
@@ -3893,6 +3893,13 @@ body {
 .c-box .u-cols .u-col--left .c-box__title, .c-box .u-cols .u-col--left .c-box__content {
   border-right: none;
 }
+.c-box .u-cols .u-col--full {
+  width: 100%;
+}
+.c-box .u-cols .u-col--full a {
+  justify-content: flex-start;
+  gap: 20px;
+}
 .c-box .u-cols.bx--equal .c-box__content {
   height: 100%;
 }
@@ -4429,6 +4436,11 @@ body {
 
 .page-404 {
   padding: 120px 0;
+  min-height: 80vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 .page-404 .row {
   display: grid;

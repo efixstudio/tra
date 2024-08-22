@@ -1,10 +1,13 @@
-<?php 
+ <?php
     $content = get_field('testimonials_g','options');
     $btn = $content['button'];
 ?>
 
-<!-- testimonials -->
-<section class="module module--testimonials bg bg--green u-pd u-pd--md">
+<?php if( isset( $content[ 'testimonials']  ) && is_array( $content[ 'testimonials'] ) ) :
+    shuffle( $content[ 'testimonials'] );
+    ?>
+    <!-- testimonials -->
+    <section class="module module--testimonials bg bg--green u-pd u-pd--md">
     <div class="container">
         <?php if($content['title']) : ?>
         <div class="c-sh">
@@ -14,6 +17,7 @@
 
         <div class="c-ss c-ss--testimonials">
             <div class="u-ss u-ss--testimonials">
+
                 <?php foreach($content['testimonials'] as $post) : ?>
                 <div class="c-card c-card--testimonial">
                     <div class="c-card__header">
@@ -41,4 +45,5 @@
         </div>
     </div>
 </section>
+<?php endif;?>
 <!-- testimonials -->
