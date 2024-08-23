@@ -54,7 +54,7 @@
                                 <?php $logos = get_field('certificates');
                                 if ($logos) : ?>
                                     <div class="c-detail c-detail--certificates">
-                                        <span><strong>Antrenor certificat Training Peaks</strong></span>
+                                        <span><strong>Antrenor certificat</strong></span>
                                         <div class="c-logos">
                                             <?php foreach ($logos as $logo) : ?>
                                                 <?php get_image($logo['certificate_image'], 'square-xsmall'); ?>
@@ -103,7 +103,7 @@
                         <?php $logos = get_field('certificates');
                         if ($logos) : ?>
                             <div class="c-detail c-detail--certificates">
-                                <span><strong>Antrenor certificat Training Peaks</strong></span>
+                                <span><strong>Antrenor certificat</strong></span>
                                 <div class="c-logos">
                                     <?php foreach ($logos as $logo) : ?>
                                         <?php get_image($logo['certificate_image'], 'square-xsmall'); ?>
